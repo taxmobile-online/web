@@ -1,12 +1,10 @@
 import React from "react";
-import PageTitle from "Components/Atoms/PageTitle";
-import Spinner from "Components/Atoms/Spinner";
+import Hero from "Components/Organisms/Hero";
 
 function App() {
   return (
     <>
-      <PageTitle title="Abayomzee" />
-      <Spinner />
+      <Hero />
     </>
   );
 }

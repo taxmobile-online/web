@@ -7,6 +7,7 @@ import {
   FlexRowJcBetweenAiCenter,
   FlexRowWrapJcBetween,
   FlexRowJcBetweenAiEnd,
+  FlexColumn,
 } from "../Abstract/Mixins";
 
 interface Props {
@@ -52,7 +53,7 @@ export const Flex = styled.div<Props>`
     if (flexRowWrapJcBetween) return `${FlexRowWrapJcBetween}`;
 
     /* Columns */
-    if (flexColumn) return "flex-direction: column";
+    if (flexColumn) return `${FlexColumn}`;
     if (flexColumnReverse) return "flex-direction: column-reverse";
   }};
 

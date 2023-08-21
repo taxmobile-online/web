@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
 
 // General Button style
-export const Button = styled(motion.button)`
+export const Button = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;

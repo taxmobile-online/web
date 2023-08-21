@@ -36,6 +36,12 @@ export const FlexRowJcBetween = css`
   justify-content: space-between;
 `;
 
+export const FlexRowJcEnd = css`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+`;
+
 export const FlexRowJcBetweenAiCenter = css`
   display: flex;
   flex-direction: row;

@@ -29,5 +29,6 @@ export const Reset = css`
 
   body {
     box-sizing: border-box;
+    background-color: var(--color-bg);
   }
 `;

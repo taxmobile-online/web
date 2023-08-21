@@ -155,74 +155,21 @@ export const Utilities = css`
   .fill-color-11 {
     fill: var(--color-11);
   }
+
   .color-white {
     color: var(--color-white);
+  }
+
+  .color-primary {
+    color: var(--color-primary);
+  }
+ 
+  .color-5 {
+    color: var(--color-5);
   }
 
   .fill-white {
     fill: var(--color-white);
   }
-
-  /* .vv {
-    &:hover {
-      .overlay {
-        display: block;
-      }
-    }
-  } */
   /* End of colors */
-
-  .slick-arrow {
-    height: 100%;
-    background: linear-gradient(
-      180deg,
-      rgba(248, 248, 250, 0.8) 0%,
-      #f8f8fa 51.36%,
-      rgba(248, 248, 250, 0.8) 100%
-    );
-    mix-blend-mode: normal;
-    opacity: 0.8;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    z-index: 4;
-
-    &:hover {
-      background: linear-gradient(
-        180deg,
-        rgba(248, 248, 250, 0.8) 0%,
-        #f8f8fa 51.36%,
-        rgba(248, 248, 250, 0.8) 100%
-      );
-      mix-blend-mode: normal;
-      opacity: 0.8;
-    }
-  }
-
-  .slick-prev {
-    left: 0;
-    &::before {
-      background-color: (--color-black);
-      color: (--color-black);
-      content: url("/images/left-arrow.png");
-    }
-  }
-  .slick-next {
-    right: 0;
-    &::before {
-      background-color: (--color-black);
-      color: (--color-black);
-      content: url("/images/right-arrow.png");
-    }
-  }
-
-  .slick-dots li button:before {
-    font-size: 0.8rem;
-    opacity: 1;
-    color: var(--color-2);
-  }
-
-  .slick-dots li.slick-active button:before {
-    opacity: 1;
-    color: var(--color-9);
-  }
 `;
