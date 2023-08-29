@@ -13,7 +13,7 @@ export const Typography = css`
     &-1 {
       font-size: 4rem;
       font-weight: 700;
-      line-height: 7.2rem;
+      line-height: 155%;
       color: var(--color-1);
     }
     &-2 {
@@ -31,7 +31,7 @@ export const Typography = css`
     &-4 {
       font-size: 2.2rem;
       font-weight: 500;
-      line-height: 4.25rem;
+      line-height: 150%;
       color: var(--color-4);
     }
     &-5 {
