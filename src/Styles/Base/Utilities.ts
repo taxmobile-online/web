@@ -217,6 +217,9 @@ export const Utilities = css`
   .flex-align-end {
     align-self: flex-end;
   }
+  .flex-j-end {
+    justify-content: flex-end;
+  }
   .flex-shrink-0 {
     flex-shrink: 0;
   }
