@@ -29,7 +29,7 @@ export const Typography = css`
       color: var(--color-3);
     }
     &-4 {
-      font-size: 2.6rem;
+      font-size: 2.2rem;
       font-weight: 500;
       line-height: 4.25rem;
       color: var(--color-4);

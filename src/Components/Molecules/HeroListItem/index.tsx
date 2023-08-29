@@ -9,7 +9,7 @@ interface Props {
 
 const HeroListItem: React.FC<Props> = ({ item }) => {
   return (
-    <Flex gap="1.2rem" flexRowAiCenter>
+    <Flex gap="1rem" flexRowAiCenter>
       <Check />
       <Typography as="h4" className="h-4" text={item} />
     </Flex>

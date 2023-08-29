@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import { HeroStyle, Left, LeftInner, Right } from "./style";
 
@@ -37,7 +36,7 @@ const Hero: React.FC<Props> = () => {
             and get access to:
           </Typography>
 
-          <Flex gap="2rem" className="mt-50" flexColumn>
+          <Flex gap="1rem" className="mt-50" flexColumn>
             {lists.map((list, index) => (
               <HeroListItem key={index} item={list} />
             ))}
