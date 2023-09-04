@@ -3,6 +3,7 @@ import { Container, Wrapper } from "./style";
 import Typography from "Components/Atoms/Typography";
 import PriceSwitch from "./PriceSwitch";
 import PlanOption from "./PlanOption";
+import Plans from "./Plans";
 
 interface Props {}
 const SubscriptionOption: React.FC<Props> = () => {
@@ -15,7 +16,8 @@ const SubscriptionOption: React.FC<Props> = () => {
           text="Choose A Subscription Plan"
         />
         <PriceSwitch />
-        <PlanOption className="mt-40" />
+        <PlanOption className="mt-40 mb-50" />
+        <Plans />
       </Container>
     </Wrapper>
   );
