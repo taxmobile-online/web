@@ -14,6 +14,8 @@ export const Variables = css`
     --color-3: #686a6e;
     --color-4: #54565a;
     --color-5: #1480c0;
+    --color-6: #e6eaee;
+    --color-7: #e7760d;
 
     /* Layout variables */
     --max-row-width: "133rem";
