@@ -16,7 +16,7 @@ const Home: React.FC<Props> = () => {
         © 2023 Tax Mobile Store. All Rights Reserved.
       </Typography>
       <Overlay>
-        <Modal>mveimlm</Modal>
+        <Modal position="right"></Modal>
       </Overlay>
     </>
   );

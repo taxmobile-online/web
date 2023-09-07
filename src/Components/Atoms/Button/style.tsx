@@ -37,6 +37,10 @@ export const ButtonStyle = styled(Button)`
       padding: 1.2rem 4rem;
     }
 
+    &-bg-color-2 {
+      background-color: var(--color-2);
+    }
+
     /* Size */
     &-full {
       width: 100%;

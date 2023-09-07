@@ -13,10 +13,10 @@ const Typography: React.FC<Props> = ({
   className,
   text,
   children,
-  ...props
+  ...otherProps
 }) => {
   return (
-    <As className={className} {...props}>
+    <As className={className} {...otherProps}>
       {text ? text : children}
     </As>
   );
