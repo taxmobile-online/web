@@ -19,7 +19,7 @@ export const Typography = css`
     &-2 {
       font-size: 3.6rem;
       font-weight: 700;
-      line-height: 5.6rem;
+      line-height: 140%;
       color: var(--color-1);
     }
     &-3 {
@@ -133,6 +133,7 @@ export const Typography = css`
   /* Link */
   .l {
     text-decoration-line: underline;
+    
     &-1 {
       font-size: 1.6rem;
       font-weight: 500;

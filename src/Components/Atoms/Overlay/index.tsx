@@ -10,7 +10,17 @@ interface Props {
 }
 const Overlay: React.FC<Props> = (props) => {
   const { children } = props;
-  return <OverlayStyle {...props}> {children} </OverlayStyle>;
+  return (
+    <OverlayStyle
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
+      {...props}
+    >
+      {" "}
+      {children}{" "}
+    </OverlayStyle>
+  );
 };
 
 export default Overlay;

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 
 import { HeroStyle, Left, LeftInner, Right } from "./style";
 
@@ -7,6 +8,7 @@ import Logo from "Components/Atoms/Logo";
 import HeroListItem from "Components/Molecules/HeroListItem";
 import { Flex } from "Styles/layouts/Flex";
 import Button from "Components/Atoms/Button";
+import RightModal from "Components/Molecules/RightModal";
 
 const lists = [
   "Articles and Books From Industry Experts",
@@ -20,47 +22,70 @@ const lists = [
 
 interface Props {}
 const Hero: React.FC<Props> = () => {
+  // State
+  const [show, setShow] = useState(false);
+
+  // Method
+  const handleShowModal = () => {
+    setShow(!show);
+  };
+
+  const handleCloseModal = () => {
+    setShow(false);
+  };
+
+  // Data to display
   return (
-    <HeroStyle>
-      <Left>
-        <LeftInner>
-          <Logo />
-          <Typography as="h1" className="h-1 mt-50">
-            <>
-              <span className="color-primary">Learn</span> With Taxmobile.Online
-              Virtual Library
-            </>
-          </Typography>
-          <Typography as="h3" className="h-3 mt-10">
-            Join our resourceful tax library on a monthly/yearly subscription
-            and get access to:
-          </Typography>
-
-          <Flex gap="1rem" className="mt-50" flexColumn>
-            {lists.map((list, index) => (
-              <HeroListItem key={index} item={list} />
-            ))}
-          </Flex>
-
-          <Flex gap="3rem" className="mt-50" flexRowAiCenter>
-            <Button className="btn btn-normal" value="Sign up" />
-            <Typography as="h5" className="h-5">
+    <>
+      <HeroStyle>
+        <Left>
+          <LeftInner>
+            <Logo />
+            <Typography as="h1" className="h-1 mt-50">
               <>
-                Already have an account?{" "}
-                <span className="color-5">Sign in</span>
+                <span className="color-primary">Learn</span> With
+                Taxmobile.Online Virtual Library
               </>
             </Typography>
-          </Flex>
-        </LeftInner>
-      </Left>
-      <Right>
-        <img
-          src="/assets/images/hero-placeholder.png"
-          alt="header-her"
-          className="hero-image"
-        />
-      </Right>
-    </HeroStyle>
+            <Typography as="h3" className="h-3 mt-10">
+              Join our resourceful tax library on a monthly/yearly subscription
+              and get access to:
+            </Typography>
+
+            <Flex gap="1rem" className="mt-50" flexColumn>
+              {lists.map((list, index) => (
+                <HeroListItem key={index} item={list} />
+              ))}
+            </Flex>
+
+            <Flex gap="3rem" className="mt-50" flexRowAiCenter>
+              <Button
+                onClick={handleShowModal}
+                className="btn btn-normal"
+                value="Sign up"
+              />
+              <Typography as="h5" className="h-5">
+                <>
+                  Already have an account?{" "}
+                  <span className="color-5">Sign in</span>
+                </>
+              </Typography>
+            </Flex>
+          </LeftInner>
+        </Left>
+        <Right>
+          <img
+            src="/assets/images/hero-placeholder.png"
+            alt="header-her"
+            className="hero-image"
+          />
+        </Right>
+      </HeroStyle>
+
+      <AnimatePresence>
+        {show && <RightModal handleCloseModal={handleCloseModal} />}
+      </AnimatePresence>
+    </>
   );
 };
 

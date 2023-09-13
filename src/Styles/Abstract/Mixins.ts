@@ -56,6 +56,12 @@ export const FlexRowJcBetweenAiEnd = css`
   align-items: flex-end;
 `;
 
+export const FlexRowJcCenter = css`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`;
+
 export const FlexRowJcCenterAiCenter = css`
   display: flex;
   flex-direction: row;

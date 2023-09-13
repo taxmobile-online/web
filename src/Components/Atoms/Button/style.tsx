@@ -1,5 +1,15 @@
 import styled from "styled-components";
-import { Button } from "Styles/Components/Button";
+
+const Button = styled.button`
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  &:active,
+  &:focus {
+    outline: none;
+  }
+`;
 
 export const ButtonStyle = styled(Button)`
   &:disabled {
@@ -7,6 +17,7 @@ export const ButtonStyle = styled(Button)`
   }
   &.btn {
     color: var(--color-white);
+    transition: 0.4s;
 
     /* Type */
     &-normal {
@@ -39,6 +50,16 @@ export const ButtonStyle = styled(Button)`
 
     &-bg-color-2 {
       background-color: var(--color-2);
+
+      &:disabled {
+        background: var(--color-6);
+        color: var(--color-12);
+        border: none;
+      }
+    }
+
+    &-naked {
+      color: var(--color-primary);
     }
 
     /* Size */
