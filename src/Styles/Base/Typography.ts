@@ -128,12 +128,18 @@ export const Typography = css`
       line-height: 150%;
       color: var(--color-8);
     }
+    &-7 {
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 140%;
+      color: var(--color-white);
+    }
   }
 
   /* Link */
   .l {
     text-decoration-line: underline;
-    
+
     &-1 {
       font-size: 1.6rem;
       font-weight: 500;

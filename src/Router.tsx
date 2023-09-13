@@ -8,6 +8,7 @@ import { ResetPassword } from "Components/Pages/ResetPassword";
 import { InviteTeamMate } from "Components/Pages/InviteTeamMate";
 import { SignIn } from "Components/Pages/SignIn";
 import { ForgetPassword } from "Components/Pages/ForgetPassword";
+import { MultiAccountSignup } from "Components/Pages/MultiAccountSignup";
 
 interface Props {}
 const Router: React.FC<Props> = () => {
@@ -31,6 +32,7 @@ const AnimatedRoutes: React.FC<AnimatedProps> = () => {
         <Route path="reset-password" element={<ResetPassword />} />
         <Route path="invite-team" element={<InviteTeamMate />} />
         <Route path="forget-password" element={<ForgetPassword />} />
+        <Route path="multi-account-signup" element={<MultiAccountSignup />} />
         <Route path="sign-in" element={<SignIn />} />
         <Route path="details" element={""}>
           <Route path=":id" element={""} />
