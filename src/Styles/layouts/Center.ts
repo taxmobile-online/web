@@ -1,9 +1,7 @@
 import styled from "styled-components";
-import { clearfix } from "../Abstract/Mixins";
 import { responsive } from "../Abstract/Breakpoints";
 
 export const Center = styled.section`
-  ${clearfix};
   max-width: var(--max-row-width);
   margin-inline: auto;
 

@@ -88,6 +88,12 @@ export const Typography = css`
       line-height: 130%;
       color: var(--color-1);
     }
+    &-14 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 150%;
+      color: var(--color-2);
+    }
   }
 
   /* Body || Paragraphs */
@@ -133,6 +139,12 @@ export const Typography = css`
       font-weight: 400;
       line-height: 140%;
       color: var(--color-white);
+    }
+    &-8 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 145%;
+      color: var(--color-4);
     }
   }
 
