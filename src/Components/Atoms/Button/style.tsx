@@ -67,5 +67,9 @@ export const ButtonStyle = styled(Button)`
       width: 100%;
       padding: 2rem 4rem;
     }
+
+    &-small {
+      padding: .6rem 2.3rem;
+    }
   }
 `;

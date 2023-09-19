@@ -1,18 +1,20 @@
 import React from "react";
 
-import { Top, Wrapper } from "./style";
 import Typography from "Components/Atoms/Typography";
+
+import { Top, Wrapper, Bottom } from "./style";
 
 // Type defination
 interface Props {
   title?: string;
   subTitle?: string;
+  children?: JSX.Element;
 }
 
 // Component
 const Card: React.FC<Props> = (props) => {
   // Props
-  const { title, subTitle } = props;
+  const { title, subTitle, children } = props;
 
   // Data to display
   return (
@@ -23,6 +25,8 @@ const Card: React.FC<Props> = (props) => {
           {subTitle && <Typography as="p" className="p-8" text={subTitle} />}
         </Top>
       ) : null}
+
+      <Bottom>{children}</Bottom>
     </Wrapper>
   );
 };
