@@ -22,6 +22,21 @@ export const Right = styled.div`
   gap: 5rem;
 `;
 
+export const NotificationWrapper = styled.div`
+  position: relative;
+`;
+
+export const NotificationBox = styled(motion.div)`
+  position: absolute;
+  top: 150%;
+  right: 0;
+  padding: 2rem;
+  width: 35rem;
+  border-radius: 1.2rem;
+  background-color: var(--color-white);
+  box-shadow: 0 0.8rem 2.5rem 0 rgba(0, 0, 0, 0.12);
+`;
+
 export const UserCta = styled.div`
   position: relative;
 

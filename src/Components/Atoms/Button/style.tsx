@@ -48,6 +48,10 @@ export const ButtonStyle = styled(Button)`
       padding: 1.2rem 4rem;
     }
 
+    &-success {
+      background-color: var(--color-17);
+    }
+
     &-bg-color-2 {
       background-color: var(--color-2);
 
@@ -69,7 +73,7 @@ export const ButtonStyle = styled(Button)`
     }
 
     &-small {
-      padding: .6rem 2.3rem;
+      padding: 0.6rem 2.3rem;
     }
   }
 `;

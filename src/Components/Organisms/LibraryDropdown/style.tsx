@@ -1,4 +1,8 @@
-import { FlexColumn, FlexRowAiCenter } from "Styles/Abstract/Mixins";
+import {
+  FlexColumn,
+  FlexRowAiCenter,
+  FlexRowJcBetweenAiCenter,
+} from "Styles/Abstract/Mixins";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -33,3 +37,17 @@ export const Books = styled.div`
   ${FlexColumn}
   gap: 1rem;
 `;
+
+export const Circulars = styled.div`
+  ${FlexColumn}
+  gap: 1rem;
+
+  .circular-toggle-style {
+    border-radius: 1.2rem;
+    background-color: var(--color-11);
+    padding: 1rem 2rem;
+    ${FlexRowJcBetweenAiCenter}
+  }
+`;
+
+export const CircularToggleStyle = styled.div``;

@@ -16,7 +16,7 @@ const Book: React.FC<Props> = ({ title }) => {
       <Typography as="h5" className="h-13" text={title} />
       <Button
         className="btn btn-primary btn-small mt-20 book-btn"
-        value="Red"
+        value="Read"
       />
     </BookStyle>
   );

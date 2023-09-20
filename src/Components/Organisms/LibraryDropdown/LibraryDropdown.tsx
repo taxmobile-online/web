@@ -3,14 +3,53 @@ import React, { useState, Fragment } from "react";
 import Button from "Components/Atoms/Button";
 import { ArrowDown } from "Components/Atoms/SvgIcons";
 
-import { Books, Wrapper } from "./style";
+import { Books, Circulars, Wrapper } from "./style";
 import Typography from "Components/Atoms/Typography";
 import Book from "./Book";
+import Circular from "./Circular";
 
 // External variables
-// const tabContent = {
-//   books:
-// }
+const tabContent = {
+  books: [
+    "NIGERIAN TAX OFFENCES AND PENALTIES",
+    "NIGERIAN TAX OFFENCES AND PENALTIES",
+    "NIGERIAN TAX OFFENCES AND PENALTIES",
+  ],
+  circulars: [
+    {
+      title: "1993",
+      list: [
+        "NIGERIAN TAX OFFENCES AND PENALTIES",
+        "NIGERIAN TAX OFFENCES AND PENALTIES",
+        "NIGERIAN TAX OFFENCES AND PENALTIES",
+      ],
+    },
+    {
+      title: "1994",
+      list: [
+        "NIGERIAN TAX OFFENCES AND PENALTIES",
+        "NIGERIAN TAX OFFENCES AND PENALTIES",
+        "NIGERIAN TAX OFFENCES AND PENALTIES",
+      ],
+    },
+    {
+      title: "1995",
+      list: [
+        "NIGERIAN TAX OFFENCES AND PENALTIES",
+        "NIGERIAN TAX OFFENCES AND PENALTIES",
+        "NIGERIAN TAX OFFENCES AND PENALTIES",
+      ],
+    },
+    {
+      title: "1996",
+      list: [
+        "NIGERIAN TAX OFFENCES AND PENALTIES",
+        "NIGERIAN TAX OFFENCES AND PENALTIES",
+        "NIGERIAN TAX OFFENCES AND PENALTIES",
+      ],
+    },
+  ],
+};
 
 // Type defination
 interface Props {
@@ -21,6 +60,12 @@ interface Props {
 const LibraryDropdown: React.FC<Props> = (props) => {
   // States
   const [showBooks, setShowBooks] = useState(false);
+  const [showCircular, setShowCircular] = useState(false);
+  const [showCircularChild, setShowCircularChild] = useState(false);
+  const [activeCircularChild, setActiveCircularChild] = useState({
+    index: -1,
+    show: false,
+  });
 
   // Props
   const { togglerList } = props;
@@ -44,19 +89,69 @@ const LibraryDropdown: React.FC<Props> = (props) => {
 
                   {showBooks && (
                     <Books>
-                      <Book title="NIGERIAN TAX OFFENCES AND PENALTIES" />
-                      <Book title="NIGERIAN TAX OFFENCES AND PENALTIES" />
-                      <Book title="NIGERIAN TAX OFFENCES AND PENALTIES" />
+                      {tabContent.books.map((book, index) => (
+                        <Book key={index} title={book} />
+                      ))}
                     </Books>
                   )}
                 </Fragment>
               );
             } else
               return (
-                <Button key={index} className="toggler-btn">
-                  <Typography as="span" className="" text={item} />
-                  <ArrowDown width={"1.6rem"} />
-                </Button>
+                <Fragment key={index}>
+                  <Button
+                    key={index}
+                    className="toggler-btn"
+                    onClick={() => setShowCircular(!showCircular)}
+                  >
+                    <Typography as="span" className="" text={item} />
+                    <ArrowDown width={"1.6rem"} />
+                  </Button>
+
+                  {showCircular && (
+                    <Circulars>
+                      {tabContent.circulars.map((circular, index) => (
+                        <Fragment>
+                          <Button
+                            key={index}
+                            className="circular-toggle-style text-left"
+                            onClick={() => {
+                              setShowCircularChild(!showCircularChild);
+                              if (index !== activeCircularChild.index) {
+                                setActiveCircularChild({
+                                  index,
+                                  show: true,
+                                });
+                              } else {
+                                setActiveCircularChild({
+                                  index,
+                                  show: !activeCircularChild.show,
+                                });
+                              }
+                            }}
+                          >
+                            <Typography
+                              as="span"
+                              className="p-9"
+                              text={circular.title}
+                            />
+                            <ArrowDown width={"1.6rem"} />
+                          </Button>
+
+                          {circular.list &&
+                          activeCircularChild.show &&
+                          activeCircularChild.index === index ? (
+                            <Circulars>
+                              {circular.list.map((book, index) => (
+                                <Circular key={index} title={book} />
+                              ))}
+                            </Circulars>
+                          ) : null}
+                        </Fragment>
+                      ))}
+                    </Circulars>
+                  )}
+                </Fragment>
               );
           })}
     </Wrapper>
