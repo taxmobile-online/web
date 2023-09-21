@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 
-import { HeroStyle, Left, LeftInner, Right } from "./style";
 
-import Typography from "Components/Atoms/Typography";
 import Logo from "Components/Atoms/Logo";
-import HeroListItem from "Components/Molecules/HeroListItem";
 import { Flex } from "Styles/layouts/Flex";
 import Button from "Components/Atoms/Button";
-import RightModal from "Components/Molecules/RightModal";
+import Typography from "Components/Atoms/Typography";
+import HeroListItem from "Components/Molecules/HeroListItem";
+
+import { HeroStyle, Left, LeftInner, Right } from "./style";
+import { RightModal } from "Components/Molecules/Modals";
 
 const lists = [
   "Articles and Books From Industry Experts",

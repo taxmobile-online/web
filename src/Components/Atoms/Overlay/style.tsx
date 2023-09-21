@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { GridCenter } from "Styles/Abstract/Mixins";
 
-export const OverlayStyle = styled(motion.div)`
+export const OverlayStyle = styled(motion.div)<{
+  position?: "center" | "right";
+}>`
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -13,6 +16,8 @@ export const OverlayStyle = styled(motion.div)`
   z-index: 10;
   overflow-y: auto;
   padding-bottom: 5rem;
+
+  ${({ position }) => (position === "center" ? `${GridCenter}` : "")}
 
   -ms-overflow-style: none;
   scrollbar-width: none;

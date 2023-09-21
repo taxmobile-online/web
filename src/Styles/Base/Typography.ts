@@ -151,6 +151,12 @@ export const Typography = css`
       font-weight: 500;
       color: var(--color-2);
     }
+    &-10 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 150%;
+      color: var(--color-9);
+    }
   }
 
   /* Link */

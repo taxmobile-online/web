@@ -1,5 +1,8 @@
 import styled from "styled-components";
-import { FlexRowJcBetweenAiCenter } from "Styles/Abstract/Mixins";
+import {
+  FlexJcEndAiCenter,
+  FlexRowJcBetweenAiCenter,
+} from "Styles/Abstract/Mixins";
 import { motion } from "framer-motion";
 
 export const RightModal = styled(motion.div)`
@@ -54,10 +57,13 @@ export const RightModalDown = styled.div`
 `;
 
 export const CenterModal = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100vh;
   width: 45rem;
+  padding: 3rem;
   background-color: var(--color-white);
+  border-radius: 1.2rem;
+`;
+
+export const CenterModalFooter = styled.div`
+  ${FlexJcEndAiCenter}
+  gap: 5rem;
 `;

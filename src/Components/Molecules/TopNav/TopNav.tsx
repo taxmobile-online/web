@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
@@ -11,12 +11,15 @@ import {
   Dropdown,
   NotificationBox,
   NotificationWrapper,
+  Notifications,
   Right,
   UserAvatar,
   UserCta,
   Wrapper,
 } from "./style";
 import Typography from "Components/Atoms/Typography";
+import { Notification } from "Components/Atoms/Notification";
+import useOnClickOutside from "Hooks/useOnClickOutside";
 
 // Type defination
 interface Props {}
@@ -26,6 +29,14 @@ const TopNav: React.FC<Props> = () => {
   // States
   const [showDropdown, setShowDropdown] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
+
+  // Ref
+  const dropdownRef = useRef<any>();
+  const notificationRef = useRef<any>();
+
+  // Hooks
+  useOnClickOutside(dropdownRef, () => setShowDropdown(false));
+  useOnClickOutside(notificationRef, () => setShowNotification(false));
 
   //   Methods
   const handleDropdownShow = () => {
@@ -54,8 +65,19 @@ const TopNav: React.FC<Props> = () => {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: 10, opacity: 0 }}
                     transition={{ ease: "easeOut", duration: 0.4 }}
+                    ref={notificationRef}
                   >
-                    <Typography as="h5" className="h-13 mb-30" text="Notifications" />
+                    <Typography
+                      as="h5"
+                      className="h-13 mb-30"
+                      text="Notifications"
+                    />
+
+                    <Notifications>
+                      <Notification text="With the increasing emphasis on STEM education, there is a growing need for an effective" />
+                      <Notification text="With the increasing emphasis on STEM education, there is a growing need for an effective" />
+                      <Notification text="With the increasing emphasis on STEM education, there is a growing need for an effective" />
+                    </Notifications>
                   </NotificationBox>
                 )}
               </AnimatePresence>
@@ -72,6 +94,7 @@ const TopNav: React.FC<Props> = () => {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: 10, opacity: 0 }}
                     transition={{ ease: "easeOut", duration: 0.4 }}
+                    ref={dropdownRef}
                   >
                     <Link to="/#" className="dropdown-item">
                       <Setting />

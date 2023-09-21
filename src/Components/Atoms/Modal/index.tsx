@@ -1,5 +1,4 @@
 import React from "react";
-import { AnimatePresence } from "framer-motion";
 
 import {
   RightModal,
@@ -8,6 +7,7 @@ import {
   CouponAndPrice,
   RightModalDown,
   RightModalFormWrapper,
+  CenterModal,
 } from "./style";
 import Typography from "../Typography";
 import Button from "../Button";
@@ -95,7 +95,8 @@ const Modal: React.FC<Props> = (props) => {
         </RightModalDown>
       </RightModal>
     );
-  return <></>;
+
+  return <CenterModal></CenterModal>;
 };
 
 export default Modal;

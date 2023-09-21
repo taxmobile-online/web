@@ -11,6 +11,8 @@ import styled from "styled-components";
 export const Wrapper = styled.nav`
   background-color: var(--color-white);
   box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.03);
+  position: sticky;
+  top: 0;
 `;
 
 export const Container = styled(Center)`
@@ -36,6 +38,8 @@ export const NotificationBox = styled(motion.div)`
   background-color: var(--color-white);
   box-shadow: 0 0.8rem 2.5rem 0 rgba(0, 0, 0, 0.12);
 `;
+
+export const Notifications = styled.div``;
 
 export const UserCta = styled.div`
   position: relative;

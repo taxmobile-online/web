@@ -7,18 +7,19 @@ interface Props {
   animate?: any;
   variants?: any;
   transition?: any;
+  position?: "center" | "right";
 }
 const Overlay: React.FC<Props> = (props) => {
-  const { children } = props;
+  const { children, position } = props;
   return (
     <OverlayStyle
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4, ease: "easeInOut" }}
+      position={position}
       {...props}
     >
-      {" "}
-      {children}{" "}
+      {children}
     </OverlayStyle>
   );
 };
