@@ -3,10 +3,6 @@ import { OverlayStyle } from "./style";
 
 interface Props {
   children?: JSX.Element;
-  initial?: any;
-  animate?: any;
-  variants?: any;
-  transition?: any;
   position?: "center" | "right";
 }
 const Overlay: React.FC<Props> = (props) => {
