@@ -151,6 +151,9 @@ export const Utilities = css`
   /* End of margin Bottoms */
 
   /* margin left */
+  .ml-40 {
+    margin-left: 4rem;
+  }
   .ml-10 {
     margin-left: 1rem;
   }

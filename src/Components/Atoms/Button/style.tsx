@@ -48,6 +48,7 @@ export const ButtonStyle = styled(Button)`
       padding: 1.2rem 4rem;
     }
 
+    /* Colors */
     &-success {
       background-color: var(--color-17);
     }
@@ -62,6 +63,18 @@ export const ButtonStyle = styled(Button)`
       }
     }
 
+    &-bg-color-18 {
+      background-color: var(--color-18);
+    }
+
+    &-color-18 {
+      color: var(--color-18);
+    }
+
+    &-color-primary {
+      color: var(--color-primary);
+    }
+
     &-naked {
       color: var(--color-primary);
     }
@@ -72,8 +85,15 @@ export const ButtonStyle = styled(Button)`
       padding: 2rem 4rem;
     }
 
-    &-small {
+    &-md {
+      padding: 0.9rem 2.5rem;
+      font-size: 1.3rem;
+    }
+
+    &-small,
+    &-sm {
       padding: 0.6rem 2.3rem;
+      font-size: 1.4rem;
     }
   }
 `;

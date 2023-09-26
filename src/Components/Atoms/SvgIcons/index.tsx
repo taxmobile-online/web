@@ -8,3 +8,5 @@ export { ReactComponent as Bell } from "./svgs/bell.svg";
 export { ReactComponent as ArrowDown } from "./svgs/arrow-down.svg";
 export { ReactComponent as Logout } from "./svgs/logout.svg";
 export { ReactComponent as Setting } from "./svgs/setting.svg";
+export { ReactComponent as CloseCircle } from "./svgs/close-circle.svg";
+export { ReactComponent as Warning } from "./svgs/warning.svg";

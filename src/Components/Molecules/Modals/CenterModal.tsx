@@ -1,19 +1,84 @@
 import React from "react";
 
-import Modal from "Components/Atoms/Modal";
 import Overlay from "Components/Atoms/Overlay";
+import {
+  CenterModalBody,
+  CenterModalFooter,
+  CenterModalTop,
+  CenterModalWrapper,
+} from "./style";
+import { CloseCircle, Warning } from "Components/Atoms/SvgIcons";
+import Button from "Components/Atoms/Button";
+import Typography from "Components/Atoms/Typography";
+import Spinner from "Components/Atoms/Spinner";
 
 // Type defination
 interface Props {
   handleCloseModal: () => void;
+  handleYes?: () => void;
+  handleNo?: () => void;
+  yesText?: string;
+  title?: string;
+  subTitle?: string;
+  children?: JSX.Element;
+  messageType?: "ok" | "warning";
 }
 
 // Component
-const CenterModal: React.FC<Props> = ({ handleCloseModal }) => {
+const CenterModal: React.FC<Props> = (props) => {
+  // Props
+  const {
+    children,
+    handleCloseModal,
+    handleYes,
+    handleNo,
+    messageType = "ok",
+    yesText = "Delete",
+    title = "Delete 1 member",
+    subTitle = "Are you sure you want to delete “michael john” ?",
+  } = props;
+
   // Data to display
   return (
     <Overlay position="center">
-      <Modal position="center" closeModal={handleCloseModal}></Modal>
+      <CenterModalWrapper
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.9, opacity: 0 }}
+        transition={{ ease: "easeOut", duration: 0.4, delay: 0.4 }}
+      >
+        <CenterModalTop>
+          <div className="right right-center">
+            <Warning className="ml-40" width={27} height={27} />
+          </div>
+          <Button onClick={handleCloseModal}>
+            <CloseCircle width={30} height={30} />
+          </Button>
+        </CenterModalTop>
+
+        <CenterModalBody>
+          {children && <>{children}</>}
+          {title && <Typography as="h6" className="h-15" text={title} />}
+          {subTitle && <Typography as="p" className="p-11" text={subTitle} />}
+        </CenterModalBody>
+
+        <CenterModalFooter>
+          <Button
+            className={`${
+              messageType === "warning" ? "btn-color-18" : "btn-color-primary"
+            }`}
+            onClick={handleNo || handleCloseModal}
+            value="Cancel"
+          />
+          <Button
+            onClick={handleYes}
+            className={`btn btn-primary btn-md ${
+              messageType === "warning" ? "btn-bg-color-18" : ""
+            }`}
+            value={yesText}
+          />
+        </CenterModalFooter>
+      </CenterModalWrapper>
     </Overlay>
   );
 };

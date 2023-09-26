@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 
-
 import Logo from "Components/Atoms/Logo";
 import { Flex } from "Styles/layouts/Flex";
 import Button from "Components/Atoms/Button";
@@ -84,7 +83,7 @@ const Hero: React.FC<Props> = () => {
       </HeroStyle>
 
       <AnimatePresence>
-        {show && <RightModal handleCloseModal={handleCloseModal} />}
+        {show && <RightModal closeModal={handleCloseModal} />}
       </AnimatePresence>
     </>
   );

@@ -4,15 +4,16 @@ import { Rotate } from "Styles/Base/Animation";
 
 export const SpinnerStyle = styled(motion.div)`
   text-align: center;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  /* padding-top: 5rem;
+  padding-bottom: 5rem; */
+
   i {
-    animation: ${Rotate} 1s infinite;
+    animation: ${Rotate} 0.8s infinite;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
     transform-origin: center center;
 
-    font-size: 3rem;
-    color: var(--color-10);
+    font-size: 1.3rem;
+    color: var(--color-white);
   }
 `;

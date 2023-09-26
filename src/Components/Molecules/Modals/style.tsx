@@ -5,7 +5,7 @@ import {
 } from "Styles/Abstract/Mixins";
 import { motion } from "framer-motion";
 
-export const RightModal = styled(motion.div)`
+export const RightModalWrapper = styled(motion.div)`
   position: fixed;
   top: 0;
   right: 0;
@@ -56,14 +56,39 @@ export const RightModalDown = styled.div`
   padding: 5rem 4rem 0;
 `;
 
-export const CenterModal = styled.div`
+export const CenterModalWrapper = styled(motion.div)`
   width: 45rem;
   padding: 3rem;
+  padding-top: 2rem;
   background-color: var(--color-white);
   border-radius: 1.2rem;
 `;
 
+export const CenterModalTop = styled.div`
+  ${FlexRowJcBetweenAiCenter}
+  gap: 1rem;
+
+  .right {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .right-left {
+    justify-content: flex-start;
+  }
+
+  .right-center {
+    justify-content: center;
+  }
+`;
+
+export const CenterModalBody = styled.div`
+  padding-block: 3rem;
+  text-align: center;
+`;
+
 export const CenterModalFooter = styled.div`
   ${FlexJcEndAiCenter}
-  gap: 5rem;
+  gap: 3.5rem;
 `;
