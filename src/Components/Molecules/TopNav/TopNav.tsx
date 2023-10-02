@@ -13,13 +13,13 @@ import {
   NotificationWrapper,
   Notifications,
   Right,
-  UserAvatar,
   UserCta,
   Wrapper,
 } from "./style";
 import Typography from "Components/Atoms/Typography";
 import { Notification } from "Components/Atoms/Notification";
 import useOnClickOutside from "Hooks/useOnClickOutside";
+import { UserAvatar } from "Components/Atoms/UserAvatar";
 
 // Type defination
 interface Props {}
@@ -84,7 +84,7 @@ const TopNav: React.FC<Props> = () => {
             </NotificationWrapper>
             <UserCta>
               <Button onClick={handleDropdownShow} className="user-cta">
-                <UserAvatar>A</UserAvatar>
+                <UserAvatar name="A" />
                 <ArrowDown />
               </Button>
               <AnimatePresence>

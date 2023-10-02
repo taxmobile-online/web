@@ -35,7 +35,7 @@ const AnimatedRoutes: React.FC<AnimatedProps> = () => {
         <Route path="invite-team" element={<InviteTeamMate />} />
         <Route path="forget-password" element={<ForgetPassword />} />
         <Route path="multi-user-signup" element={<MultiUserSignup />} />
-        <Route path="multi-user-setting" element={<MultiUserSetting />} />
+        <Route path="setting" element={<MultiUserSetting />} />
         <Route path="library" element={<Library />} />
         <Route path="sign-in" element={<SignIn />} />
         <Route path="details" element={""}>

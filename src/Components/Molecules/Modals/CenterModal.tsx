@@ -10,7 +10,6 @@ import {
 import { CloseCircle, Warning } from "Components/Atoms/SvgIcons";
 import Button from "Components/Atoms/Button";
 import Typography from "Components/Atoms/Typography";
-import Spinner from "Components/Atoms/Spinner";
 
 // Type defination
 interface Props {
