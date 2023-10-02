@@ -10,3 +10,4 @@ export { ReactComponent as Logout } from "./svgs/logout.svg";
 export { ReactComponent as Setting } from "./svgs/setting.svg";
 export { ReactComponent as CloseCircle } from "./svgs/close-circle.svg";
 export { ReactComponent as Warning } from "./svgs/warning.svg";
+export { ReactComponent as GalleryAdd } from "./svgs/gallery-add.svg";

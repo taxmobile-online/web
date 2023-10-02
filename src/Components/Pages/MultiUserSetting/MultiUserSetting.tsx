@@ -2,7 +2,7 @@ import React from "react";
 
 import { Card } from "Components/Organisms/Card";
 import { DashboardTemplate } from "Components/Templates/DashboardTemplate";
-import { UserAvatar } from "Components/Atoms/UserAvatar";
+import { UserProfile } from "Components/Molecules/UserProfile";
 
 // Type defination
 interface Props {}
@@ -13,7 +13,7 @@ const MultiUserSetting: React.FC<Props> = () => {
   return (
     <DashboardTemplate>
       <Card title="Account setting" subTitle="Manage your Taxmobile account.">
-        <UserAvatar name="S" size="big" />
+        <UserProfile />
       </Card>
     </DashboardTemplate>
   );

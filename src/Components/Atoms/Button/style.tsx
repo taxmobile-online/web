@@ -1,3 +1,4 @@
+import { FlexRowAiCenter } from "Styles/Abstract/Mixins";
 import styled from "styled-components";
 
 const Button = styled.button`
@@ -46,6 +47,24 @@ export const ButtonStyle = styled(Button)`
       font-size: 1.6rem;
       font-weight: 400;
       padding: 1.2rem 4rem;
+    }
+
+    &-settings {
+      border-radius: 3.8rem;
+      padding: 1rem 2.4rem;
+      font-size: 1.4rem;
+    }
+
+    &-setting-with-bg {
+      background: var(--color-6);
+    }
+
+    &-setting-no-bg {
+      ${FlexRowAiCenter}
+      gap: 1rem;
+      border: 0.1rem solid var(--color-8);
+      color: var(--color-2);
+      font-weight: 400;
     }
 
     /* Colors */

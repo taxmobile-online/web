@@ -100,6 +100,12 @@ export const Typography = css`
       line-height: 150%;
       color: var(--color-2);
     }
+    &-16 {
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 150%;
+      color: var(--color-2);
+    }
   }
 
   /* Body || Paragraphs */
@@ -167,6 +173,12 @@ export const Typography = css`
       font-size: 1.5rem;
       // font-weight: 400;
       line-height: 150%;
+      color: var(--color-4);
+    }
+    &-12 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 135%;
       color: var(--color-4);
     }
   }
