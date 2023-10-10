@@ -1,13 +1,16 @@
 import React from "react";
-import { Body, Content, Nav, SubscriptionBox, Wrapper } from "./style";
-import { Center } from "Styles/layouts/Center";
-import Logo from "Components/Atoms/Logo";
-import Typography from "Components/Atoms/Typography";
-import { Flex } from "Styles/layouts/Flex";
-import Input from "Components/Atoms/Input/Input";
-import { Tags } from "Components/Molecules/Tags";
-import Button from "Components/Atoms/Button";
+
+import { Body, Content, Nav, Wrapper } from "./style";
+
 import { Link } from "react-router-dom";
+import Logo from "Components/Atoms/Logo";
+import { Flex } from "Styles/layouts/Flex";
+import Button from "Components/Atoms/Button";
+import { Center } from "Styles/layouts/Center";
+import Input from "Components/Atoms/Input/Input";
+import Typography from "Components/Atoms/Typography";
+import { SubscriptionUpgradeBox } from "Components/Molecules/SubscriptionUpgradeBox";
+import { AppTagInput } from "Components/Atoms/Input";
 
 // Type defination
 interface Props {}
@@ -32,14 +35,12 @@ const InviteTeamMate: React.FC<Props> = () => {
               Build your team to collaborate on taxmobile.
             </Typography>
 
-            <SubscriptionBox>
-              <Flex gap="1rem" flexRowJcBetweenAiCenter>
-                <Typography as="h6" className="" text="Subscription plan" />
-                <Flex gap="1rem" flexRowAiCenter></Flex>
-              </Flex>
-            </SubscriptionBox>
+            <SubscriptionUpgradeBox />
 
-            <Input label="Email addresses" bottomLabel="Add members by email" />
+            <AppTagInput
+              label="Email Addresses"
+              bottomLabel="Add members by email"
+            />
 
             <Flex gap="3rem" className="mt-70" flexRowAiCenter>
               <Button

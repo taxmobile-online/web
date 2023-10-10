@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
   color: var(--color-white);
   font-weight: 500;
   text-transform: uppercase;
+  flex-shrink: 0;
 
   &.small {
     width: 4rem;

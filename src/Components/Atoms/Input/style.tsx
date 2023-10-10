@@ -23,7 +23,7 @@ export const Wrapper = styled.div`
 
   .input-bottom-label {
     color: var(--color-3);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 400;
     line-height: 140%;
     display: inline-block;

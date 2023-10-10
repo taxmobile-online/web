@@ -1,3 +1,4 @@
+import { FlexRowAiCenter } from "Styles/Abstract/Mixins";
 import { css } from "styled-components";
 
 export const Typography = css`
@@ -106,6 +107,35 @@ export const Typography = css`
       line-height: 150%;
       color: var(--color-2);
     }
+    &-17 {
+      font-size: 2rem;
+      font-weight: 500;
+      line-height: 140%;
+      color: var(--color-2);
+    }
+    &-18 {
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: var(--color-2);
+    }
+    &-19 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 135%;
+      color: var(--color-8);
+    }
+    &-20 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 135%;
+      color: var(--color-9);
+    }
+    &-21 {
+      font-size: 1.35rem;
+      font-weight: 500;
+      line-height: 135%;
+      color: var(--color-9);
+    }
   }
 
   /* Body || Paragraphs */
@@ -181,6 +211,13 @@ export const Typography = css`
       line-height: 135%;
       color: var(--color-4);
     }
+    &-13 {
+      font-size: 1.4rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 135%;
+      color: var(--color-9);
+    }
   }
 
   /* Link */
@@ -203,6 +240,14 @@ export const Typography = css`
       font-size: 1.2rem;
       font-weight: 500;
       line-height: 1.6rem;
+    }
+    &-4 {
+      color: var(--color-primary);
+      font-size: 1.5rem;
+      font-weight: 500;
+      text-decoration: none;
+      ${FlexRowAiCenter}
+      gap: 1rem;
     }
   }
 `;

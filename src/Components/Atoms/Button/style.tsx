@@ -1,4 +1,4 @@
-import { FlexRowAiCenter } from "Styles/Abstract/Mixins";
+import { FlexRowAiCenter, GridCenter } from "Styles/Abstract/Mixins";
 import styled from "styled-components";
 
 const Button = styled.button`
@@ -65,6 +65,34 @@ export const ButtonStyle = styled(Button)`
       border: 0.1rem solid var(--color-8);
       color: var(--color-2);
       font-weight: 400;
+    }
+
+    &-logout-user {
+      ${FlexRowAiCenter}
+      gap: 1rem;
+      color: var(--color-white);
+      border-radius: 3.8rem;
+      background-color: var(--color-19);
+      padding: 0.8rem 2.3rem;
+
+      path {
+        fill: var(--color-white);
+      }
+    }
+
+    &-members {
+      ${FlexRowAiCenter}
+      gap: 1rem;
+      border-radius: 3.8rem;
+      background-color: var(--color-primary);
+      padding: 0.8rem 2.1rem;
+    }
+
+    &-member-trash {
+      ${GridCenter}
+      border-radius: 50%;
+      border: 1px solid rgba(234, 114, 114, 0.6);
+      padding: 0.6rem;
     }
 
     /* Colors */

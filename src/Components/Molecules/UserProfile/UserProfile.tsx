@@ -1,10 +1,11 @@
 import React from "react";
-import { UserDetail, Wrapper } from "./style";
-import { UserAvatar } from "Components/Atoms/UserAvatar";
-import Typography from "Components/Atoms/Typography";
+
 import { Flex } from "Styles/layouts/Flex";
 import Button from "Components/Atoms/Button";
+import { UserDetail, Wrapper } from "./style";
+import Typography from "Components/Atoms/Typography";
 import { GalleryAdd } from "Components/Atoms/SvgIcons";
+import { UserAvatar } from "Components/Atoms/UserAvatar";
 
 // Type defination
 interface Props {
@@ -27,7 +28,7 @@ const UserProfile: React.FC<Props> = (props) => {
         </div>
       </UserDetail>
 
-      <Flex gap="2rem" className="mt-40" flexRowAiCenter>
+      <Flex gap="2rem" className="mt-40 mb-50" flexRowAiCenter>
         <Button className="btn-settings btn-setting-no-bg">
           <GalleryAdd width={20} height={20} /> Change profile
         </Button>
