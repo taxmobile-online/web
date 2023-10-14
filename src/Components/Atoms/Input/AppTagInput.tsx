@@ -32,6 +32,13 @@ const AppTagInput: React.FC<Props> = (props) => {
         }}
         tagStyle={{
           fontSize: "1.3rem",
+          borderRadius: "7.2rem",
+          border: "1px solid var(--color-2)",
+          backgroundColor: "transparent",
+          padding: ".7rem 1.5rem",
+        }}
+        tagRemoveButton={{
+          buttonStyle: { padding: ".5rem", borderRadius: "3rem" },
         }}
       />
       {bottomLabel && <span className="input-bottom-label">{bottomLabel}</span>}

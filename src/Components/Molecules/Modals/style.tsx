@@ -85,7 +85,7 @@ export const CenterModalTop = styled.div`
 
 export const CenterModalBody = styled.div`
   padding-block: 3rem;
-  text-align: center;
+  /* text-align: center; */
 `;
 
 export const CenterModalFooter = styled.div`

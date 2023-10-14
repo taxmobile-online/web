@@ -12,6 +12,7 @@ import { ForgetPassword } from "Components/Pages/ForgetPassword";
 import { InviteTeamMate } from "Components/Pages/InviteTeamMate";
 import { MultiUserSignup } from "Components/Pages/MultiUserSignup";
 import { MultiUserSetting } from "Components/Pages/MultiUserSetting";
+import { AdminProfileSetting } from "Components/Pages/AdminProfileSetting";
 
 interface Props {}
 const Router: React.FC<Props> = () => {
@@ -37,7 +38,11 @@ const AnimatedRoutes: React.FC<AnimatedProps> = () => {
         <Route path="forget-password" element={<ForgetPassword />} />
         <Route path="multi-user-signup" element={<MultiUserSignup />} />
         <Route path="multi-user-settings" element={<MultiUserSetting />} />
-        <Route path="multi-admin-settings" element={<AdminSettings />} />
+        <Route path="admin-account-settings" element={<AdminSettings />} />
+        <Route
+          path="admin-profile-settings"
+          element={<AdminProfileSetting />}
+        />
         <Route path="library" element={<Library />} />
         <Route path="sign-in" element={<SignIn />} />
         <Route path="details" element={""}>

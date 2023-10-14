@@ -21,6 +21,8 @@ interface Props {
   subTitle?: string;
   children?: JSX.Element;
   messageType?: "ok" | "warning";
+  headerType?: "warning" | "text";
+  headerTitle?: string;
 }
 
 // Component
@@ -31,6 +33,8 @@ const CenterModal: React.FC<Props> = (props) => {
     handleCloseModal,
     handleYes,
     handleNo,
+    headerType,
+    headerTitle,
     messageType = "ok",
     yesText = "Delete",
     title = "Delete 1 member",
@@ -47,18 +51,31 @@ const CenterModal: React.FC<Props> = (props) => {
         transition={{ ease: "easeOut", duration: 0.4, delay: 0.4 }}
       >
         <CenterModalTop>
-          <div className="right right-center">
-            <Warning className="ml-40" width={27} height={27} />
-          </div>
+          {headerType === "text" ? (
+            <div className="right">
+              <Typography as="h6" className="h-22" text={headerTitle} />
+            </div>
+          ) : (
+            <div className="right right-center">
+              <Warning className="ml-40" width={27} height={27} />
+            </div>
+          )}
           <Button onClick={handleCloseModal}>
             <CloseCircle width={30} height={30} />
           </Button>
         </CenterModalTop>
 
         <CenterModalBody>
-          {children && <>{children}</>}
-          {title && <Typography as="h6" className="h-15" text={title} />}
-          {subTitle && <Typography as="p" className="p-11" text={subTitle} />}
+          {children ? (
+            <>{children}</>
+          ) : (
+            <>
+              {title && <Typography as="h6" className="h-15" text={title} />}
+              {subTitle && (
+                <Typography as="p" className="p-11" text={subTitle} />
+              )}
+            </>
+          )}
         </CenterModalBody>
 
         <CenterModalFooter>

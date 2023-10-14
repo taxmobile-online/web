@@ -7,7 +7,7 @@ export const Wrapper = styled.div<{ size?: "small" | "full" }>`
   margin-top: 3.5rem;
   margin-bottom: 5rem;
   border: 1px solid var(--color-7);
-  ${({ size }) => (size === "small" ? `max-width: 43rem;` : "")}
+  ${({ size }) => (size === "small" ? `max-width: 40rem;` : "")}
 `;
 
 export const SubscriptionRange = styled.p`
