@@ -3,6 +3,7 @@ import { Wrapper } from "./style";
 import { DashboardTemplate } from "Components/Templates/DashboardTemplate";
 import { Card } from "Components/Organisms/Card";
 import { UserProfile } from "Components/Molecules/UserProfile";
+import { ProfileInfoTemplate } from "Components/Templates/ProfileInfoTemplate";
 
 // Type defination
 interface Props {}
@@ -13,11 +14,13 @@ const AdminProfileSetting: React.FC<Props> = () => {
   return (
     <Wrapper>
       <DashboardTemplate>
-        <Card title="Account setting" subTitle="Manage your Taxmobile account.">
-          <>
-            <UserProfile role="Admin" />
-          </>
-        </Card>
+        <ProfileInfoTemplate>
+          <Card title="Avatar" subTitle="Help people recognize you">
+            <>
+              <UserProfile type="second" />
+            </>
+          </Card>
+        </ProfileInfoTemplate>
       </DashboardTemplate>
     </Wrapper>
   );

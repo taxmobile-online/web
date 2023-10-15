@@ -53,6 +53,7 @@ export const ButtonStyle = styled(Button)`
       border-radius: 3.8rem;
       padding: 1rem 2.4rem;
       font-size: 1.4rem;
+      /* font-family: inherit; */
     }
 
     &-setting-with-bg {
@@ -64,6 +65,14 @@ export const ButtonStyle = styled(Button)`
       gap: 1rem;
       border: 0.1rem solid var(--color-8);
       color: var(--color-2);
+      font-weight: 400;
+    }
+
+    &-setting-dark-bg {
+      ${FlexRowAiCenter}
+      gap: 1rem;
+      color: var(--color-white);
+      background-color: var(--color-black);
       font-weight: 400;
     }
 
@@ -93,6 +102,14 @@ export const ButtonStyle = styled(Button)`
       border-radius: 50%;
       border: 1px solid rgba(234, 114, 114, 0.6);
       padding: 0.6rem;
+    }
+
+    &-back {
+      font-size: 1.7rem;
+      font-weight: 500;
+      color: var(--color-primary);
+      ${FlexRowAiCenter}
+      gap: .6rem;
     }
 
     /* Colors */

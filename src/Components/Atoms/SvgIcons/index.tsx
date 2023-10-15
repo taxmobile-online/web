@@ -14,3 +14,5 @@ export { ReactComponent as GalleryAdd } from "./svgs/gallery-add.svg";
 export { ReactComponent as ArrowRight } from "./svgs/arrow-right.svg";
 export { ReactComponent as EyeUnSlash } from "./svgs/eye-unsplash.svg";
 export { ReactComponent as CloseCircle } from "./svgs/close-circle.svg";
+export { ReactComponent as ArrowLeft } from "./svgs/arrow-left.svg";
+export { ReactComponent as Camera } from "./svgs/camera.svg";
