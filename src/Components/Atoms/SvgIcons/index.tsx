@@ -16,3 +16,4 @@ export { ReactComponent as EyeUnSlash } from "./svgs/eye-unsplash.svg";
 export { ReactComponent as CloseCircle } from "./svgs/close-circle.svg";
 export { ReactComponent as ArrowLeft } from "./svgs/arrow-left.svg";
 export { ReactComponent as Camera } from "./svgs/camera.svg";
+export { ReactComponent as Success } from "./svgs/success.svg";

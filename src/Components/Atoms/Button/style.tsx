@@ -149,6 +149,10 @@ export const ButtonStyle = styled(Button)`
       padding: 2rem 4rem;
     }
 
+    &-big {
+      padding: 1.3rem 18rem;
+    }
+
     &-md {
       padding: 0.9rem 2.5rem;
       font-size: 1.3rem;

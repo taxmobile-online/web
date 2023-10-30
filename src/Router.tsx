@@ -13,6 +13,8 @@ import { InviteTeamMate } from "Components/Pages/InviteTeamMate";
 import { MultiUserSignup } from "Components/Pages/MultiUserSignup";
 import { MultiUserSetting } from "Components/Pages/MultiUserSetting";
 import { AdminProfileSetting } from "Components/Pages/AdminProfileSetting";
+import { Billing } from "Components/Pages/Billing";
+import { PaymentSuccess } from "Components/Pages/PaymentSuccess";
 
 interface Props {}
 const Router: React.FC<Props> = () => {
@@ -44,6 +46,8 @@ const AnimatedRoutes: React.FC<AnimatedProps> = () => {
           element={<AdminProfileSetting />}
         />
         <Route path="library" element={<Library />} />
+        <Route path="billing" element={<Billing />} />
+        <Route path="/payment-success" element={<PaymentSuccess />} />
         <Route path="sign-in" element={<SignIn />} />
         <Route path="details" element={""}>
           <Route path=":id" element={""} />

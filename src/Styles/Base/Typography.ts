@@ -142,6 +142,18 @@ export const Typography = css`
       line-height: 140%;
       color: var(--color-black);
     }
+    &-23 {
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 500;
+      color: var(--color-2);
+    }
+    &-24 {
+      font-size: 2.7rem;
+      font-weight: 700;
+      line-height: 140%;
+      color: var(--color-8);
+    }
   }
 
   /* Body || Paragraphs */
@@ -223,6 +235,18 @@ export const Typography = css`
       font-weight: 400;
       line-height: 135%;
       color: var(--color-9);
+    }
+    &-14 {
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 135%;
+      color: var(--color-3);
+    }
+    &-15 {
+      font-size: 1.3rem;
+      font-style: normal;
+      font-weight: 400;
+      color: var(--color-primary);
     }
   }
 

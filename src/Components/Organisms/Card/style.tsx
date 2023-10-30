@@ -6,6 +6,10 @@ export const Wrapper = styled.div`
   background-color: var(--color-16);
   /* background-color: #0000ff54; */
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.03);
+
+  &.with-border {
+    border: 1px solid var(--color-6);
+  }
 `;
 
 export const Top = styled.div`

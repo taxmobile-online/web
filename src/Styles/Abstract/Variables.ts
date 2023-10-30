@@ -29,6 +29,9 @@ export const Variables = css`
     --color-18: #860e0e;
     --color-19: #9a2222;
 
+    /** Shadows */
+    --shadow-1: 0 0.5rem 1rem rgba(0, 0, 0, 0.04);
+
     /* Layout variables */
     --max-row-width: "133rem";
     --max-row-width-extended: "155rem";

@@ -7,21 +7,29 @@ import { Top, Wrapper, Bottom } from "./style";
 // Type defination
 interface Props {
   title?: string;
+  tittleLight?: boolean;
   subTitle?: string;
   children?: JSX.Element;
+  className?: string;
 }
 
 // Component
 const Card: React.FC<Props> = (props) => {
   // Props
-  const { title, subTitle, children } = props;
+  const { title, subTitle, children, className, tittleLight } = props;
 
   // Data to display
   return (
-    <Wrapper>
+    <Wrapper className={className ? className : ""}>
       {title || subTitle ? (
         <Top>
-          {title && <Typography as="h2" className="h-14" text={title} />}
+          {title && (
+            <Typography
+              as="h2"
+              className={tittleLight ? "h-23" : "h-14"}
+              text={title}
+            />
+          )}
           {subTitle && <Typography as="p" className="p-8" text={subTitle} />}
         </Top>
       ) : null}

@@ -2,7 +2,6 @@ import {
   FlexColumn,
   FlexRowAiCenter,
   FlexRowJcBetweenAiCenter,
-  GridCenter,
 } from "Styles/Abstract/Mixins";
 import { Center } from "Styles/layouts/Center";
 import { motion } from "framer-motion";
@@ -13,6 +12,7 @@ export const Wrapper = styled.nav`
   box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.03);
   position: sticky;
   top: 0;
+  z-index: 1;
 `;
 
 export const Container = styled(Center)`

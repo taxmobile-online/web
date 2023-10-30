@@ -15,7 +15,7 @@ const ProfileInfoTemplate: React.FC<Props> = (props) => {
   // Data to display
   return (
     <Wrapper>
-      <Button className="btn-back">
+      <Button className="btn-back mb-20">
         <ArrowLeft width={17} height={17} />
         Back
       </Button>

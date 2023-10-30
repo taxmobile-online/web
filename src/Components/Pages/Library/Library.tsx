@@ -16,7 +16,7 @@ const Library: React.FC<Props> = () => {
   // Data to display
   return (
     <DashboardTemplate>
-      <Card title="Library" subTitle="Manage your Taxmobile account.">
+      <Card title="Library">
         <>
           <LibraryDropdown togglerList={["Books", "FIRS Circular"]} />
 
