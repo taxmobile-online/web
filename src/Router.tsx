@@ -15,6 +15,8 @@ import { MultiUserSetting } from "Components/Pages/MultiUserSetting";
 import { AdminProfileSetting } from "Components/Pages/AdminProfileSetting";
 import { Billing } from "Components/Pages/Billing";
 import { PaymentSuccess } from "Components/Pages/PaymentSuccess";
+import { IndividualUserSettings } from "Components/Pages/IndividualUserSettings";
+import { SideNav } from "Components/Molecules/SideNav";
 
 interface Props {}
 const Router: React.FC<Props> = () => {
@@ -40,15 +42,21 @@ const AnimatedRoutes: React.FC<AnimatedProps> = () => {
         <Route path="forget-password" element={<ForgetPassword />} />
         <Route path="multi-user-signup" element={<MultiUserSignup />} />
         <Route path="multi-user-settings" element={<MultiUserSetting />} />
+        <Route
+          path="individual-user-settings"
+          element={<IndividualUserSettings />}
+        />
         <Route path="admin-account-settings" element={<AdminSettings />} />
         <Route
           path="admin-profile-settings"
           element={<AdminProfileSetting />}
         />
         <Route path="library" element={<Library />} />
+        <Route path="dashboard" element={<SideNav />} />
         <Route path="billing" element={<Billing />} />
         <Route path="/payment-success" element={<PaymentSuccess />} />
         <Route path="sign-in" element={<SignIn />} />
+
         <Route path="details" element={""}>
           <Route path=":id" element={""} />
         </Route>

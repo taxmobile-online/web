@@ -17,3 +17,9 @@ export { ReactComponent as CloseCircle } from "./svgs/close-circle.svg";
 export { ReactComponent as ArrowLeft } from "./svgs/arrow-left.svg";
 export { ReactComponent as Camera } from "./svgs/camera.svg";
 export { ReactComponent as Success } from "./svgs/success.svg";
+
+export { ReactComponent as DashboardIcon } from "./svgs/dashboard-icon.svg";
+export { ReactComponent as LibraryIcon } from "./svgs/library-icon.svg";
+export { ReactComponent as PriceIcon } from "./svgs/price-icon.svg";
+export { ReactComponent as SubscribersIcon } from "./svgs/subscribers-icon.svg";
+export { ReactComponent as CouponIcon } from "./svgs/coupon-icon.svg";

@@ -279,5 +279,14 @@ export const Typography = css`
       ${FlexRowAiCenter}
       gap: 1rem;
     }
+    &-5 {
+      ${FlexRowAiCenter}
+      gap: 1rem;
+      text-decoration: none;
+
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--color-4);
+    }
   }
 `;
