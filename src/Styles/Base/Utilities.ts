@@ -72,6 +72,9 @@ export const Utilities = css`
   .mt-30 {
     margin-top: 3rem;
   }
+  .mt-25 {
+    margin-top: 2.5rem;
+  }
   .mt-22 {
     margin-top: 2.2rem;
   }

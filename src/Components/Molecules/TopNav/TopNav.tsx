@@ -22,13 +22,19 @@ import useOnClickOutside from "Hooks/useOnClickOutside";
 import { UserAvatar } from "Components/Atoms/UserAvatar";
 
 // Type defination
-interface Props {}
+interface Props {
+  type?: "admin" | "user";
+  pageTitle?: string;
+}
 
 // Component
-const TopNav: React.FC<Props> = () => {
+const TopNav: React.FC<Props> = (props) => {
   // States
   const [showDropdown, setShowDropdown] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
+
+  // Props
+  const { type, pageTitle } = props;
 
   // Ref
   const dropdownRef = useRef<any>();
@@ -49,10 +55,14 @@ const TopNav: React.FC<Props> = () => {
 
   // Data to display
   return (
-    <Wrapper>
+    <Wrapper $type={type}>
       <Center>
         <Container>
-          <Logo />
+          {type === "admin" ? (
+            <Typography as="h3" className="h-29" text={pageTitle} />
+          ) : (
+            <Logo />
+          )}
           <Right>
             <NotificationWrapper>
               <Button onClick={handleNotificationShow}>

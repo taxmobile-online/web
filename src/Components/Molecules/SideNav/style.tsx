@@ -8,7 +8,7 @@ export const Wrapper = styled.nav`
   position: sticky;
   top: 0;
   height: 100vh;
-  width: 26.4rem;
+  width: 100%;
   padding: 2rem 1rem 2rem 3rem;
   overflow: auto;
 `;

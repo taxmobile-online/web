@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import {
   FlexColumn,
   FlexRowAiCenter,
@@ -5,11 +6,17 @@ import {
 } from "Styles/Abstract/Mixins";
 import { Center } from "Styles/layouts/Center";
 import { motion } from "framer-motion";
-import styled from "styled-components";
 
-export const Wrapper = styled.nav`
-  background-color: var(--color-white);
+export const Wrapper = styled.nav<{ $type?: "admin" | "user" }>`
+  background-color: ${({ $type }) =>
+    $type === "admin" ? "transparent" : "var(--color-white)"};
+
+  ${({ $type }) => ($type === "admin" ? "padding-block: 3.5rem" : "")};
+
+  /* background-color: var(--color-white); */
   box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.03);
+  box-shadow: ${({ $type }) =>
+    $type === "admin" ? "none" : "0 0.7rem 1rem rgba(0, 0, 0, 0.03)"};
   position: sticky;
   top: 0;
   z-index: 1;

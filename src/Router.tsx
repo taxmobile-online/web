@@ -17,6 +17,8 @@ import { Billing } from "Components/Pages/Billing";
 import { PaymentSuccess } from "Components/Pages/PaymentSuccess";
 import { IndividualUserSettings } from "Components/Pages/IndividualUserSettings";
 import { SideNav } from "Components/Molecules/SideNav";
+import { OverviewCard } from "Components/Molecules/OverviewCard";
+import { DashboardRouter } from "Components/Pages/Dashboard";
 
 interface Props {}
 const Router: React.FC<Props> = () => {
@@ -52,7 +54,7 @@ const AnimatedRoutes: React.FC<AnimatedProps> = () => {
           element={<AdminProfileSetting />}
         />
         <Route path="library" element={<Library />} />
-        <Route path="dashboard" element={<SideNav />} />
+        <Route path="dashboard" element={<DashboardRouter />} />
         <Route path="billing" element={<Billing />} />
         <Route path="/payment-success" element={<PaymentSuccess />} />
         <Route path="sign-in" element={<SignIn />} />

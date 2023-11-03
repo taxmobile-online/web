@@ -23,3 +23,8 @@ export { ReactComponent as LibraryIcon } from "./svgs/library-icon.svg";
 export { ReactComponent as PriceIcon } from "./svgs/price-icon.svg";
 export { ReactComponent as SubscribersIcon } from "./svgs/subscribers-icon.svg";
 export { ReactComponent as CouponIcon } from "./svgs/coupon-icon.svg";
+
+export { ReactComponent as MaterialsIcon } from "./svgs/materials-icon.svg";
+export { ReactComponent as PurchasesIcon } from "./svgs/purchases-icon.svg";
+export { ReactComponent as SubscriptionIcon } from "./svgs/subscription-icon.svg";
+export { ReactComponent as UsersIcon } from "./svgs/users-icon.svg";

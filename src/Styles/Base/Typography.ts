@@ -154,6 +154,31 @@ export const Typography = css`
       line-height: 140%;
       color: var(--color-8);
     }
+    &-25 {
+      font-size: 1.7rem;
+      font-weight: 400;
+      color: var(--color-9);
+    }
+    &-26 {
+      font-size: 2.1rem;
+      font-weight: 500;
+      color: var(--color-primary);
+    }
+    &-27 {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--color-9);
+    }
+    &-28 {
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--color-primary);
+    }
+    &-29 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-2);
+    }
   }
 
   /* Body || Paragraphs */
