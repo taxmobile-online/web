@@ -12,12 +12,11 @@ export const SideNavWrapper = styled.nav`
 
   height: 100vh;
   background-color: blue;
+  /* position: fixed; */
 `;
 
 export const BodyWrapper = styled.main`
   flex-grow: 1;
-
-  /* background-color: green; */
 `;
 
 export const Body = styled.section`

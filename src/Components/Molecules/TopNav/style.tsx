@@ -9,9 +9,9 @@ import { motion } from "framer-motion";
 
 export const Wrapper = styled.nav<{ $type?: "admin" | "user" }>`
   background-color: ${({ $type }) =>
-    $type === "admin" ? "transparent" : "var(--color-white)"};
+    $type === "admin" ? "var(--color-11)" : "var(--color-white)"};
 
-  ${({ $type }) => ($type === "admin" ? "padding-block: 3.5rem" : "")};
+  ${({ $type }) => ($type === "admin" ? "padding-block: 3rem" : "")};
 
   /* background-color: var(--color-white); */
   box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.03);

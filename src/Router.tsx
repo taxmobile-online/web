@@ -16,8 +16,6 @@ import { AdminProfileSetting } from "Components/Pages/AdminProfileSetting";
 import { Billing } from "Components/Pages/Billing";
 import { PaymentSuccess } from "Components/Pages/PaymentSuccess";
 import { IndividualUserSettings } from "Components/Pages/IndividualUserSettings";
-import { SideNav } from "Components/Molecules/SideNav";
-import { OverviewCard } from "Components/Molecules/OverviewCard";
 import { DashboardRouter } from "Components/Pages/Dashboard";
 
 interface Props {}

@@ -179,6 +179,11 @@ export const Typography = css`
       font-weight: 700;
       color: var(--color-2);
     }
+    &-30 {
+      font-size: 1.7rem;
+      font-weight: 500;
+      color: var(--color-2);
+    }
   }
 
   /* Body || Paragraphs */
