@@ -1,9 +1,9 @@
 import React from "react";
-// import { Wrapper } from './style'
-import { AdminDashboardTemplate } from "Components/Templates/AdminDashboardTemplate";
+
 import { Grid } from "Styles/layouts/Grid";
 import { OverviewCard } from "Components/Molecules/OverviewCard";
 import { Analysis } from "Components/Molecules/Analysis";
+import AdminDashboardChildTemplate from "Components/Templates/AdminDashboardTemplate/AdminDashboardChildTemplate";
 
 // Type defination
 interface Props {}
@@ -12,14 +12,9 @@ interface Props {}
 const AdminDashboard: React.FC<Props> = () => {
   // Data to display
   return (
-    <AdminDashboardTemplate>
+    <AdminDashboardChildTemplate pageTile="Dashboard">
       <>
-        <Grid
-          className="mb-30"
-          $itemMinWidth={25.5}
-          $columnGap={2.4}
-          $rowGap={2}
-        >
+        <Grid className="mb-30" $itemMinWidth={24} $columnGap={2.4} $rowGap={2}>
           <OverviewCard type="subscription" />
           <OverviewCard type="users" />
           <OverviewCard type="purchases" />
@@ -28,7 +23,7 @@ const AdminDashboard: React.FC<Props> = () => {
 
         <Analysis />
       </>
-    </AdminDashboardTemplate>
+    </AdminDashboardChildTemplate>
   );
 };
 

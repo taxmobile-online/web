@@ -20,23 +20,23 @@ const SideNav: React.FC<Props> = () => {
     <Wrapper>
       <Logo />
       <LinksWrapper>
-        <Link to="/dashboard" className="l l-5">
+        <Link to="/admin" className="l l-5">
           <DashboardIcon />
           <span>Dashboard</span>
         </Link>
-        <Link to="/dashboard" className="l l-5">
+        <Link to="/admin/e-library" className="l l-5">
           <LibraryIcon />
           <span>E-library</span>
         </Link>
-        <Link to="/dashboard" className="l l-5">
+        <Link to="/admin" className="l l-5">
           <SubscribersIcon />
           <span>Subscribers</span>
         </Link>
-        <Link to="/dashboard" className="l l-5">
+        <Link to="/admin" className="l l-5">
           <PriceIcon />
           <span>Pricing set-up</span>
         </Link>
-        <Link to="/dashboard" className="l l-5">
+        <Link to="/admin" className="l l-5">
           <CouponIcon />
           <span>Coupon code</span>
         </Link>

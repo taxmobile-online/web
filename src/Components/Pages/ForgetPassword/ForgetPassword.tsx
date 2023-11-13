@@ -14,7 +14,7 @@ interface Props {}
 // Component
 const ForgetPassword: React.FC<Props> = () => {
   // States
-  const [linkSent, setLinkSent] = useState(false);
+  const [linkSent] = useState(false);
 
   // Data to display
   return (

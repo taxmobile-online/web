@@ -1,5 +1,4 @@
 import {
-  FlexRow,
   FlexRowAiCenter,
   FlexRowJcBetweenAiCenter,
 } from "Styles/Abstract/Mixins";
@@ -57,5 +56,4 @@ export const Legends = styled.div`
   }
 `;
 
-
-export const Bottom = styled.div``
+export const Bottom = styled.div``;

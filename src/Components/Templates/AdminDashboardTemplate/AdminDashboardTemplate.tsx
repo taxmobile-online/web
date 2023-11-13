@@ -1,15 +1,14 @@
 import React from "react";
-import { Body, BodyWrapper, SideNavWrapper, Wrapper } from "./style";
+import { Outlet } from "react-router-dom";
+
+import { BodyWrapper, SideNavWrapper, Wrapper } from "./style";
 import { SideNav } from "Components/Molecules/SideNav";
-import { TopNav } from "Components/Molecules/TopNav";
 
 // Type defination
-interface Props {
-  children?: JSX.Element;
-}
+interface Props {}
 
 // Component
-const AdminDashboardTemplate: React.FC<Props> = ({ children }) => {
+const AdminDashboardTemplate: React.FC<Props> = () => {
   // Data to display
   return (
     <Wrapper>
@@ -17,8 +16,7 @@ const AdminDashboardTemplate: React.FC<Props> = ({ children }) => {
         <SideNav />
       </SideNavWrapper>
       <BodyWrapper>
-        <TopNav type="admin" pageTitle="Dashboard" />
-        <Body>{children}</Body>
+        <Outlet />
       </BodyWrapper>
     </Wrapper>
   );

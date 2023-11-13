@@ -1,26 +1,20 @@
 import React from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { Routes, Route } from "react-router-dom";
 
 import Dashboard from "./Dashboard";
-import { AdminDashboard } from "../AdminDashboard";
+import { ELibrary } from "../ELibrary";
 
 interface Props {}
 const DashboardRouter: React.FC<Props> = () => {
-  return <AnimatedRoutes />;
+  return (
+    <Routes>
+      <Route path="/" element={<DashboardRouter />} />
+      {/* </Route> */}
+      <Route path="e-library" element={<ELibrary />} />
+      <Route path="/dd" element={<Dashboard />} />
+      <Route path="e-library" element={<ELibrary />} />
+    </Routes>
+  );
 };
 
 export default DashboardRouter;
-
-interface AnimatedProps {}
-const AnimatedRoutes: React.FC<AnimatedProps> = () => {
-  const location = useLocation();
-  return (
-    <AnimatePresence>
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<AdminDashboard />} />
-        <Route path="/dd" element={<Dashboard />} />
-      </Routes>
-    </AnimatePresence>
-  );
-};
