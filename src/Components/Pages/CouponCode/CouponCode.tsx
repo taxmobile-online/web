@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AdminDashboardChildTemplate } from "Components/Templates/AdminDashboardTemplate";
-import { EmptyCard } from "Components/Molecules/EmptyCard";
+// import { EmptyCard } from "Components/Molecules/EmptyCard";
 import { CreateCouponCodeModal } from "Components/Molecules/Modals";
 import { Card, Top, Wrapper } from "./style";
 import Typography from "Components/Atoms/Typography";

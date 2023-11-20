@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AdminDashboardChildTemplate } from "Components/Templates/AdminDashboardTemplate";
-import { EmptyCard } from "Components/Molecules/EmptyCard";
+// import { EmptyCard } from "Components/Molecules/EmptyCard";
 import {
   Card,
   SectionCardContainer,

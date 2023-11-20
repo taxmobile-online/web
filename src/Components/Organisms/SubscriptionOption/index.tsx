@@ -8,7 +8,7 @@ import { PlanOption } from "Components/Molecules/PlanOption";
 interface Props {}
 const SubscriptionOption: React.FC<Props> = () => {
   return (
-    <Wrapper>
+    <Wrapper id='sub-option'>
       <Container>
         <Typography
           as="h3"
