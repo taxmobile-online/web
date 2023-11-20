@@ -229,6 +229,16 @@ export const Typography = css`
       color: var(--color-2);
     }
     &-38 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: var(--color-2);
+      border-bottom: 1px solid var(--color-6);
+    }
+    &-39 {
+      font-size: 2rem;
+      font-weight: 500;
+      line-height: 163.462%;
+      color: var(--color-8);
     }
   }
 

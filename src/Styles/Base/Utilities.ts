@@ -172,6 +172,12 @@ export const Utilities = css`
   /* End of margin right */
   /* End of Margins */
 
+  /* Padding */
+  .pb-15 {
+    padding-bottom: 1.5rem;
+  }
+  /* End of paddings */
+
   /* Texts */
   .textCenter {
     text-align: center;

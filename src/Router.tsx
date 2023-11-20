@@ -26,6 +26,7 @@ import { Subscribers } from "Components/Pages/Subscribers";
 import { Pricing } from "Components/Pages/Pricing";
 import { PricingSetup } from "Components/Pages/PricingSetup";
 import { PricingTemplate } from "Components/Templates/PricingTemplate";
+import { CouponCode } from "Components/Pages/CouponCode";
 
 const Router = createBrowserRouter(
   createRoutesFromElements(
@@ -55,6 +56,7 @@ const Router = createBrowserRouter(
         <Route path="e-library" element={<ELibrary />} />
         <Route path="sections" element={<Sections />} />
         <Route path="subscribers" element={<Subscribers />} />
+        <Route path="coupon-code" element={<CouponCode />} />
         <Route path="pricing" element={<PricingTemplate />}>
           <Route path="" element={<Pricing />} />
           <Route path="set-up" element={<PricingSetup />} />

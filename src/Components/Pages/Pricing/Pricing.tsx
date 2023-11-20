@@ -1,20 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { EmptyCard } from "Components/Molecules/EmptyCard";
+import { useNavigate } from "react-router-dom";
 
 // Type defination
 interface Props {}
 
 // Component
 const Pricing: React.FC<Props> = () => {
-  // States
-  const [, setShowModal] = useState<boolean>(false);
+  //   Hooks
+  const navigate = useNavigate();
 
   // Data to display
   return (
     <EmptyCard
       message="No Pricing plan yet!"
       btnLabel="Create pricing plans"
-      handleAction={() => setShowModal(true)}
+      handleAction={() => navigate("/admin/pricing/set-up")}
     />
   );
 };

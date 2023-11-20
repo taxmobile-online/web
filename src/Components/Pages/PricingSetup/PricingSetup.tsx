@@ -1,16 +1,18 @@
-import React, { useState } from "react";
-import { Wrapper } from "./style";
+import React from "react";
+import { Actions, Card, Wrapper } from "./style";
 import Typography from "Components/Atoms/Typography";
-import { PriceSwitch } from "Components/Molecules/PriceSwitch";
 import { PlanOption } from "Components/Molecules/PlanOption";
+import { Input } from "Components/Atoms/Input";
+import Button from "Components/Atoms/Button";
+import { useNavigate } from "react-router-dom";
 
 // Type defination
 interface Props {}
 
 // Component
 const PricingSetup: React.FC<Props> = () => {
-  // States
-  const [, setShowModal] = useState<boolean>(false);
+  //   Hooks
+  const navigate = useNavigate();
 
   // Data to display
   return (
@@ -20,7 +22,28 @@ const PricingSetup: React.FC<Props> = () => {
         pricing set plans for taxmobile community
       </Typography>
 
-      <PlanOption className="mt-60" />
+      <PlanOption className="mt-60 mb-40" />
+
+      <Card>
+        <Typography
+          as="h5"
+          className="h-38 pb-15 mb-50"
+          text="Create pricing set-up"
+        />
+
+        <Input label="Account type" />
+        <Input label="Price" />
+
+        <Actions className="mt-90">
+          <Button
+            className="btn-secondary btn-md"
+            onClick={() => navigate("/admin/pricing")}
+          >
+            Cancel
+          </Button>
+          <Button className="btn-primary btn-md">Update</Button>
+        </Actions>
+      </Card>
     </Wrapper>
   );
 };
