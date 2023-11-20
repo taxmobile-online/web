@@ -1,9 +1,9 @@
 import React from "react";
 import { Container, Wrapper } from "./style";
 import Typography from "Components/Atoms/Typography";
-import PriceSwitch from "./PriceSwitch";
-import PlanOption from "./PlanOption";
 import Plans from "./Plans";
+import { PriceSwitch } from "Components/Molecules/PriceSwitch";
+import { PlanOption } from "Components/Molecules/PlanOption";
 
 interface Props {}
 const SubscriptionOption: React.FC<Props> = () => {

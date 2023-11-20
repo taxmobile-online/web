@@ -54,7 +54,7 @@ export const Wrapper = styled.div`
   } */
 
   &:not(:last-child) {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   &.no-bottom-margin {
@@ -80,6 +80,8 @@ export const InputWrapper = styled.div`
 
   .input {
     border: none;
+    color: var(--color-4);
+    font-family: inherit;
     &:active,
     &:focus {
       outline: none;

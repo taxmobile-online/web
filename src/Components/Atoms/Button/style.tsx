@@ -112,6 +112,11 @@ export const ButtonStyle = styled(Button)`
       gap: .6rem;
     }
 
+    &-light {
+      border-radius: 3.8rem;
+      border: 1px solid var(--color-4);
+    }
+
     /* Colors */
     &-success {
       background-color: var(--color-17);

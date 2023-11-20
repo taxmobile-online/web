@@ -28,3 +28,7 @@ export { ReactComponent as MaterialsIcon } from "./svgs/materials-icon.svg";
 export { ReactComponent as PurchasesIcon } from "./svgs/purchases-icon.svg";
 export { ReactComponent as SubscriptionIcon } from "./svgs/subscription-icon.svg";
 export { ReactComponent as UsersIcon } from "./svgs/users-icon.svg";
+export { ReactComponent as CaretDownIcon } from "./svgs/caret-down-icon.svg";
+export { ReactComponent as LensIcon } from "./svgs/lens-icon.svg";
+export { ReactComponent as CaretLeftIcon } from "./svgs/caret-left-icon.svg";
+export { ReactComponent as CaretRightIcon } from "./svgs/caret-right-icon.svg";

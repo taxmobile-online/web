@@ -184,6 +184,52 @@ export const Typography = css`
       font-weight: 500;
       color: var(--color-2);
     }
+    &-31 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      line-height: 140%;
+      color: var(--color-8);
+    }
+    &-32 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 140%;
+      color: var(--color-8);
+    }
+    &-33 {
+      font-size: 1.35rem;
+      font-weight: 400;
+      line-height: 140%;
+      color: var(--color-8);
+    }
+    &-34 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--color-9);
+      display: inline-block;
+      margin-bottom: 0.3rem;
+      text-transform: capitalize;
+    }
+    &-35 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      line-height: 163.462%;
+      color: var(--color-8);
+    }
+    &-36 {
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 135.714%;
+      color: var(--color-8);
+    }
+    &-37 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      line-height: 123.3%;
+      color: var(--color-2);
+    }
+    &-38 {
+    }
   }
 
   /* Body || Paragraphs */
@@ -274,9 +320,19 @@ export const Typography = css`
     }
     &-15 {
       font-size: 1.3rem;
-      font-style: normal;
       font-weight: 400;
       color: var(--color-primary);
+    }
+    &-16 {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--color-4);
+    }
+    &-17 {
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 135.714%;
+      color: var(--color-2);
     }
   }
 
@@ -317,6 +373,20 @@ export const Typography = css`
       font-size: 1.6rem;
       font-weight: 400;
       color: var(--color-4);
+    }
+  }
+
+  /* Buttons */
+  .b {
+    &-1 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--color-primary);
+    }
+    &-2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--color-20);
     }
   }
 `;

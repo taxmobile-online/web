@@ -15,7 +15,7 @@ export const OverlayStyle = styled(motion.div)<{
   background-color: rgba(0, 0, 0, 0.45);
   z-index: 10;
   overflow-y: auto;
-  padding-bottom: 5rem;
+  padding-block: 3rem;
 
   ${({ position }) => (position === "center" ? `${GridCenter}` : "")}
 

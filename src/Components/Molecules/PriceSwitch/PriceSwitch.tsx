@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-
-import { PriceSwitchStyle, Switch, SwitchToggle } from "./style";
+import { Switch, SwitchToggle, Wrapper } from "./style";
 import Typography from "Components/Atoms/Typography";
-
-// Type defination
-interface Props {}
 
 // Variable
 const ng = "NGN";
 const us = "US$";
+
+// Type defination
+interface Props {}
 
 // Component
 const PriceSwitch: React.FC<Props> = () => {
@@ -17,7 +16,7 @@ const PriceSwitch: React.FC<Props> = () => {
 
   // Data to display
   return (
-    <PriceSwitchStyle>
+    <Wrapper>
       <Typography as="h6" className="h-8" text={ng} />
       <Switch
         onClick={() => setCurrency((currency) => (currency === ng ? us : ng))}
@@ -25,7 +24,7 @@ const PriceSwitch: React.FC<Props> = () => {
         <SwitchToggle className={currency === us ? "mvv" : ""} />
       </Switch>
       <Typography as="h6" className="h-8" text={us} />
-    </PriceSwitchStyle>
+    </Wrapper>
   );
 };
 

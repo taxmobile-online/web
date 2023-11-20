@@ -24,15 +24,19 @@ const SideNav: React.FC<Props> = () => {
           <DashboardIcon />
           <span>Dashboard</span>
         </Link>
+        <Link to="/admin/sections" className="l l-5">
+          <PriceIcon />
+          <span>Sections</span>
+        </Link>
         <Link to="/admin/e-library" className="l l-5">
           <LibraryIcon />
           <span>E-library</span>
         </Link>
-        <Link to="/admin" className="l l-5">
+        <Link to="/admin/subscribers" className="l l-5">
           <SubscribersIcon />
           <span>Subscribers</span>
         </Link>
-        <Link to="/admin" className="l l-5">
+        <Link to="/admin/pricing" className="l l-5">
           <PriceIcon />
           <span>Pricing set-up</span>
         </Link>

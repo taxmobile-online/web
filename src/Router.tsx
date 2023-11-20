@@ -21,6 +21,11 @@ import { IndividualUserSettings } from "Components/Pages/IndividualUserSettings"
 import { ELibrary } from "Components/Pages/ELibrary";
 import { AdminDashboard } from "Components/Pages/AdminDashboard";
 import { AdminDashboardTemplate } from "Components/Templates/AdminDashboardTemplate";
+import { Sections } from "Components/Pages/Sections";
+import { Subscribers } from "Components/Pages/Subscribers";
+import { Pricing } from "Components/Pages/Pricing";
+import { PricingSetup } from "Components/Pages/PricingSetup";
+import { PricingTemplate } from "Components/Templates/PricingTemplate";
 
 const Router = createBrowserRouter(
   createRoutesFromElements(
@@ -48,6 +53,12 @@ const Router = createBrowserRouter(
         <Route path="" element={<AdminDashboard />} />
         <Route path="payment-success" element={<PaymentSuccess />} />
         <Route path="e-library" element={<ELibrary />} />
+        <Route path="sections" element={<Sections />} />
+        <Route path="subscribers" element={<Subscribers />} />
+        <Route path="pricing" element={<PricingTemplate />}>
+          <Route path="" element={<Pricing />} />
+          <Route path="set-up" element={<PricingSetup />} />
+        </Route>
       </Route>
 
       <Route path="billing" element={<Billing />} />

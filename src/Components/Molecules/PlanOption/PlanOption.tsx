@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PlanOptionWrapper as Wrapper } from "./style";
+import { Wrapper } from "./style";
 import Button from "Components/Atoms/Button";
 
 // Type defination
