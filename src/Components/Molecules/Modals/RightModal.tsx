@@ -14,6 +14,7 @@ import Button from "Components/Atoms/Button";
 import { Close } from "Components/Atoms/SvgIcons";
 import Input from "Components/Atoms/Input/Input";
 import { Flex } from "Styles/layouts/Flex";
+import { SignUpForm } from "Components/Organisms/Forms";
 
 // Type defination
 interface Props {
@@ -45,52 +46,55 @@ const RightModal: React.FC<Props> = (props) => {
         </RightModalTop>
         <RightModalBody>
           <RightModalFormWrapper>
-            <Input label="Full Name" name="fullName" />
-            <Input label="Email" name="email" />
-            <Input label="Phone Number" name="phone-number" />
+            <SignUpForm>
+              <CouponAndPrice className="mt-30">
+                <div className="top">
+                  <Input
+                    label="Coupon code"
+                    bottomLabel="Have you been offered a discount?"
+                    labelClass="input-label--coupon"
+                    inputClass="input-ele--coupon"
+                    wrapperClass="rounded"
+                    noMargin
+                  />
+                  <Button className="btn btn-primary" value="Apply" />
+                </div>
+
+                <div className="bottom">
+                  <Flex gap="1rem" className="mb-20" flexRowJcBetweenAiCenter>
+                    <Typography as="h4" className="h-13" text="Pricing total" />
+                    <Typography as="h4" className="">
+                      <>
+                        <sup className="h-13">NGN</sup>{" "}
+                        <span className="h-6">23,000</span>
+                      </>
+                    </Typography>
+                  </Flex>
+                  <Flex gap="1rem" flexRowJcBetweenAiCenter>
+                    <Typography
+                      as="h4"
+                      className="h-13"
+                      text="Discount applied"
+                    />
+                    <Typography as="h4" className="">
+                      <>
+                        <sup className="h-13">NGN</sup>{" "}
+                        <span className="h-6">0</span>
+                      </>
+                    </Typography>
+                  </Flex>
+                </div>
+              </CouponAndPrice>
+              <RightModalDown>
+                <Button
+                  type="submit"
+                  className="btn btn-full btn-primary btn-bg-color-2"
+                  value="Pay now"
+                />
+              </RightModalDown>
+            </SignUpForm>
           </RightModalFormWrapper>
-
-          <CouponAndPrice className="mt-30">
-            <div className="top">
-              <Input
-                label="Coupon code"
-                bottomLabel="Have you been offered a discount?"
-                labelClass="input-label--coupon"
-                inputClass="input-ele--coupon"
-                wrapperClass="rounded"
-                noMargin
-              />
-              <Button className="btn btn-primary" value="Apply" />
-            </div>
-
-            <div className="bottom">
-              <Flex gap="1rem" className="mb-20" flexRowJcBetweenAiCenter>
-                <Typography as="h4" className="h-13" text="Pricing total" />
-                <Typography as="h4" className="">
-                  <>
-                    <sup className="h-13">NGN</sup>{" "}
-                    <span className="h-6">23,000</span>
-                  </>
-                </Typography>
-              </Flex>
-              <Flex gap="1rem" flexRowJcBetweenAiCenter>
-                <Typography as="h4" className="h-13" text="Discount applied" />
-                <Typography as="h4" className="">
-                  <>
-                    <sup className="h-13">NGN</sup>{" "}
-                    <span className="h-6">0</span>
-                  </>
-                </Typography>
-              </Flex>
-            </div>
-          </CouponAndPrice>
         </RightModalBody>
-        <RightModalDown>
-          <Button
-            className="btn btn-full btn-primary btn-bg-color-2"
-            value="Pay now"
-          />
-        </RightModalDown>
       </RightModalWrapper>
     </Overlay>
   );

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Wrapper } from "./style";
 import Button from "Components/Atoms/Button";
+import useAuthStore from "Store/auth.store";
 
 // Type defination
 interface Props {
@@ -16,6 +17,9 @@ const PlanOption: React.FC<Props> = (props) => {
   // States
   const [duration, setDuration] = useState(monthly);
 
+  // Store
+  const { setPlanDuration } = useAuthStore();
+
   // Props
   const { className } = props;
 
@@ -25,12 +29,18 @@ const PlanOption: React.FC<Props> = (props) => {
       <Button
         value="Monthly"
         className="plan-option__btn"
-        onClick={() => setDuration(monthly)}
+        onClick={() => {
+          setDuration(monthly);
+          setPlanDuration!("MONTHLY");
+        }}
       />
       <Button
         value="Yearly"
         className="plan-option__btn"
-        onClick={() => setDuration(yearly)}
+        onClick={() => {
+          setDuration(yearly);
+          setPlanDuration!("YEARLY");
+        }}
       />
     </Wrapper>
   );

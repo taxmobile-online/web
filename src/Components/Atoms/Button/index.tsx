@@ -1,20 +1,10 @@
 import React from "react";
 import { ButtonStyle } from "./style";
+import { ButtonProps } from "./types";
 
-interface Props {
-  children?: any;
-  value?: any;
-  className?: string;
-  disabled?: any;
-  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
-}
-const Button: React.FC<Props> = (props) => {
-  const { children, className, value } = props;
-  return (
-    <ButtonStyle className={className} {...props}>
-      {value || children}
-    </ButtonStyle>
-  );
+const Button: React.FC<ButtonProps> = (props) => {
+  const { children, value, ...otherProps } = props;
+  return <ButtonStyle {...otherProps}>{value || children}</ButtonStyle>;
 };
 
 export default Button;

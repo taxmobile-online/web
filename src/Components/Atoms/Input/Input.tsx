@@ -1,21 +1,11 @@
 import React, { useState } from "react";
 import { InputWrapper, Wrapper } from "./style";
 import { EyeSlash, EyeUnSlash } from "../SvgIcons";
+import { InputProps } from "./types";
 
-// Type defination
-interface Props {
-  label?: string;
-  bottomLabel?: string;
-  labelClass?: string;
-  inputClass?: string;
-  wrapperClass?: string;
-  name?: string;
-  type?: string;
-  noMargin?: boolean;
-}
 
 // Component
-const Input: React.FC<Props> = (props) => {
+const Input: React.FC<InputProps> = (props) => {
   // States
   const [showPass, setShowPass] = useState<boolean>(false);
 
@@ -24,6 +14,7 @@ const Input: React.FC<Props> = (props) => {
     label,
     name,
     type = "text",
+    errorMessage,
     labelClass = "input-label",
     inputClass = "input-ele",
     wrapperClass = "normal",
@@ -64,6 +55,10 @@ const Input: React.FC<Props> = (props) => {
           />
         ) : null}
       </InputWrapper>
+
+      {errorMessage && (
+        <span className="input-bottom-label">{errorMessage}</span>
+      )}
       {bottomLabel && <span className="input-bottom-label">{bottomLabel}</span>}
     </Wrapper>
   );

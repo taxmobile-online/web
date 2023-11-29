@@ -1,5 +1,4 @@
 import React from "react";
-import { usePaystackPayment } from "react-paystack";
 
 import { PlansWrapper as Wrapper, PlanCard, SubscriberQuantity } from "./style";
 
@@ -10,34 +9,24 @@ import Button from "Components/Atoms/Button";
 import Typography from "Components/Atoms/Typography";
 
 import { PlansProps } from "./types";
+import PaymentButton from "./PaymentButton";
 
 // Component
 const Plans: React.FC<PlansProps> = (props) => {
   // Hooks
-  const { data, loading } = useFetch<[]>("/pricing", "GET");
-
-  // Varible
-  const config = {
-    reference: new Date().getTime().toString(),
-    email: "user@example.com",
-    amount: 20000,
-    publicKey: "pk_test_da2adf82cb1ed414ff60cd5839106a414b6a21bf",
-  };
-  const initializePayment = usePaystackPayment(config);
-
-  // Methods
-  const onSuccess = (reference: any) => {
-    console.log(reference);
-  };
-
-  const onClose = () => {
-    console.log("closed");
-  };
+  const { data, loading, error } = useFetch<[]>("/pricing", "GET");
 
   // Props
   const { handleShowModal } = props;
 
   // Data to display
+  if (error) {
+    return (
+      <Typography as="p" className="text-cnter mt-50 p-18">
+        Could not load plans 😢
+      </Typography>
+    );
+  }
   if (loading) {
     return (
       <Wrapper>
@@ -78,14 +67,13 @@ const Plans: React.FC<PlansProps> = (props) => {
             />
 
             {plan.accountType === "PERSONAL" ? (
-              <Button
-                value="Subscribe Now"
-                className="mt-70 btn-secondary"
-                onClick={() => {
-                  handleShowModal!();
-                  initializePayment(onSuccess, onClose);
-                }}
-              />
+              <>
+                <PaymentButton
+                  price={plan.price}
+                  accountType={plan.accountType}
+                  handleShowModal={handleShowModal}
+                />
+              </>
             ) : (
               <>
                 <SubscriberQuantity>

@@ -32,7 +32,7 @@ export const RightModalBody = styled.div`
 `;
 
 export const RightModalFormWrapper = styled.div`
-  padding-inline: 4rem;
+  /* padding-inline: 4rem; */
 `;
 
 export const CouponAndPrice = styled.div`

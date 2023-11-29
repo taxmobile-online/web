@@ -1,15 +1,18 @@
 // Auth store
-type AccountType = "PERSONAL" | "CORPERATE";
-type PlanDurationType = "YEARLY" | "MONTHLY";
+type AccountType = "PERSONAL" | "CORPERATE" | null;
+type PlanDurationType = "YEARLY" | "MONTHLY" | null;
 type CurrencyType = "NGN" | "USD";
 
 export interface AuthStoreProps {
-  accountType: AccountType;
-  setAccountType: (type: AccountType) => void;
+  accountType?: AccountType;
+  setAccountType?: (type: AccountType) => void;
 
-  planDuration: PlanDurationType;
-  setPlanDuration: (type: PlanDurationType) => void;
+  planDuration?: PlanDurationType;
+  setPlanDuration?: (duration: PlanDurationType) => void;
 
-  curency: CurrencyType;
-  setCurrency: (type: CurrencyType) => void;
+  curency?: CurrencyType;
+  setCurrency?: (type: CurrencyType) => void;
+
+  transactionId?: string | number | null;
+  setTransactionId?: (id: string | number) => void;
 }
