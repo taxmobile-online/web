@@ -12,54 +12,54 @@ import {
 
 interface Props {
   // Flex rows
-  flexRow?: boolean;
-  flexRowReverse?: boolean;
-  flexRowAiCenter?: boolean;
-  flexRowJcBetween?: boolean;
-  flexRowJcBetweenAiCenter?: boolean;
-  flexRowJcBetweenAiEnd?: boolean;
+  $flexRow?: boolean;
+  $flexRowReverse?: boolean;
+  $flexRowAiCenter?: boolean;
+  $flexRowJcBetween?: boolean;
+  $flexRowJcBetweenAiCenter?: boolean;
+  $flexRowJcBetweenAiEnd?: boolean;
 
   // Flex row wraps
-  flexRowWrapJcBetween?: boolean;
+  $flexRowWrapJcBetween?: boolean;
 
   //   Flex columns
-  flexColumn?: boolean;
-  flexColumnReverse?: boolean;
+  $flexColumn?: boolean;
+  $flexColumnReverse?: boolean;
 
   //   Flex gaps
-  gap?: string;
-  columnGap?: string;
-  rowGap?: string;
+  $gap?: string;
+  $columnGap?: string;
+  $rowGap?: string;
 }
 export const Flex = styled.div<Props>`
   ${({
-    flexRow,
-    flexRowReverse,
-    flexRowAiCenter,
-    flexRowJcBetween,
-    flexRowJcBetweenAiCenter,
-    flexRowJcBetweenAiEnd,
-    flexRowWrapJcBetween,
-    flexColumn,
-    flexColumnReverse,
+    $flexRow,
+    $flexRowReverse,
+    $flexRowAiCenter,
+    $flexRowJcBetween,
+    $flexRowJcBetweenAiCenter,
+    $flexRowJcBetweenAiEnd,
+    $flexRowWrapJcBetween,
+    $flexColumn,
+    $flexColumnReverse,
   }) => {
     /* Rows */
-    if (flexRow) return `${FlexRow}`;
-    if (flexRowReverse) return `${FlexRowReverse}`;
-    if (flexRowAiCenter) return `${FlexRowAiCenter}`;
-    if (flexRowJcBetween) return `${FlexRowJcBetween}`;
-    if (flexRowJcBetweenAiCenter) return `${FlexRowJcBetweenAiCenter}`;
-    if (flexRowJcBetweenAiEnd) return `${FlexRowJcBetweenAiEnd}`;
-    if (flexRowWrapJcBetween) return `${FlexRowWrapJcBetween}`;
+    if ($flexRow) return `${FlexRow}`;
+    if ($flexRowReverse) return `${FlexRowReverse}`;
+    if ($flexRowAiCenter) return `${FlexRowAiCenter}`;
+    if ($flexRowJcBetween) return `${FlexRowJcBetween}`;
+    if ($flexRowJcBetweenAiCenter) return `${FlexRowJcBetweenAiCenter}`;
+    if ($flexRowJcBetweenAiEnd) return `${FlexRowJcBetweenAiEnd}`;
+    if ($flexRowWrapJcBetween) return `${FlexRowWrapJcBetween}`;
 
     /* Columns */
-    if (flexColumn) return `${FlexColumn}`;
-    if (flexColumnReverse) return "flex-direction: column-reverse";
+    if ($flexColumn) return `${FlexColumn}`;
+    if ($flexColumnReverse) return "flex-direction: column-reverse";
   }};
 
-  ${({ gap, columnGap, rowGap }) => {
-    if (gap) return `gap: ${gap}`;
-    if (columnGap) return `column-gap: ${columnGap}`;
-    if (rowGap) return `row-gap: ${rowGap}`;
+  ${({ $gap, $columnGap, $rowGap }) => {
+    if ($gap) return `gap: ${$gap}`;
+    if ($columnGap) return `column-gap: ${$columnGap}`;
+    if ($rowGap) return `row-gap: ${$rowGap}`;
   }}
 `;

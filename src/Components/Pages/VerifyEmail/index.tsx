@@ -6,7 +6,7 @@ import Logo from "Components/Atoms/Logo";
 import Typography from "Components/Atoms/Typography";
 import Button from "Components/Atoms/Button";
 import { Email } from "Components/Atoms/SvgIcons";
-import usePageTitle from "Hooks/usePageTitle";
+import usePageTitle from "Utils/Hooks/usePageTitle";
 
 // Type defination
 interface Props {}

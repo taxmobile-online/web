@@ -57,7 +57,7 @@ const Input: React.FC<InputProps> = (props) => {
       </InputWrapper>
 
       {errorMessage && (
-        <span className="input-bottom-label">{errorMessage}</span>
+        <span className="input-error-message">{errorMessage}</span>
       )}
       {bottomLabel && <span className="input-bottom-label">{bottomLabel}</span>}
     </Wrapper>

@@ -15,7 +15,7 @@ const SubscriptionUpgradeBox: React.FC<Props> = ({ size }) => {
   // Data to display
   return (
     <Wrapper size={size}>
-      <Flex gap="1rem" className="mb-30" flexRowJcBetweenAiCenter>
+      <Flex $gap="1rem" className="mb-30" $flexRowJcBetweenAiCenter>
         <Typography as="h6" className="h-21" text="Subscription plan" />
 
         <SubscriptionRange>10-30</SubscriptionRange>

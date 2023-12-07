@@ -56,13 +56,13 @@ const Hero: React.FC<Props> = () => {
               and get access to:
             </Typography>
 
-            <Flex gap="1rem" className="mt-50" flexColumn>
+            <Flex $gap="1rem" className="mt-50" $flexColumn>
               {lists.map((list, index) => (
                 <HeroListItem key={index} item={list} />
               ))}
             </Flex>
 
-            <Flex gap="3rem" className="mt-50" flexRowAiCenter>
+            <Flex $gap="3rem" className="mt-50" $flexRowAiCenter>
               <a href="#sub-option">
                 <Button
                   // onClick={handleShowModal}

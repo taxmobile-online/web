@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Wrapper } from "./style";
 import Button from "Components/Atoms/Button";
 import useAuthStore from "Store/auth.store";
@@ -22,6 +22,13 @@ const PlanOption: React.FC<Props> = (props) => {
 
   // Props
   const { className } = props;
+
+  // Effects
+  useEffect(() => {
+    setPlanDuration!("MONTHLY");
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Data to display
   return (

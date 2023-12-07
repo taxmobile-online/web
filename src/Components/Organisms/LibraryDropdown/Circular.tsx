@@ -15,7 +15,7 @@ const Circular: React.FC<Props> = ({ title }) => {
   return (
     <BookStyle>
       <Typography as="h5" className="h-13" text={title} />
-      <Flex gap="1.5rem" flexRowAiCenter>
+      <Flex $gap="1.5rem" $flexRowAiCenter>
         <Button
           className="btn btn-primary btn-small mt-20 book-btn"
           value="Read"

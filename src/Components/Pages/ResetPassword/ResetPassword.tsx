@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Content, Wrapper } from "./style";
-import usePageTitle from "Hooks/usePageTitle";
+import usePageTitle from "Utils/Hooks/usePageTitle";
 import Logo from "Components/Atoms/Logo";
 import Typography from "Components/Atoms/Typography";
 import Input from "Components/Atoms/Input/Input";

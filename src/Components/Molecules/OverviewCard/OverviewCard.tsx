@@ -45,12 +45,12 @@ const OverviewCard: React.FC<Props> = (props) => {
         />
       ) : (
         <>
-          <Flex className="mt-22" gap="1rem" flexRowJcBetweenAiCenter>
+          <Flex className="mt-22" $gap="1rem" $flexRowJcBetweenAiCenter>
             <Typography as="h5" className="h-27" text={"Individual"} />
             <Typography as="h5" className="h-28" text={"23"} />
           </Flex>
 
-          <Flex className="mt-15" gap="1rem" flexRowJcBetweenAiCenter>
+          <Flex className="mt-15" $gap="1rem" $flexRowJcBetweenAiCenter>
             <Typography as="h5" className="h-27" text={"Coperate"} />
             <Typography as="h5" className="h-28" text={"555"} />
           </Flex>

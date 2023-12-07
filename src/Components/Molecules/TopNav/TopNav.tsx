@@ -18,7 +18,7 @@ import {
 } from "./style";
 import Typography from "Components/Atoms/Typography";
 import { Notification } from "Components/Atoms/Notification";
-import useOnClickOutside from "Hooks/useOnClickOutside";
+import useOnClickOutside from "Utils/Hooks/useOnClickOutside";
 import { UserAvatar } from "Components/Atoms/UserAvatar";
 
 // Type defination

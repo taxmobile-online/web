@@ -11,7 +11,7 @@ interface Props {
 
 const HeroListItem: React.FC<Props> = ({ item }) => {
   return (
-    <Flex gap="1rem" flexRow>
+    <Flex $gap="1rem" $flexRow>
       <Check className="mt-5" />
       <Typography as="h4" className="h-4" text={item} />
     </Flex>

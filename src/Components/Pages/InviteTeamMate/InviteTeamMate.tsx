@@ -7,7 +7,6 @@ import Logo from "Components/Atoms/Logo";
 import { Flex } from "Styles/layouts/Flex";
 import Button from "Components/Atoms/Button";
 import { Center } from "Styles/layouts/Center";
-import Input from "Components/Atoms/Input/Input";
 import Typography from "Components/Atoms/Typography";
 import { SubscriptionUpgradeBox } from "Components/Molecules/SubscriptionUpgradeBox";
 import { AppTagInput } from "Components/Atoms/Input";
@@ -42,7 +41,7 @@ const InviteTeamMate: React.FC<Props> = () => {
               bottomLabel="Add members by email"
             />
 
-            <Flex gap="3rem" className="mt-70" flexRowAiCenter>
+            <Flex $gap="3rem" className="mt-70" $flexRowAiCenter>
               <Button
                 className="btn btn-primary btn-bg-color-2"
                 value="Invite and continue"

@@ -4,7 +4,6 @@ import Overlay from "Components/Atoms/Overlay";
 import {
   CouponAndPrice,
   RightModalBody,
-  RightModalDown,
   RightModalFormWrapper,
   RightModalTop,
   RightModalWrapper,
@@ -61,7 +60,7 @@ const RightModal: React.FC<Props> = (props) => {
                 </div>
 
                 <div className="bottom">
-                  <Flex gap="1rem" className="mb-20" flexRowJcBetweenAiCenter>
+                  <Flex $gap="1rem" className="mb-20" $flexRowJcBetweenAiCenter>
                     <Typography as="h4" className="h-13" text="Pricing total" />
                     <Typography as="h4" className="">
                       <>
@@ -70,7 +69,7 @@ const RightModal: React.FC<Props> = (props) => {
                       </>
                     </Typography>
                   </Flex>
-                  <Flex gap="1rem" flexRowJcBetweenAiCenter>
+                  <Flex $gap="1rem" $flexRowJcBetweenAiCenter>
                     <Typography
                       as="h4"
                       className="h-13"
@@ -85,13 +84,13 @@ const RightModal: React.FC<Props> = (props) => {
                   </Flex>
                 </div>
               </CouponAndPrice>
-              <RightModalDown>
+              {/* <RightModalDown>
                 <Button
                   type="submit"
                   className="btn btn-full btn-primary btn-bg-color-2"
-                  value="Pay now"
+                  value="Sign Up"
                 />
-              </RightModalDown>
+              </RightModalDown> */}
             </SignUpForm>
           </RightModalFormWrapper>
         </RightModalBody>

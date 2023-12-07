@@ -1,32 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { PlansWrapper as Wrapper, PlanCard, SubscriberQuantity } from "./style";
 
 import Loader from "./Loader";
-import useFetch from "Hooks/useFetch";
 import { formatNumber } from "Utils/Helper";
 import Button from "Components/Atoms/Button";
 import Typography from "Components/Atoms/Typography";
 
 import { PlansProps } from "./types";
 import PaymentButton from "./PaymentButton";
+import useApi from "Utils/Hooks/useApi";
 
 // Component
 const Plans: React.FC<PlansProps> = (props) => {
   // Hooks
-  const { data, loading, error } = useFetch<[]>("/pricing", "GET");
+  let { data, loading, error, sendRequest } = useApi<any>();
+
+  data = data?.data || [];
 
   // Props
   const { handleShowModal } = props;
 
+  // Effects
+  useEffect(() => {
+    sendRequest("GET", "/pricing");
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // Data to display
-  if (error) {
-    return (
-      <Typography as="p" className="text-cnter mt-50 p-18">
-        Could not load plans 😢
-      </Typography>
-    );
-  }
   if (loading) {
     return (
       <Wrapper>
@@ -35,6 +37,15 @@ const Plans: React.FC<PlansProps> = (props) => {
       </Wrapper>
     );
   }
+
+  if (error) {
+    return (
+      <Typography as="p" className="text-cnter mt-50 p-18">
+        Could not load plans 😢
+      </Typography>
+    );
+  }
+
   return (
     <Wrapper>
       {data?.map((plan: any) => (

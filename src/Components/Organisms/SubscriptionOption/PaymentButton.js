@@ -6,20 +6,21 @@ const PaymentButton = (props) => {
   // Props
   const { handleShowModal, price, accountType } = props;
   // Store
-  const { setTransactionId, planDuration } = useAuthStore();
+  const { setTransactionId, setAccountType } = useAuthStore();
 
   const config = {
     reference: new Date().getTime().toString(),
     email: "user@example.com",
-    amount: parseInt(`${price}00`),
+    amount: parseInt(`${price}100`),
     publicKey: `pk_test_da2adf82cb1ed414ff60cd5839106a414b6a21bf`,
   };
   const initializePayment = usePaystackPayment(config);
 
   const onSuccess = (reference) => {
     handleShowModal();
-    console.log(reference);
-    setTransactionId(reference);
+    console.log({ reference });
+    setAccountType(accountType);
+    setTransactionId(reference.trxref);
   };
   const onClose = () => {
     console.log("closed");

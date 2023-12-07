@@ -30,6 +30,15 @@ export const Wrapper = styled.div`
     margin-top: 0.5rem;
   }
 
+  .input-error-message {
+    color: var(--color-22);
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 140%;
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+
   /* .input {
     &:active,
     &:focus {

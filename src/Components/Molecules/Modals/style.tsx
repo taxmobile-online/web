@@ -5,6 +5,8 @@ import {
 } from "Styles/Abstract/Mixins";
 import { motion } from "framer-motion";
 
+
+// Right modal
 export const RightModalWrapper = styled(motion.div)`
   position: fixed;
   top: 0;
@@ -56,6 +58,7 @@ export const RightModalDown = styled.div`
   padding: 5rem 4rem 0;
 `;
 
+// Center modal
 export const CenterModalWrapper = styled(motion.div)`
   width: 45rem;
   padding: 3rem;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Body } from "./style";
 import { TopNav } from "Components/Molecules/TopNav";
-import usePageTitle from "Hooks/usePageTitle";
+import usePageTitle from "Utils/Hooks/usePageTitle";
 
 // Type defination
 interface Props {

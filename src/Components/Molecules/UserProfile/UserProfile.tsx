@@ -31,7 +31,7 @@ const UserProfile: React.FC<Props> = (props) => {
         </div>
       </UserDetail>
 
-      <Flex gap="2rem" className="mt-40 mb-50" flexRowAiCenter>
+      <Flex $gap="2rem" className="mt-40 mb-50" $flexRowAiCenter>
         {type === "second" ? (
           <Button className="btn-settings btn-setting-dark-bg">
             <Camera width={20} height={20} /> Upload new

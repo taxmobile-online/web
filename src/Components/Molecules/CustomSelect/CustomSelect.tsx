@@ -5,7 +5,7 @@ import { Wrapper, Dropdown, DropdownItem } from "./style";
 import Typography from "Components/Atoms/Typography";
 import { AnimatePresence } from "framer-motion";
 import { animate_slideUp } from "Styles/Base/Animation";
-import useOnClickOutside from "Hooks/useOnClickOutside";
+import useOnClickOutside from "Utils/Hooks/useOnClickOutside";
 import { Flex } from "Styles/layouts/Flex";
 import { CaretDownIcon } from "Components/Atoms/SvgIcons";
 
@@ -47,7 +47,7 @@ const CustomSelect: React.FC<Props> = (props) => {
         ref={dropdownRef}
         dropdownwidth={dropdownwidth}
       >
-        <Flex gap="1rem" flexRowJcBetweenAiCenter>
+        <Flex $gap="1rem" $flexRowJcBetweenAiCenter>
           <Typography as="p" className="p-16" text={value} />
           <CaretDownIcon width={16} height={16} />
         </Flex>
