@@ -4,7 +4,6 @@ import { PlansWrapper as Wrapper, PlanCard, SubscriberQuantity } from "./style";
 
 import Loader from "./Loader";
 import { formatNumber } from "Utils/Helper";
-import Button from "Components/Atoms/Button";
 import Typography from "Components/Atoms/Typography";
 
 import { PlansProps } from "./types";
@@ -95,11 +94,18 @@ const Plans: React.FC<PlansProps> = (props) => {
                   />
                 </SubscriberQuantity>
 
-                <Button
+                <PaymentButton
+                  price={plan.price}
+                  accountType={plan.accountType}
+                  handleShowModal={handleShowModal}
+                  btnType="btn-primary"
+                />
+
+                {/* <Button
                   value="Subscribe Now"
                   className="mt-40 btn-primary"
                   onClick={handleShowModal}
-                />
+                /> */}
               </>
             )}
           </PlanCard>
