@@ -14,4 +14,8 @@ export const Content = styled.main`
   ${FlexColumnJcCenterAiCenter}
   padding-block: 10rem;
   flex-basis: 40rem;
+
+  .form-container {
+    width: 100%;
+  }
 `;

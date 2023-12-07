@@ -10,4 +10,5 @@ export interface InputFieldProps
   name?: any;
   value?: any;
   label?: any;
+  type?: string;
 }

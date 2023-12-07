@@ -6,13 +6,14 @@ import Logo from "Components/Atoms/Logo";
 import Typography from "Components/Atoms/Typography";
 import Input from "Components/Atoms/Input/Input";
 import Button from "Components/Atoms/Button";
+import { ResetPasswordForm } from "Components/Organisms/Forms";
 
 // Type defination
 interface Props {}
 
 // Component
 const ResetPassword: React.FC<Props> = () => {
-  usePageTitle("Sign in");
+  usePageTitle("Reset password");
 
   // Data to display
   return (
@@ -20,13 +21,17 @@ const ResetPassword: React.FC<Props> = () => {
       <Content>
         <Logo size="lg" />
         <Typography as="h3" className="h-3 mt-10 mb-40" text="Set password" />
-        <Input label="Password" type="password" />
+        {/* <Input label="Password" type="password" />
         <Input label="Confirm password" type="password" />
 
         <Button
           className="btn btn-full btn-primary btn-bg-color-2 mt-35"
           value="Save"
-        />
+        /> */}
+
+        <div className="form-container">
+          <ResetPasswordForm />
+        </div>
       </Content>
     </Wrapper>
   );
