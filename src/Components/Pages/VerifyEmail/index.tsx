@@ -7,6 +7,7 @@ import Typography from "Components/Atoms/Typography";
 import Button from "Components/Atoms/Button";
 import { Email } from "Components/Atoms/SvgIcons";
 import usePageTitle from "Utils/Hooks/usePageTitle";
+import { Link } from "react-router-dom";
 
 // Type defination
 interface Props {}
@@ -38,7 +39,9 @@ const VerifyEmail: React.FC<Props> = () => {
             <Typography as="p" className="p-1 mt-60">
               <>
                 Didn’t get an email?{" "}
+                <Link to='/reset-password'>
                 <Button value="Send it again" className="btn-naked" />
+                </Link>
               </>
             </Typography>
           </Content>
