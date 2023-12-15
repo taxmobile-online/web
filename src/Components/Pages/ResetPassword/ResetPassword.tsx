@@ -4,8 +4,6 @@ import { Content, Wrapper } from "./style";
 import usePageTitle from "Utils/Hooks/usePageTitle";
 import Logo from "Components/Atoms/Logo";
 import Typography from "Components/Atoms/Typography";
-import Input from "Components/Atoms/Input/Input";
-import Button from "Components/Atoms/Button";
 import { ResetPasswordForm } from "Components/Organisms/Forms";
 
 // Type defination

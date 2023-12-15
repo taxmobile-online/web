@@ -20,6 +20,7 @@ import Typography from "Components/Atoms/Typography";
 import { Notification } from "Components/Atoms/Notification";
 import useOnClickOutside from "Utils/Hooks/useOnClickOutside";
 import { UserAvatar } from "Components/Atoms/UserAvatar";
+import useAuthStore from "Store/auth.store";
 
 // Type defination
 interface Props {
@@ -35,6 +36,9 @@ const TopNav: React.FC<Props> = (props) => {
 
   // Props
   const { type, pageTitle } = props;
+
+  // Store
+  const { setUserData } = useAuthStore();
 
   // Ref
   const dropdownRef = useRef<any>();
@@ -106,11 +110,18 @@ const TopNav: React.FC<Props> = (props) => {
                     transition={{ ease: "easeOut", duration: 0.4 }}
                     ref={dropdownRef}
                   >
-                    <Link to="/#" className="dropdown-item">
+                    <Link
+                      to="/individual-user-settings"
+                      className="dropdown-item"
+                    >
                       <Setting />
                       Settings
                     </Link>
-                    <Link to="/#" className="dropdown-item">
+                    <Link
+                      to="/#"
+                      className="dropdown-item"
+                      onClick={() => setUserData({})}
+                    >
                       <Logout />
                       Logout
                     </Link>

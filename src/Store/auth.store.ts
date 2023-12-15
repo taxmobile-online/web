@@ -1,19 +1,34 @@
 import { create } from "zustand";
+import { devtools, persist } from "zustand/middleware";
+import { immer } from "zustand/middleware/immer";
+
 import { AuthStoreProps } from "./types";
 
-const useAuthStore = create<AuthStoreProps>()((set) => ({
-  accountType: null,
-  planDuration: null,
-  transactionId: null,
+const useAuthStore = create<AuthStoreProps>()(
+  // persist(
+  immer(
+    devtools((set) => ({
+      accountType: null,
+      planDuration: null,
+      transactionId: null,
+      userData: {},
 
-  setAccountType: (type) => {
-    set({ accountType: type });
-  },
-  setPlanDuration: (duration) => {
-    set({ planDuration: duration });
-  },
-  setTransactionId: (id) => {
-    set({ transactionId: id });
-  },
-}));
+      // Actions | Methods
+
+      setAccountType: (type) => {
+        set({ accountType: type });
+      },
+      setPlanDuration: (duration) => {
+        set({ planDuration: duration });
+      },
+      setTransactionId: (id) => {
+        set({ transactionId: id });
+      },
+      setUserData: (data) => {
+        set({ userData: data });
+      },
+    }))
+  )
+  // )
+);
 export default useAuthStore;

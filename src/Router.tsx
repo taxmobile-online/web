@@ -27,6 +27,7 @@ import { Pricing } from "Components/Pages/Pricing";
 import { PricingSetup } from "Components/Pages/PricingSetup";
 import { PricingTemplate } from "Components/Templates/PricingTemplate";
 import { CouponCode } from "Components/Pages/CouponCode";
+import { ProtectedRoute } from "Components/Atoms/ProtectedRoute";
 
 const Router = createBrowserRouter(
   createRoutesFromElements(
@@ -38,17 +39,35 @@ const Router = createBrowserRouter(
       />
       <Route path="/verify-email" element={<VerifyEmail />} />
       <Route path="reset-password" element={<ResetPassword />} />
-      <Route path="invite-team" element={<InviteTeamMate />} />
+      <Route
+        path="invite-team"
+        element={
+          <ProtectedRoute>
+            <InviteTeamMate />
+          </ProtectedRoute>
+        }
+      />
       <Route path="forget-password" element={<ForgetPassword />} />
       <Route path="multi-user-signup" element={<MultiUserSignup />} />
       <Route path="multi-user-settings" element={<MultiUserSetting />} />
       <Route
         path="individual-user-settings"
-        element={<IndividualUserSettings />}
+        element={
+          <ProtectedRoute>
+            <IndividualUserSettings />
+          </ProtectedRoute>
+        }
       />
       <Route path="admin-account-settings" element={<AdminSettings />} />
       <Route path="admin-profile-settings" element={<AdminProfileSetting />} />
-      <Route path="library" element={<Library />} />
+      <Route
+        path="library"
+        element={
+          <ProtectedRoute>
+            <Library />
+          </ProtectedRoute>
+        }
+      />
 
       <Route path="admin" element={<AdminDashboardTemplate />}>
         <Route path="" element={<AdminDashboard />} />

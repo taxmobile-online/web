@@ -12,7 +12,7 @@ interface Props {}
 // Component
 const Library: React.FC<Props> = () => {
   // States ***************** Tentative
-  const [show, setShow] = useState(true);
+  // const [show, setShow] = useState(true);
   // Data to display
   return (
     <DashboardTemplate>
@@ -20,9 +20,9 @@ const Library: React.FC<Props> = () => {
         <>
           <LibraryDropdown togglerList={["Books", "FIRS Circular"]} />
 
-          <AnimatePresence>
+          {/* <AnimatePresence>
             {show && <CenterModal handleCloseModal={() => setShow(false)} />}
-          </AnimatePresence>
+          </AnimatePresence> */}
         </>
       </Card>
     </DashboardTemplate>

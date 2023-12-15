@@ -6,6 +6,7 @@ import SubscriptionOption from "Components/Organisms/SubscriptionOption";
 
 interface Props {}
 const Home: React.FC<Props> = () => {
+  // Data to display
   return (
     <>
       <Hero />

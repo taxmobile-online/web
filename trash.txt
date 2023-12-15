@@ -1,0 +1,11 @@
+{
+    "phoneNumber": "+2347039299498",
+    "createdAt": "2023-12-11T17:15:53.640Z",
+    "isSubscriber": false,
+    "email": "library+me1996@taxmobile.online",
+    "fullName": "Okegbenro Abayomi",
+    "isVerified": true,
+    "accountType": "PERSONAL",
+    "userId": "PERSONAL_C4AAA930FC42E41C8DEFAC151CEB6AAA",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJQRVJTT05BTF9DNEFBQTkzMEZDNDJFNDFDOERFRkFDMTUxQ0VCNkFBQSIsInVzZXJuYW1lIjoibGlicmFyeSttZTE5OTZAdGF4bW9iaWxlLm9ubGluZSIsImlhdCI6MTcwMjMxNjIyNiwiZXhwIjoxNzAyNDAyNjI2fQ.LwJyW7iQf2wiqorrTBbiqq59c4PT5wzyv6_usVr5E1Q"
+}

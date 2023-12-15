@@ -6,6 +6,7 @@ import { UserDetail, Wrapper } from "./style";
 import Typography from "Components/Atoms/Typography";
 import { GalleryAdd, Camera } from "Components/Atoms/SvgIcons";
 import { UserAvatar } from "Components/Atoms/UserAvatar";
+import useAuthStore from "Store/auth.store";
 
 // Type defination
 interface Props {
@@ -18,6 +19,11 @@ interface Props {
 const UserProfile: React.FC<Props> = (props) => {
   // Props
   const { role, name, type } = props;
+
+  // Store
+  const { userData } = useAuthStore();
+
+  console.log({ userData });
   // Data to display
   return (
     <Wrapper>
@@ -25,7 +31,7 @@ const UserProfile: React.FC<Props> = (props) => {
         <UserAvatar size="big" />
         <div>
           {type !== "second" && (
-            <Typography as="h3" className="h-16" text={name} />
+            <Typography as="h3" className="h-16" text={userData?.fullName || '--'} />
           )}
           {role && <Typography as="h3" className="p-12" text={role} />}
         </div>

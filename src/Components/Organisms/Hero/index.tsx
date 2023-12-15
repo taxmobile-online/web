@@ -9,6 +9,7 @@ import HeroListItem from "Components/Molecules/HeroListItem";
 
 import { HeroStyle, Left, LeftInner, Right } from "./style";
 import { RightModal } from "Components/Molecules/Modals";
+import { Link } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 
 const lists = [
@@ -74,7 +75,9 @@ const Hero: React.FC<Props> = () => {
               <Typography as="h5" className="h-5">
                 <>
                   Already have an account?{" "}
-                  <span className="color-5">Sign in</span>
+                  <Link to="/sign-in" className="l-6">
+                    <span className="color-5">Sign in</span>
+                  </Link>
                 </>
               </Typography>
             </Flex>

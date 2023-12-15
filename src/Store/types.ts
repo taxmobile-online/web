@@ -15,4 +15,7 @@ export interface AuthStoreProps {
 
   transactionId?: string | number | null;
   setTransactionId?: (id: string | number) => void;
+
+  userData?: any;
+  setUserData: (data: object) => void;
 }

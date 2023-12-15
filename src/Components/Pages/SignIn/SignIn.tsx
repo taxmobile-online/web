@@ -4,6 +4,7 @@ import Typography from "Components/Atoms/Typography";
 import Input from "Components/Atoms/Input/Input";
 import Button from "Components/Atoms/Button";
 import { Link } from "react-router-dom";
+import SignInForm from "Components/Organisms/Forms/SignInForm";
 
 // Type defination
 interface Props {}
@@ -17,15 +18,16 @@ const SignIn: React.FC<Props> = () => {
         <Left>
           <Typography as="h2" className="h-2 mt-40" text="Sign in" />
           <Typography as="p" className="p-1 mb-30" text="Welcome back!" />
-          <Input label="Email" />
+          {/* <Input label="Email" />
           <Input label="Password" type="password" />
           <Button
             className="btn btn-primary btn-full btn-bg-color-2 mt-40"
             value="Sign in"
-          />
+          /> */}
+          <SignInForm />
           <Typography as="p" className="p-1 mt-40 text-center">
             <>
-              Not a member? <Button> Sign up</Button>
+              Not a member? <Link to="/#sub-option">Sign up</Link>
             </>
           </Typography>
           <div className="text-center mt-20">
