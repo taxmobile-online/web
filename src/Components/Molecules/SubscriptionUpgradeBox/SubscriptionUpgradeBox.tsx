@@ -20,7 +20,7 @@ const SubscriptionUpgradeBox: React.FC<Props> = ({ size }) => {
 
         <SubscriptionRange>10-30</SubscriptionRange>
       </Flex>
-      <Link to="#" className="l-4 flex-row">
+      <Link to="/billing" className="l-4 flex-row">
         Upgrade subscription plan
         <ArrowRight />
       </Link>

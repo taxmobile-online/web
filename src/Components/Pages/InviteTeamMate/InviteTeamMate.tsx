@@ -2,14 +2,11 @@ import React from "react";
 
 import { Body, Content, Nav, Wrapper } from "./style";
 
-import { Link } from "react-router-dom";
 import Logo from "Components/Atoms/Logo";
-import { Flex } from "Styles/layouts/Flex";
-import Button from "Components/Atoms/Button";
 import { Center } from "Styles/layouts/Center";
 import Typography from "Components/Atoms/Typography";
 import { SubscriptionUpgradeBox } from "Components/Molecules/SubscriptionUpgradeBox";
-import { AppTagInput } from "Components/Atoms/Input";
+import InviteTeamMembersForm from "Components/Organisms/Forms/InviteTeamMembersForm";
 
 // Type defination
 interface Props {}
@@ -36,18 +33,7 @@ const InviteTeamMate: React.FC<Props> = () => {
 
             <SubscriptionUpgradeBox />
 
-            <AppTagInput
-              label="Email Addresses"
-              bottomLabel="Add members by email"
-            />
-
-            <Flex $gap="3rem" className="mt-70" $flexRowAiCenter>
-              <Button
-                className="btn btn-primary btn-bg-color-2"
-                value="Invite and continue"
-              />
-              <Link to="/sign-in">Skip</Link>
-            </Flex>
+            <InviteTeamMembersForm />
           </Content>
         </Body>
       </Center>

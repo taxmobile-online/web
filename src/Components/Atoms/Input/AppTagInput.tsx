@@ -6,6 +6,8 @@ import { TagInput } from "react-simple-tagged-input";
 interface Props {
   label?: string;
   bottomLabel?: string;
+  onChange?: any;
+  errorMessage?: string;
 }
 
 // Component
@@ -14,14 +16,15 @@ const AppTagInput: React.FC<Props> = (props) => {
   const [, setSelected] = useState([]);
 
   // Props
-  const { label, bottomLabel } = props;
+  const { label, bottomLabel, onChange, errorMessage } = props;
 
   // Data to display
   return (
     <Wrapper>
       {label && <label className="input-label">{label}</label>}
       <TagInput
-        onInputChange={setSelected}
+        editOnRemove
+        onInputChange={onChange || setSelected}
         placeholder="Enter email and press enter"
         style={{
           borderRadius: "1.2rem",
@@ -32,15 +35,20 @@ const AppTagInput: React.FC<Props> = (props) => {
         }}
         tagStyle={{
           fontSize: "1.3rem",
-          borderRadius: "7.2rem",
+          borderRadius: ".8rem",
           border: "1px solid var(--color-2)",
           backgroundColor: "transparent",
-          padding: ".7rem 1.5rem",
+          padding: ".2rem .2rem .2rem 1rem",
         }}
         tagRemoveButton={{
-          buttonStyle: { padding: ".5rem", borderRadius: "3rem" },
+          buttonStyle: { padding: ".5rem", marginLeft: ".5rem" },
         }}
       />
+      {errorMessage && (
+        <span className="input-error-message" style={{ color: "#e22335" }}>
+          {errorMessage}
+        </span>
+      )}
       {bottomLabel && <span className="input-bottom-label">{bottomLabel}</span>}
     </Wrapper>
   );

@@ -4,8 +4,7 @@ import { DashboardTemplate } from "Components/Templates/DashboardTemplate";
 import { Card } from "Components/Organisms/Card";
 import { UserProfile } from "Components/Molecules/UserProfile";
 import { ProfileInfoTemplate } from "Components/Templates/ProfileInfoTemplate";
-import { Input } from "Components/Atoms/Input";
-import Button from "Components/Atoms/Button";
+import AdminProfileForm from "Components/Organisms/Forms/AdminProfileForm";
 
 // Type defination
 interface Props {}
@@ -28,15 +27,7 @@ const AdminProfileSetting: React.FC<Props> = () => {
           </Card>
           <Card title="Personal info" className="with-border" tittleLight>
             <FormWrapper>
-              <Input label="Full Name" />
-              <Input label="Email" />
-              <Input label="Phone Number" />
-
-              <Button
-                className="btn btn-primary btn-bg-color-2"
-                value="Save changes"
-                disabled
-              />
+              <AdminProfileForm />
             </FormWrapper>
           </Card>
         </>

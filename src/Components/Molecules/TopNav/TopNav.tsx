@@ -38,7 +38,7 @@ const TopNav: React.FC<Props> = (props) => {
   const { type, pageTitle } = props;
 
   // Store
-  const { setUserData } = useAuthStore();
+  const { setUserData, userData } = useAuthStore();
 
   // Ref
   const dropdownRef = useRef<any>();
@@ -56,6 +56,12 @@ const TopNav: React.FC<Props> = (props) => {
   const handleNotificationShow = () => {
     setShowNotification(!showNotification);
   };
+
+  // Component local variables
+  const settingsUrl =
+    userData.accountType === "PERSONAL"
+      ? "/individual-user-settings"
+      : "/admin-account-settings";
 
   // Data to display
   return (
@@ -110,10 +116,7 @@ const TopNav: React.FC<Props> = (props) => {
                     transition={{ ease: "easeOut", duration: 0.4 }}
                     ref={dropdownRef}
                   >
-                    <Link
-                      to="/individual-user-settings"
-                      className="dropdown-item"
-                    >
+                    <Link to={settingsUrl} className="dropdown-item">
                       <Setting />
                       Settings
                     </Link>

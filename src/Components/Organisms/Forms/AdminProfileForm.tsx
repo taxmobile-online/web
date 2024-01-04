@@ -3,29 +3,20 @@ import * as yup from "yup";
 import { Form } from "formik";
 
 import { FormField, InputField } from "Components/Molecules/FormFields";
-import { SignUpFormProps, ValuesProps } from "./types";
+import { SignUpFormProps } from "./types";
 import useAuthStore from "Store/auth.store";
 import useApi from "Utils/Hooks/useApi";
-import endpoints from "Services/endpoints";
 import Button from "Components/Atoms/Button";
 import { useNavigate } from "react-router-dom";
 
-const initialValues = {
-  password: "",
-  passwordConfirmation: "",
-};
-
 const validationSchema = yup.object().shape({
-  password: yup.string().required().min(1).label("Password"),
-  //   passwordConfirmation: yup.string().required().min(1).label("Password"),
-  passwordConfirmation: yup
-    .string()
-    .required("Please retype your password.")
-    .oneOf([yup.ref("password")], "Passwords must match"),
+  fullName: yup.string().required().min(1).label("Full Name"),
+  email: yup.string().required().min(1).label("Email"),
+  phoneNumber: yup.string().required().min(1).label("Phone Number"),
 });
 
 // Component
-const ResetPasswordForm: React.FC<SignUpFormProps> = () => {
+const AdminProfileForm: React.FC<SignUpFormProps> = () => {
   // States
   const [reRender, setReRender] = useState(false);
 
@@ -33,20 +24,20 @@ const ResetPasswordForm: React.FC<SignUpFormProps> = () => {
   let { data, loading, error, sendRequest } = useApi<any>();
   const navigate = useNavigate();
 
+  //   Store
+  const { userData } = useAuthStore();
+
   // Methods
   const handleSubmit = async (values: any) => {
-    const idString =
-      "84617DD95F887E8BB8940E64BDE088-42ccfe8e52aed47cb.c-C7487967C93F4ADE5070D14848EB2D:1702683779685-4e9ae1c709650f8-C8678BC5509D573AFB49719D6B64D9";
     const requestData = {
       password: values.password,
-      idString,
     };
 
     console.log({ requestData });
 
     // Send to backend
-    await sendRequest("POST", endpoints.resetPasswordApi, requestData);
-    setReRender(!reRender);
+    // await sendRequest("POST", endpoints.resetPasswordApi, requestData);
+    // setReRender(!reRender);
 
     // if (!error) actions.resetForm();
   };
@@ -64,6 +55,13 @@ const ResetPasswordForm: React.FC<SignUpFormProps> = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [reRender]);
 
+  //   Variables
+  const initialValues = {
+    fullName: userData.fullName || "",
+    email: userData.email || "",
+    phoneNumber: userData.phoneNumber || "",
+  };
+
   // Data to display
   return (
     <FormField
@@ -72,12 +70,9 @@ const ResetPasswordForm: React.FC<SignUpFormProps> = () => {
       onSubmit={handleSubmit}
     >
       <Form>
-        <InputField label="Password" name="password" type="password" />
-        <InputField
-          label="Confirm Password"
-          name="passwordConfirmation"
-          type="password"
-        />
+        <InputField label="Full Name" name="fullName" />
+        <InputField label="Email" name="email" />
+        <InputField label="Phone Number" name="phoneNumber" />
 
         <Button
           disabled={loading}
@@ -90,4 +85,4 @@ const ResetPasswordForm: React.FC<SignUpFormProps> = () => {
   );
 };
 
-export default ResetPasswordForm;
+export default AdminProfileForm;

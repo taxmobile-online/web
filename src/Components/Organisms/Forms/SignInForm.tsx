@@ -3,7 +3,7 @@ import * as yup from "yup";
 import { Form } from "formik";
 
 import { FormField, InputField } from "Components/Molecules/FormFields";
-import { SignUpFormProps, ValuesProps } from "./types";
+import { SignUpFormProps } from "./types";
 import useAuthStore from "Store/auth.store";
 import useApi from "Utils/Hooks/useApi";
 import endpoints from "Services/endpoints";
@@ -56,6 +56,7 @@ const SignInForm: React.FC<SignUpFormProps> = () => {
       httpService.setToken(userData.token);
       setUserData(userData);
       if (userData?.userId.includes("PERSONAL")) navigate("/library");
+      else navigate("/invite-team");
     }
     // if (data?.status && data?.status === "SUCCESS") navigate("/sign-in");
   };

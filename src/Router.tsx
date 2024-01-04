@@ -58,7 +58,14 @@ const Router = createBrowserRouter(
           </ProtectedRoute>
         }
       />
-      <Route path="admin-account-settings" element={<AdminSettings />} />
+      <Route
+        path="admin-account-settings"
+        element={
+          <ProtectedRoute>
+            <AdminSettings />
+          </ProtectedRoute>
+        }
+      />
       <Route path="admin-profile-settings" element={<AdminProfileSetting />} />
       <Route
         path="library"

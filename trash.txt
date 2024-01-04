@@ -9,3 +9,13 @@
     "userId": "PERSONAL_C4AAA930FC42E41C8DEFAC151CEB6AAA",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJQRVJTT05BTF9DNEFBQTkzMEZDNDJFNDFDOERFRkFDMTUxQ0VCNkFBQSIsInVzZXJuYW1lIjoibGlicmFyeSttZTE5OTZAdGF4bW9iaWxlLm9ubGluZSIsImlhdCI6MTcwMjMxNjIyNiwiZXhwIjoxNzAyNDAyNjI2fQ.LwJyW7iQf2wiqorrTBbiqq59c4PT5wzyv6_usVr5E1Q"
 }
+
+{
+    "accountType": "STAFF",
+    "organizationId": "CORPERATE_4E9AE1C709650F842CCFE8E52AED47CB",
+    "userId": "STAFF_319171B9FD3730EBBB60068CE09B7421",
+    "createdAt": "2023-12-16T00:58:32.501Z",
+    "isSubscriber": false,
+    "email": "wvwwe@gmail.com",
+    "isVerified": false
+}

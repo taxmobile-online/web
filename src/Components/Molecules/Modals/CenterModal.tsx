@@ -23,6 +23,7 @@ interface Props {
   messageType?: "ok" | "warning";
   headerType?: "warning" | "text";
   headerTitle?: string;
+  disabledYesBtn?: boolean;
 }
 
 // Component
@@ -39,6 +40,7 @@ const CenterModal: React.FC<Props> = (props) => {
     yesText = "Delete",
     title = "Delete 1 member",
     subTitle = "Are you sure you want to delete “michael john” ?",
+    disabledYesBtn,
   } = props;
 
   // Data to display
@@ -92,6 +94,7 @@ const CenterModal: React.FC<Props> = (props) => {
               messageType === "warning" ? "btn-bg-color-18" : ""
             }`}
             value={yesText}
+            disabled={disabledYesBtn}
           />
         </CenterModalFooter>
       </CenterModalWrapper>

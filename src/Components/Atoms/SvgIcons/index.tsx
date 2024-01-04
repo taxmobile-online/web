@@ -33,3 +33,4 @@ export { ReactComponent as LensIcon } from "./svgs/lens-icon.svg";
 export { ReactComponent as CaretLeftIcon } from "./svgs/caret-left-icon.svg";
 export { ReactComponent as CaretRightIcon } from "./svgs/caret-right-icon.svg";
 export { ReactComponent as TableMenuIcon } from "./svgs/table-actions-icon.svg";
+export { ReactComponent as NotificationCheckIcon } from "./svgs/notification-check-icon.svg";

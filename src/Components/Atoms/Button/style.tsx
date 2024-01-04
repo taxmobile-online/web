@@ -1,5 +1,5 @@
-import { FlexRowAiCenter, GridCenter } from "Styles/Abstract/Mixins";
 import styled from "styled-components";
+import { FlexRowAiCenter, GridCenter } from "Styles/Abstract/Mixins";
 
 const Button = styled.button`
   background-color: transparent;
@@ -47,6 +47,11 @@ export const ButtonStyle = styled(Button)`
       font-size: 1.6rem;
       font-weight: 400;
       padding: 1.2rem 4rem;
+
+      &:disabled {
+        background: var(--color-6);
+        color: var(--color-12);
+      }
     }
 
     &-settings {
