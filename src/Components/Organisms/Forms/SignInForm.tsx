@@ -53,6 +53,8 @@ const SignInForm: React.FC<SignUpFormProps> = () => {
 
     if (data?.status && data?.status === "SUCCESS") {
       const userData = data?.data;
+
+      console.log({ userData });
       httpService.setToken(userData.token);
       setUserData(userData);
       if (userData?.userId.includes("PERSONAL")) navigate("/library");

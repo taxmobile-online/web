@@ -1,8 +1,6 @@
 import React from "react";
 import { Content, Left, Right, Wrapper } from "./style";
 import Typography from "Components/Atoms/Typography";
-import Input from "Components/Atoms/Input/Input";
-import Button from "Components/Atoms/Button";
 import { Link } from "react-router-dom";
 import SignInForm from "Components/Organisms/Forms/SignInForm";
 

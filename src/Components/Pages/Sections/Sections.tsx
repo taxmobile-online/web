@@ -26,11 +26,6 @@ const Sections: React.FC<Props> = () => {
     <>
       <AdminDashboardChildTemplate pageTile="Sections">
         <>
-          {/* <EmptyCard
-            message="No sections yet!"
-            btnLabel="Create section"
-            handleAction={() => setShowModal(true)}
-          /> */}
           <SectionCardsWrapper>
             <SectionCardContainer>
               <Button

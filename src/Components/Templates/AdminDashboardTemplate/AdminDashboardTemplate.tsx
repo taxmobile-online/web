@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 
 import { BodyWrapper, SideNavWrapper, Wrapper } from "./style";
+
 import { SideNav } from "Components/Molecules/SideNav";
 
 // Type defination

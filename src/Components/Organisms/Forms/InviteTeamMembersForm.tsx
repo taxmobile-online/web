@@ -89,7 +89,7 @@ const InviteTeamMembersForm: React.FC<SignUpFormProps> = () => {
           value="Invite and continue"
           disabled={loading}
         />
-        <Link to="/library">Skip</Link>
+        <Link to="/admin">Skip</Link>
       </Flex>
     </>
   );
