@@ -24,7 +24,7 @@ const validationSchema = yup.object().shape({
 });
 
 // Component
-const ResetPasswordForm: React.FC<SignUpFormProps> = () => {
+const CreateSectionForm: React.FC<SignUpFormProps> = () => {
   // States
   const [reRender, setReRender] = useState(false);
 
@@ -87,4 +87,4 @@ const ResetPasswordForm: React.FC<SignUpFormProps> = () => {
   );
 };
 
-export default ResetPasswordForm;
+export default CreateSectionForm;
