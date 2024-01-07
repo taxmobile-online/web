@@ -19,6 +19,7 @@ const CreateSectionModal: React.FC<Props> = ({ showModal, setShowModal }) => {
           handleCloseModal={setShowModal}
           headerType="text"
           headerTitle="Create a new section"
+          yesText="Create"
         >
             <Input label="Section name" />
         </CenterModal>

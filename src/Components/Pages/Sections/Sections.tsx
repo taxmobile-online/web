@@ -24,11 +24,16 @@ const Sections: React.FC<Props> = () => {
   const [showSubSection, setShowSubSection] = useState<boolean>(false);
 
   // Hooks
+  let { loading: deleting, sendRequest: deleteSectionRequest } = useApi<any>();
   let { data, loading, error, sendRequest } = useApi<any>();
+
   data = data?.data || [];
 
   // Methods
-  const 
+  const handleSectionDelete = async (id: any) => {
+    await deleteSectionRequest("DELETE", `/section/${id}`);
+  };
+  const handleSectionEdit = async () => {};
 
   // Effects
   useEffect(() => {
@@ -77,8 +82,21 @@ const Sections: React.FC<Props> = () => {
                           text={section?.sectionName}
                         />
                         <div className="actions">
-                          <Button className="b-1" value="Edit" />
-                          <Button className="b-2" value="Delete" />
+                          <Button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                            }}
+                            className="b-1"
+                            value="Edit"
+                          />
+                          <Button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleSectionDelete(section.sectionId);
+                            }}
+                            className="b-2"
+                            value="Delete"
+                          />
                         </div>
                       </Button>
 
