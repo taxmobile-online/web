@@ -2,13 +2,13 @@ import React, { useEffect } from "react";
 
 import { PlansWrapper as Wrapper, PlanCard, SubscriberQuantity } from "./style";
 
-import Loader from "./Loader";
 import { formatNumber } from "Utils/Helper";
 import Typography from "Components/Atoms/Typography";
 
 import { PlansProps } from "./types";
 import PaymentButton from "./PaymentButton";
 import useApi from "Utils/Hooks/useApi";
+import { PlansLoader } from "Components/Molecules/Loaders";
 
 // Component
 const Plans: React.FC<PlansProps> = (props) => {
@@ -31,8 +31,8 @@ const Plans: React.FC<PlansProps> = (props) => {
   if (loading) {
     return (
       <Wrapper>
-        <Loader />
-        <Loader />
+        <PlansLoader />
+        <PlansLoader />
       </Wrapper>
     );
   }

@@ -80,7 +80,14 @@ const Router = createBrowserRouter(
         <Route path="" element={<AdminDashboard />} />
         <Route path="payment-success" element={<PaymentSuccess />} />
         <Route path="e-library" element={<ELibrary />} />
-        <Route path="sections" element={<Sections />} />
+        <Route
+          path="sections"
+          element={
+            <ProtectedRoute>
+              <Sections />
+            </ProtectedRoute>
+          }
+        />
         <Route path="subscribers" element={<Subscribers />} />
         <Route path="coupon-code" element={<CouponCode />} />
         <Route path="pricing" element={<PricingTemplate />}>

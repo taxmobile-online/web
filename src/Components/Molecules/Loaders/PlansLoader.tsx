@@ -7,7 +7,7 @@ import { LoaderStyle } from "./style";
 interface Props {}
 
 // Component
-const Loader: React.FC<Props> = () => {
+const PlansLoader: React.FC<Props> = () => {
   // Data to display
   return (
     <LoaderStyle>
@@ -22,4 +22,4 @@ const Loader: React.FC<Props> = () => {
   );
 };
 
-export default Loader;
+export default PlansLoader;

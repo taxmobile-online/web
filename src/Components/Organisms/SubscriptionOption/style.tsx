@@ -39,19 +39,3 @@ export const SubscriberQuantity = styled.div`
   padding: 1.3rem 3rem;
   margin-top: 2.5rem;
 `;
-
-export const LoaderStyle = styled.div`
-  border: 0.1rem solid var(--color-6);
-  border-radius: 1.2rem;
-  width: 36rem;
-  padding: 4rem 1.5rem;
-  background-color: #f8f8f8;
-  text-align: center;
-
-  .heading {
-    border-radius: 1rem;
-  }
-  .button {
-    border-radius: 3.8rem;
-  }
-`;

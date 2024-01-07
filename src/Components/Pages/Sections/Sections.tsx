@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AdminDashboardChildTemplate } from "Components/Templates/AdminDashboardTemplate";
-// import { EmptyCard } from "Components/Molecules/EmptyCard";
+import { EmptyCard } from "Components/Molecules/EmptyCard";
 import {
   Card,
   SectionCardContainer,
@@ -11,6 +11,8 @@ import {
 import Button from "Components/Atoms/Button";
 import Typography from "Components/Atoms/Typography";
 import { CreateSectionModal } from "Components/Molecules/Modals";
+import useApi from "Utils/Hooks/useApi";
+import { SectionLoader } from "Components/Molecules/Loaders";
 
 // Type defination
 interface Props {}
@@ -21,117 +23,103 @@ const Sections: React.FC<Props> = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [showSubSection, setShowSubSection] = useState<boolean>(false);
 
+  // Hooks
+  let { data, loading, error, sendRequest } = useApi<any>();
+  data = data?.data || [];
+
+  // Methods
+  const 
+
+  // Effects
+  useEffect(() => {
+    sendRequest("GET", "/section");
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   // Data to display
+
   return (
     <>
       <AdminDashboardChildTemplate pageTile="Sections">
         <>
-          {/* <EmptyCard
-            message="No sections yet!"
-            btnLabel="Create section"
-            handleAction={() => setShowModal(true)}
-          /> */}
-          <SectionCardsWrapper>
-            <SectionCardContainer>
-              <Button
-                className="btn btn-primary btn-md mb-10 ml-auto display-block"
-                value="Create section"
-                onClick={() => setShowModal(true)}
-              />
+          {loading ? (
+            <SectionCardsWrapper>
               <SectionCards>
-                <Card>
-                  <Button
-                    className="top"
-                    onClick={() => setShowSubSection(!showSubSection)}
-                  >
-                    <Typography as="h5" className="h-32" text="Section one" />
-                    <div className="actions">
-                      <Button className="b-1" value="Edit" />
-                      <Button className="b-2" value="Delete" />
-                    </div>
-                  </Button>
-
-                  {showSubSection && (
-                    <div className="bottom">
-                      <SubSection>
-                        <Typography
-                          as="h5"
-                          className="h-33"
-                          text="Sub section one"
-                        />
-                      </SubSection>
-                      <SubSection>
-                        <Typography
-                          as="h5"
-                          className="h-33"
-                          text="Sub section one"
-                        />
-                      </SubSection>
-                      <SubSection>
-                        <Typography
-                          as="h5"
-                          className="h-33"
-                          text="Sub section one"
-                        />
-                      </SubSection>
-                      <SubSection>
-                        <Typography
-                          as="h5"
-                          className="h-33"
-                          text="Sub section one"
-                        />
-                      </SubSection>
-                    </div>
-                  )}
-                </Card>
-                <Card>
-                  <Button
-                    className="top"
-                    onClick={() => setShowSubSection(!showSubSection)}
-                  >
-                    <Typography as="h5" className="h-32" text="Section one" />
-                    <div className="actions">
-                      <Button className="b-1" value="Edit" />
-                      <Button className="b-2" value="Delete" />
-                    </div>
-                  </Button>
-
-                  {showSubSection && (
-                    <div className="bottom">
-                      <SubSection>
-                        <Typography
-                          as="h5"
-                          className="h-33"
-                          text="Sub section one"
-                        />
-                      </SubSection>
-                      <SubSection>
-                        <Typography
-                          as="h5"
-                          className="h-33"
-                          text="Sub section one"
-                        />
-                      </SubSection>
-                      <SubSection>
-                        <Typography
-                          as="h5"
-                          className="h-33"
-                          text="Sub section one"
-                        />
-                      </SubSection>
-                      <SubSection>
-                        <Typography
-                          as="h5"
-                          className="h-33"
-                          text="Sub section one"
-                        />
-                      </SubSection>
-                    </div>
-                  )}
-                </Card>
+                <SectionLoader />
+                <SectionLoader />
+                <SectionLoader />
               </SectionCards>
-            </SectionCardContainer>
-          </SectionCardsWrapper>
+            </SectionCardsWrapper>
+          ) : !data.length ? (
+            <EmptyCard
+              message="No sections yet!"
+              btnLabel="Create section"
+              handleAction={() => setShowModal(true)}
+            />
+          ) : (
+            <SectionCardsWrapper>
+              <SectionCardContainer>
+                <Button
+                  className="btn btn-primary btn-md mb-10 ml-auto display-block"
+                  value="Create section"
+                  onClick={() => setShowModal(true)}
+                />
+                <SectionCards>
+                  {data.map((section: any) => (
+                    <Card key={section.sectionId}>
+                      <Button
+                        className="top"
+                        onClick={() => setShowSubSection(!showSubSection)}
+                      >
+                        <Typography
+                          as="h5"
+                          className="h-32"
+                          text={section?.sectionName}
+                        />
+                        <div className="actions">
+                          <Button className="b-1" value="Edit" />
+                          <Button className="b-2" value="Delete" />
+                        </div>
+                      </Button>
+
+                      {showSubSection && (
+                        <div className="bottom">
+                          <SubSection>
+                            <Typography
+                              as="h5"
+                              className="h-33"
+                              text="Sub section one"
+                            />
+                          </SubSection>
+                          <SubSection>
+                            <Typography
+                              as="h5"
+                              className="h-33"
+                              text="Sub section one"
+                            />
+                          </SubSection>
+                          <SubSection>
+                            <Typography
+                              as="h5"
+                              className="h-33"
+                              text="Sub section one"
+                            />
+                          </SubSection>
+                          <SubSection>
+                            <Typography
+                              as="h5"
+                              className="h-33"
+                              text="Sub section one"
+                            />
+                          </SubSection>
+                        </div>
+                      )}
+                    </Card>
+                  ))}
+                </SectionCards>
+              </SectionCardContainer>
+            </SectionCardsWrapper>
+          )}
         </>
       </AdminDashboardChildTemplate>
 

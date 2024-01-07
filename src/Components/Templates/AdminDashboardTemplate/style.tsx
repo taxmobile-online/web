@@ -11,8 +11,6 @@ export const SideNavWrapper = styled.nav`
   flex-shrink: 0;
 
   height: 100vh;
-  background-color: blue;
-  /* position: fixed; */
 `;
 
 export const BodyWrapper = styled.main`

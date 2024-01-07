@@ -11,6 +11,10 @@ export const Wrapper = styled.nav`
   width: 100%;
   padding: 2rem 1rem 2rem 3rem;
   overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const LinksWrapper = styled.nav`
