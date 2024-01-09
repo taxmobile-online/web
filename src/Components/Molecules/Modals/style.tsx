@@ -5,7 +5,6 @@ import {
 } from "Styles/Abstract/Mixins";
 import { motion } from "framer-motion";
 
-
 // Right modal
 export const RightModalWrapper = styled(motion.div)`
   position: fixed;
@@ -87,11 +86,16 @@ export const CenterModalTop = styled.div`
 `;
 
 export const CenterModalBody = styled.div`
-  padding-block: 3rem;
+  padding-top: 3rem;
   /* text-align: center; */
 `;
 
 export const CenterModalFooter = styled.div`
+  ${FlexJcEndAiCenter}
+  gap: 3.5rem;
+  padding-bottom: 3rem;
+`;
+export const CenterPassedFooter = styled.div`
   ${FlexJcEndAiCenter}
   gap: 3.5rem;
 `;

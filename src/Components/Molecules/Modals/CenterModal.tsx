@@ -10,24 +10,10 @@ import {
 import { CloseCircle, Warning } from "Components/Atoms/SvgIcons";
 import Button from "Components/Atoms/Button";
 import Typography from "Components/Atoms/Typography";
-
-// Type defination
-interface Props {
-  handleCloseModal: () => void;
-  handleYes?: () => void;
-  handleNo?: () => void;
-  yesText?: string;
-  title?: string;
-  subTitle?: string;
-  children?: JSX.Element;
-  messageType?: "ok" | "warning";
-  headerType?: "warning" | "text";
-  headerTitle?: string;
-  disabledYesBtn?: boolean;
-}
+import { ModalsProps } from "./types";
 
 // Component
-const CenterModal: React.FC<Props> = (props) => {
+const CenterModal: React.FC<ModalsProps> = (props) => {
   // Props
   const {
     children,
@@ -40,6 +26,7 @@ const CenterModal: React.FC<Props> = (props) => {
     yesText = "Delete",
     title = "Delete 1 member",
     subTitle = "Are you sure you want to delete “michael john” ?",
+    hideFooter,
     disabledYesBtn,
   } = props;
 
@@ -80,23 +67,25 @@ const CenterModal: React.FC<Props> = (props) => {
           )}
         </CenterModalBody>
 
-        <CenterModalFooter>
-          <Button
-            className={`${
-              messageType === "warning" ? "btn-color-18" : "btn-color-primary"
-            }`}
-            onClick={handleNo || handleCloseModal}
-            value="Cancel"
-          />
-          <Button
-            onClick={handleYes}
-            className={`btn btn-primary btn-md ${
-              messageType === "warning" ? "btn-bg-color-18" : ""
-            }`}
-            value={yesText}
-            disabled={disabledYesBtn}
-          />
-        </CenterModalFooter>
+        {!hideFooter && (
+          <CenterModalFooter>
+            <Button
+              className={`${
+                messageType === "warning" ? "btn-color-18" : "btn-color-primary"
+              }`}
+              onClick={handleNo || handleCloseModal}
+              value="Cancel"
+            />
+            <Button
+              onClick={handleYes}
+              className={`btn btn-primary btn-md ${
+                messageType === "warning" ? "btn-bg-color-18" : ""
+              }`}
+              value={yesText}
+              disabled={disabledYesBtn}
+            />
+          </CenterModalFooter>
+        )}
       </CenterModalWrapper>
     </Overlay>
   );

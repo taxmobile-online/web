@@ -37,7 +37,7 @@ const Router = createBrowserRouter(
         element={<Home />}
         errorElement={<h2>Can't find this page</h2>}
       />
-      <Route path="/verify-email" element={<VerifyEmail />} />
+      <Route path="verify-email" element={<VerifyEmail />} />
       <Route path="reset-password" element={<ResetPassword />} />
       <Route
         path="invite-team"
@@ -75,6 +75,7 @@ const Router = createBrowserRouter(
           </ProtectedRoute>
         }
       />
+      <Route path="admin/sign-in" element={<SignIn isAdmin />} />
 
       <Route path="admin" element={<AdminDashboardTemplate />}>
         <Route path="" element={<AdminDashboard />} />

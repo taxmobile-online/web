@@ -19,3 +19,14 @@
     "email": "wvwwe@gmail.com",
     "isVerified": false
 }
+
+{
+    "phoneNumber": "+2347063352013",
+    "createdAt": "2023-10-18T08:51:52.091Z",
+    "email": "ganiu.sy@gmail.com",
+    "fullName": "Ganiu Akowanu",
+    "isVerified": true,
+    "adminId": "REGULAR_808F696AFB79512353D467FA5FB2BE28",
+    "adminType": "REGULAR",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJSRUdVTEFSXzgwOEY2OTZBRkI3OTUxMjM1M0Q0NjdGQTVGQjJCRTI4IiwiYWRtaW5uYW1lIjoiZ2FuaXUuc3lAZ21haWwuY29tIiwiaWF0IjoxNzA0ODIxMjYyLCJleHAiOjE3MDQ5MDc2NjJ9.iyQm-pxOi7Hdg2yzk-HH9gJ7ElS0yKzSfBFOBgYVTfY"
+}

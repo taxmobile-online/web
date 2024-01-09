@@ -35,9 +35,14 @@ const Sections: React.FC<Props> = () => {
   };
   const handleSectionEdit = async () => {};
 
+  const getSections = async () => {
+    await sendRequest("GET", "/section");
+    setShowModal(false);
+  };
+
   // Effects
   useEffect(() => {
-    sendRequest("GET", "/section");
+    getSections();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -70,7 +75,7 @@ const Sections: React.FC<Props> = () => {
                   onClick={() => setShowModal(true)}
                 />
                 <SectionCards>
-                  {data.map((section: any) => (
+                  {[...data].reverse().map((section: any) => (
                     <Card key={section.sectionId}>
                       <Button
                         className="top"
@@ -144,6 +149,7 @@ const Sections: React.FC<Props> = () => {
       <CreateSectionModal
         showModal={showModal}
         setShowModal={() => setShowModal(false)}
+        handleFormSuccess={getSections}
       />
     </>
   );

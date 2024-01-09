@@ -21,7 +21,7 @@ const validationSchema = yup.object().shape({
 });
 
 // Component
-const SignInForm: React.FC<SignUpFormProps> = () => {
+const SignInForm: React.FC<SignUpFormProps> = (props) => {
   // States
   const [reRender, setReRender] = useState(false);
 
@@ -32,6 +32,12 @@ const SignInForm: React.FC<SignUpFormProps> = () => {
   let { data, loading, error, sendRequest } = useApi<any>();
   const navigate = useNavigate();
 
+  // Props
+  const { isAdmin } = props;
+
+  // Variables
+  const endpoint = isAdmin ? endpoints.adminSignInApi : endpoints.signInApi;
+
   // Methods
   const handleSubmit = async (values: any) => {
     const requestData = {
@@ -39,10 +45,8 @@ const SignInForm: React.FC<SignUpFormProps> = () => {
       password: values.password,
     };
 
-    console.log({ requestData });
-
     // Send to backend
-    await sendRequest("POST", endpoints.signInApi, requestData);
+    await sendRequest("POST", endpoint, requestData);
     setReRender(!reRender);
 
     // if (!error) actions.resetForm();
@@ -57,8 +61,13 @@ const SignInForm: React.FC<SignUpFormProps> = () => {
       console.log({ userData });
       httpService.setToken(userData.token);
       setUserData(userData);
-      if (userData?.userId.includes("PERSONAL")) navigate("/library");
-      else navigate("/invite-team");
+
+      if (isAdmin) {
+        navigate("/admin");
+      } else {
+        if (userData?.userId?.includes("PERSONAL")) navigate("/library");
+        else navigate("/invite-team");
+      }
     }
     // if (data?.status && data?.status === "SUCCESS") navigate("/sign-in");
   };

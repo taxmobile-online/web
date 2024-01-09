@@ -2,13 +2,15 @@ import React from "react";
 import { Content, Left, Right, Wrapper } from "./style";
 import Typography from "Components/Atoms/Typography";
 import { Link } from "react-router-dom";
-import SignInForm from "Components/Organisms/Forms/SignInForm";
+import { SignInForm } from "Components/Organisms/Forms";
 
 // Type defination
-interface Props {}
+interface Props {
+  isAdmin?: boolean;
+}
 
 // Component
-const SignIn: React.FC<Props> = () => {
+const SignIn: React.FC<Props> = ({ isAdmin }) => {
   // Data to display
   return (
     <Wrapper>
@@ -22,7 +24,7 @@ const SignIn: React.FC<Props> = () => {
             className="btn btn-primary btn-full btn-bg-color-2 mt-40"
             value="Sign in"
           /> */}
-          <SignInForm />
+          <SignInForm isAdmin={isAdmin} />
           <Typography as="p" className="p-1 mt-40 text-center">
             <>
               Not a member? <Link to="/#sub-option">Sign up</Link>

@@ -1,16 +1,23 @@
 import React from "react";
 import { AnimatePresence } from "framer-motion";
 import CenterModal from "./CenterModal";
-import { Input } from "Components/Atoms/Input";
+import { CreateSectionForm } from "Components/Organisms/Forms";
+import { CenterPassedFooter } from "./style";
+import Button from "Components/Atoms/Button";
 
 // Type defination
 interface Props {
   showModal: boolean;
   setShowModal: () => void;
+  handleFormSuccess?: () => void;
 }
 
 // Component
-const CreateSectionModal: React.FC<Props> = ({ showModal, setShowModal }) => {
+const CreateSectionModal: React.FC<Props> = ({
+  showModal,
+  setShowModal,
+  handleFormSuccess,
+}) => {
   // Data to display
   return (
     <AnimatePresence>
@@ -19,9 +26,22 @@ const CreateSectionModal: React.FC<Props> = ({ showModal, setShowModal }) => {
           handleCloseModal={setShowModal}
           headerType="text"
           headerTitle="Create a new section"
-          yesText="Create"
+          hideFooter
         >
-            <Input label="Section name" />
+          <CreateSectionForm handleAfterFormSubmit={handleFormSuccess}>
+            <CenterPassedFooter>
+              <Button
+                className={"btn-color-primary"}
+                onClick={setShowModal}
+                value="Cancel"
+              />
+              <Button
+                type="submit"
+                className={"btn btn-primary btn-md"}
+                value="Create"
+              />
+            </CenterPassedFooter>
+          </CreateSectionForm>
         </CenterModal>
       )}
     </AnimatePresence>
