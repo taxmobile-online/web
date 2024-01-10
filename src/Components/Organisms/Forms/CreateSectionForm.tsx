@@ -7,7 +7,6 @@ import { SignUpFormProps } from "./types";
 import useApi from "Utils/Hooks/useApi";
 import endpoints from "Services/endpoints";
 import Button from "Components/Atoms/Button";
-import { useNavigate } from "react-router-dom";
 
 const initialValues = {
   sectionName: "",
@@ -24,7 +23,6 @@ const CreateSectionForm: React.FC<SignUpFormProps> = (props) => {
 
   // Hooks
   let { data, loading, sendRequest } = useApi<any>();
-  const navigate = useNavigate();
 
   // Props
   const { children, handleAfterFormSubmit } = props;
