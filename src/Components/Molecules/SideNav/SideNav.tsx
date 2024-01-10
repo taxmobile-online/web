@@ -28,6 +28,10 @@ const SideNav: React.FC<Props> = () => {
           <PriceIcon />
           <span>Sections</span>
         </Link>
+        <Link to="/admin/sub-sections" className="l l-5">
+          <CouponIcon />
+          <span>Sub sections</span>
+        </Link>
         <Link to="/admin/e-library" className="l l-5">
           <LibraryIcon />
           <span>E-library</span>

@@ -28,6 +28,7 @@ import { PricingSetup } from "Components/Pages/PricingSetup";
 import { PricingTemplate } from "Components/Templates/PricingTemplate";
 import { CouponCode } from "Components/Pages/CouponCode";
 import { ProtectedRoute } from "Components/Atoms/ProtectedRoute";
+import { SubSections } from "Components/Pages/SubSections";
 
 const Router = createBrowserRouter(
   createRoutesFromElements(
@@ -86,6 +87,14 @@ const Router = createBrowserRouter(
           element={
             <ProtectedRoute>
               <Sections />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="sub-sections"
+          element={
+            <ProtectedRoute>
+              <SubSections />
             </ProtectedRoute>
           }
         />

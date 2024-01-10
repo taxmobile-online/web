@@ -19,9 +19,7 @@ const SectionCards: React.FC<SectionCardsProps> = (props) => {
         {isLoading ? (
           <Wrapper>
             <SectionCardsWrapper>
-              <SectionLoader />
-              <SectionLoader />
-              <SectionLoader />
+              <SectionLoader length={2} />
             </SectionCardsWrapper>
           </Wrapper>
         ) : !sections.length || error ? (

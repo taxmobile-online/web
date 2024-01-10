@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { AdminDashboardChildTemplate } from "Components/Templates/AdminDashboardTemplate";
 
 import { CreateSectionModal } from "Components/Molecules/Modals";
-import { SectionCards } from "Components/Organisms/SectionCards";
-import { AdminDashboardChildTemplate } from "Components/Templates/AdminDashboardTemplate";
 import useApi from "Utils/Hooks/useApi";
+import { SectionCards } from "Components/Organisms/SectionCards";
 
 // Type defination
 interface Props {}
 
 // Component
-const Sections: React.FC<Props> = () => {
+const SubSections: React.FC<Props> = () => {
   // States
   const [showModal, setShowModal] = useState<boolean>(false);
 
@@ -54,4 +54,4 @@ const Sections: React.FC<Props> = () => {
   );
 };
 
-export default Sections;
+export default SubSections;
