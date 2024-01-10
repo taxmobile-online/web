@@ -18,7 +18,7 @@ export const FaSpinnerStyle = styled(motion.div)`
     color: var(--color-2);
   }
 `;
-export const SpinnerStyle = styled(motion.div)`
+export const SpinnerStyle = styled.div`
   width: 2rem;
   height: 2rem;
   border-radius: 50%;

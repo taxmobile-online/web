@@ -17,7 +17,7 @@ export const SectionCardsWrapper = styled.div`
   padding: 3rem;
 `;
 
-export const Card = styled.div`
+export const CardStyle = styled.div`
   box-shadow: var(--shadow-1);
   padding: 1.8rem;
   /* border: 1px solid var(--color-6); */

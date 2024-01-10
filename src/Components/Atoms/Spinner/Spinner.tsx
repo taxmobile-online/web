@@ -1,12 +1,9 @@
-import React from "react";
+import React, { AllHTMLAttributes } from "react";
 import { SpinnerStyle } from "./style";
 
-interface Props {}
-const Spinner: React.FC<Props> = () => {
-  return (
-    <SpinnerStyle>
-    </SpinnerStyle>
-  );
+interface Props extends AllHTMLAttributes<HTMLDivElement> {}
+const Spinner: React.FC<Props> = (props) => {
+  return <SpinnerStyle {...props}></SpinnerStyle>;
 };
 
 export default Spinner;
