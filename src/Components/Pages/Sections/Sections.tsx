@@ -101,9 +101,10 @@ const Sections: React.FC<Props> = () => {
                               handleSectionDelete(section.sectionId);
                             }}
                             className="b-2"
-                            value={deleting ? "Deleting..." : "Delete"}
                             disabled={deleting}
-                          />
+                          >
+                            {deleting ? <Spinner /> : "Delete"}
+                          </Button>
                         </div>
                       </Button>
 
