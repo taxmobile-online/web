@@ -95,7 +95,7 @@ export const CenterModalFooter = styled.div`
   gap: 3.5rem;
   padding-bottom: 3rem;
 `;
-export const CenterPassedFooter = styled.div`
+export const PassedFooter = styled.div`
   ${FlexJcEndAiCenter}
   gap: 3.5rem;
 `;

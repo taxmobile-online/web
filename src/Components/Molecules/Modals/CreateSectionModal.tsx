@@ -1,9 +1,11 @@
 import React from "react";
 import { AnimatePresence } from "framer-motion";
+
+import { PassedFooter } from "./style";
+
 import CenterModal from "./CenterModal";
-import { CreateSectionForm } from "Components/Organisms/Forms";
-import { CenterPassedFooter } from "./style";
 import Button from "Components/Atoms/Button";
+import { CreateSectionForm } from "Components/Organisms/Forms";
 
 // Type defination
 interface Props {
@@ -29,7 +31,7 @@ const CreateSectionModal: React.FC<Props> = ({
           hideFooter
         >
           <CreateSectionForm handleAfterFormSubmit={handleFormSuccess}>
-            <CenterPassedFooter>
+            <PassedFooter>
               <Button
                 className={"btn-color-primary"}
                 onClick={setShowModal}
@@ -40,7 +42,7 @@ const CreateSectionModal: React.FC<Props> = ({
                 className={"btn btn-primary btn-md"}
                 value="Create"
               />
-            </CenterPassedFooter>
+            </PassedFooter>
           </CreateSectionForm>
         </CenterModal>
       )}

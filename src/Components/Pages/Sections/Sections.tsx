@@ -13,7 +13,7 @@ import Typography from "Components/Atoms/Typography";
 import { CreateSectionModal } from "Components/Molecules/Modals";
 import useApi from "Utils/Hooks/useApi";
 import { SectionLoader } from "Components/Molecules/Loaders";
-import { FaSpinner, Spinner } from "Components/Atoms/Spinner";
+import { Spinner } from "Components/Atoms/Spinner";
 
 // Type defination
 interface Props {}
@@ -76,8 +76,6 @@ const Sections: React.FC<Props> = () => {
                   onClick={() => setShowModal(true)}
                 />
                 <SectionCards>
-                  <Spinner />
-                  <FaSpinner/>
                   {[...data].reverse().map((section: any) => (
                     <Card key={section.sectionId}>
                       <Button
@@ -103,7 +101,8 @@ const Sections: React.FC<Props> = () => {
                               handleSectionDelete(section.sectionId);
                             }}
                             className="b-2"
-                            value="Delete"
+                            value={deleting ? "Deleting..." : "Delete"}
+                            disabled={deleting}
                           />
                         </div>
                       </Button>

@@ -22,7 +22,7 @@ export const SpinnerStyle = styled(motion.div)`
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  border: 0.1rem solid #f1f1f1;
+  border: 0.1rem solid var(--color-23);
   border-left-color: var(--color-primary);
 
   animation: ${Rotate} 0.8s infinite;
