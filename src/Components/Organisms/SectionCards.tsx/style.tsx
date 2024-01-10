@@ -20,7 +20,6 @@ export const SectionCardsWrapper = styled.div`
 export const CardStyle = styled.div`
   box-shadow: var(--shadow-1);
   padding: 1.8rem;
-  /* border: 1px solid var(--color-6); */
   border-radius: 0.6rem;
   .top {
     ${FlexRowJcBetweenAiCenter}

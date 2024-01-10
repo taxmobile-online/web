@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CardStyle, SubSection, Wrapper } from "./style";
+import { CardStyle, SubSection } from "./style";
 import Button from "Components/Atoms/Button";
 import Typography from "Components/Atoms/Typography";
 import useApi from "Utils/Hooks/useApi";
@@ -17,6 +17,7 @@ const Card: React.FC<Props> = ({ data: section, handleFormSuccess }) => {
   const [showSubSection, setShowSubSection] = useState<boolean>(false);
 
   // Hooks
+  let { loading: editing, sendRequest: editSectionRequest } = useApi<any>();
   let { loading: deleting, sendRequest: deleteSectionRequest } = useApi<any>();
 
   // Methods
@@ -24,7 +25,11 @@ const Card: React.FC<Props> = ({ data: section, handleFormSuccess }) => {
     await deleteSectionRequest("DELETE", `/section/${id}`);
     await handleFormSuccess!();
   };
-  const handleSectionEdit = async () => {};
+  const handleSectionEdit = async (id: any) => {
+    await editSectionRequest("PUT", `/section/${id}`);
+    await handleFormSuccess!();
+  };
+
   // Data to display
   return (
     <CardStyle>
@@ -37,10 +42,17 @@ const Card: React.FC<Props> = ({ data: section, handleFormSuccess }) => {
           <Button
             onClick={(e) => {
               e.stopPropagation();
+              handleSectionEdit(section.sectionId);
             }}
             className="b-1"
-            value="Edit"
-          />
+            disabled={editing}
+          >
+            {editing ? (
+              <Spinner style={{ width: "1.5rem", height: "1.5rem" }} />
+            ) : (
+              "Edit"
+            )}
+          </Button>
           <Button
             onClick={(e) => {
               e.stopPropagation();
