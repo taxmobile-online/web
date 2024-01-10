@@ -19,7 +19,7 @@ interface Props {
 // Component
 const UserProfile: React.FC<Props> = (props) => {
   // Props
-  const { role, name, type } = props;
+  const { role, type } = props;
 
   // Hooks
   const navigator = useNavigate()

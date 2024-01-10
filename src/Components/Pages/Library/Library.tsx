@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Card } from "Components/Organisms/Card";
 import { DashboardTemplate } from "Components/Templates/DashboardTemplate";
 import { LibraryDropdown } from "Components/Organisms/LibraryDropdown";
-import { CenterModal } from "Components/Molecules/Modals";
-import { AnimatePresence } from "framer-motion";
 
 // Type defination
 interface Props {}

@@ -18,10 +18,10 @@ const validationSchema = yup.object().shape({
 // Component
 const AdminProfileForm: React.FC<SignUpFormProps> = () => {
   // States
-  const [reRender, setReRender] = useState(false);
+  const [reRender] = useState(false);
 
   // Hooks
-  let { data, loading, error, sendRequest } = useApi<any>();
+  let { data, loading, error } = useApi<any>();
   const navigate = useNavigate();
 
   //   Store
