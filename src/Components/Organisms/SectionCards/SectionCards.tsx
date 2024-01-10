@@ -10,8 +10,14 @@ import { EmptyCard } from "Components/Molecules/EmptyCard";
 const SectionCards: React.FC<SectionCardsProps> = (props) => {
   // Props
 
-  const { handleShowModal, sections, isLoading, error, handleFormSuccess } =
-    props;
+  const {
+    handleShowModal,
+    sections,
+    isLoading,
+    error,
+    handleFormSuccess,
+    isSub,
+  } = props;
   // Data to display
   return (
     <Wrapper>
@@ -39,9 +45,10 @@ const SectionCards: React.FC<SectionCardsProps> = (props) => {
             <SectionCardsWrapper>
               {[...sections].reverse().map((section: any) => (
                 <Card
-                  key={section.sectionId}
+                  key={section.sectionId || section.subSectionId}
                   data={section}
                   handleFormSuccess={handleFormSuccess}
+                  isSub={isSub}
                 />
               ))}
             </SectionCardsWrapper>

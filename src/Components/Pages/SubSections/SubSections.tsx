@@ -20,7 +20,7 @@ const SubSections: React.FC<Props> = () => {
 
   // Methods
   const getSections = async () => {
-    await sendRequest("GET", "/section");
+    await sendRequest("GET", "/section/sub");
     setShowModal(false);
   };
 
@@ -34,13 +34,14 @@ const SubSections: React.FC<Props> = () => {
 
   return (
     <>
-      <AdminDashboardChildTemplate pageTile="Sections">
+      <AdminDashboardChildTemplate pageTile="Sub Sections">
         <SectionCards
           isLoading={loading}
           sections={data}
           error={error}
           handleShowModal={() => setShowModal(true)}
           handleFormSuccess={getSections}
+          isSub
         />
       </AdminDashboardChildTemplate>
 

@@ -9,10 +9,11 @@ import { Spinner } from "Components/Atoms/Spinner";
 interface Props {
   data?: any;
   handleFormSuccess?: () => void;
+  isSub?: boolean;
 }
 
 // Component
-const Card: React.FC<Props> = ({ data: section, handleFormSuccess }) => {
+const Card: React.FC<Props> = ({ data: section, handleFormSuccess, isSub }) => {
   // States
   const [showSubSection, setShowSubSection] = useState<boolean>(false);
 
@@ -22,11 +23,19 @@ const Card: React.FC<Props> = ({ data: section, handleFormSuccess }) => {
 
   // Methods
   const handleSectionDelete = async (id: any) => {
-    await deleteSectionRequest("DELETE", `/section/${id}`);
+    if (isSub) {
+      await deleteSectionRequest("DELETE", `/section/sub/${id}`);
+    } else {
+      await deleteSectionRequest("DELETE", `/section/${id}`);
+    }
     await handleFormSuccess!();
   };
   const handleSectionEdit = async (id: any) => {
-    await editSectionRequest("PUT", `/section/${id}`);
+    if (isSub) {
+      await editSectionRequest("PUT", `/section/sub/${id}`);
+    } else {
+      await editSectionRequest("PUT", `/section/${id}`);
+    }
     await handleFormSuccess!();
   };
 
@@ -37,12 +46,16 @@ const Card: React.FC<Props> = ({ data: section, handleFormSuccess }) => {
         className="top"
         onClick={() => setShowSubSection(!showSubSection)}
       >
-        <Typography as="h5" className="h-32" text={section?.sectionName} />
+        <Typography
+          as="h5"
+          className="h-32"
+          text={section?.sectionName || section?.subSectionName}
+        />
         <div className="actions">
           <Button
             onClick={(e) => {
               e.stopPropagation();
-              handleSectionEdit(section.sectionId);
+              handleSectionEdit(section.sectionId || section.subSectionId);
             }}
             className="b-1"
             disabled={editing}
@@ -56,7 +69,7 @@ const Card: React.FC<Props> = ({ data: section, handleFormSuccess }) => {
           <Button
             onClick={(e) => {
               e.stopPropagation();
-              handleSectionDelete(section.sectionId);
+              handleSectionDelete(section.sectionId || section.subSectionId);
             }}
             className="b-2"
             disabled={deleting}
@@ -70,7 +83,7 @@ const Card: React.FC<Props> = ({ data: section, handleFormSuccess }) => {
         </div>
       </Button>
 
-      {showSubSection && (
+      {showSubSection && !isSub && (
         <div className="bottom">
           <SubSection>
             <Typography as="h5" className="h-33" text="Sub section one" />
