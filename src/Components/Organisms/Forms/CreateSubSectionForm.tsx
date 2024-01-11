@@ -60,6 +60,7 @@ const CreateSubSectionForm: React.FC<SignUpFormProps> = (props) => {
     >
       <Form>
         <InputField label="Section Name" name="sectionName" />
+        <InputField label="Section Name" name="sectionName" />
 
         {children ? (
           children

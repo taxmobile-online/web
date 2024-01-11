@@ -7,6 +7,7 @@ import CenterModal from "./CenterModal";
 import Button from "Components/Atoms/Button";
 import { CreateSectionForm } from "Components/Organisms/Forms";
 import { Spinner } from "Components/Atoms/Spinner";
+import CreateSubSectionForm from "Components/Organisms/Forms/CreateSubSectionForm";
 
 // Type defination
 interface Props {
@@ -20,21 +21,25 @@ interface Props {
 }
 
 // Component
-const CreateSubSectionModal: React.FC<Props> = ({
-  showModal,
-  setShowModal,
-  handleFormSuccess,
-  isLoading,
-  formDependentApi,
-}) => {
+const CreateSubSectionModal: React.FC<Props> = (props) => {
+  // Props
+  const {
+    showModal,
+    setShowModal,
+    handleFormSuccess,
+    isLoading,
+    formDependentApi,
+    formDependentData,
+    formDependentDataLoading,
+  } = props;
+
   // Effect
   useEffect(
     () => {
-      formDependentApi!();
+      if (showModal) formDependentApi!();
     },
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
+    [showModal]
   );
   // Data to display
   return (
@@ -46,22 +51,30 @@ const CreateSubSectionModal: React.FC<Props> = ({
           headerTitle="Create a new sub section"
           hideFooter
         >
-          <CreateSectionForm handleAfterFormSubmit={handleFormSuccess}>
-            <PassedFooter>
-              <Button
-                className={"btn-color-primary"}
-                onClick={setShowModal}
-                value="Cancel"
-              />
-              <Button type="submit" className={"btn btn-primary btn-md"}>
-                {isLoading ? (
-                  <Spinner style={{ width: "1rem", height: "1rem" }} />
-                ) : (
-                  "Create"
-                )}
-              </Button>
-            </PassedFooter>
-          </CreateSectionForm>
+          <>
+            {formDependentDataLoading ? (
+              <div style={{ paddingBlock: "7rem" }}>
+                <Spinner style={{ marginInline: "auto" }} />
+              </div>
+            ) : (
+              <CreateSubSectionForm handleAfterFormSubmit={handleFormSuccess}>
+                <PassedFooter>
+                  <Button
+                    className={"btn-color-primary"}
+                    onClick={setShowModal}
+                    value="Cancel"
+                  />
+                  <Button type="submit" className={"btn btn-primary btn-md"}>
+                    {isLoading ? (
+                      <Spinner style={{ width: "1rem", height: "1rem" }} />
+                    ) : (
+                      "Create"
+                    )}
+                  </Button>
+                </PassedFooter>
+              </CreateSubSectionForm>
+            )}
+          </>
         </CenterModal>
       )}
     </AnimatePresence>

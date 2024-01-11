@@ -61,8 +61,8 @@ const SubSections: React.FC<Props> = () => {
         setShowModal={() => setShowModal(false)}
         handleFormSuccess={getSubSections}
         isLoading={loading}
-        formDependentApi={() => getSections()}
-        formDependentData={sections}
+        formDependentApi={async () => await getSections()}
+        formDependentData={sections?.data || []}
         formDependentDataLoading={loadingSections}
       />
     </>
