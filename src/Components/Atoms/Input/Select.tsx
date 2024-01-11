@@ -1,31 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import { InputWrapper, Wrapper } from "./style";
-import { EyeSlash, EyeUnSlash } from "../SvgIcons";
-import { InputProps } from "./types";
+import { SelectProps } from "./types";
 
 // Component
-const Select: React.FC<InputProps> = (props) => {
-  // States
-  const [showPass, setShowPass] = useState<boolean>(false);
-
+const Select: React.FC<SelectProps> = (props) => {
   // Props
   const {
     label,
     name,
-    type = "text",
     errorMessage,
     labelClass = "input-label",
     inputClass = "input-ele",
     wrapperClass = "normal",
     bottomLabel,
     noMargin,
+    options,
     ...otherProps
   } = props;
-
-  // Method
-  const handlePasswordState = () => {
-    setShowPass(!showPass);
-  };
 
   // Data to display
   return (
@@ -36,23 +27,18 @@ const Select: React.FC<InputProps> = (props) => {
         </label>
       )}
       <InputWrapper className={wrapperClass}>
-        <input
-          type={showPass ? "text" : type}
+        <select
           name={name}
+          id={name}
           className={`input ${inputClass ? inputClass : ""}`}
           {...otherProps}
-        />
-        {type === "password" && !showPass ? (
-          <EyeSlash
-            onClick={handlePasswordState}
-            style={{ cursor: "pointer" }}
-          />
-        ) : type === "password" && showPass ? (
-          <EyeUnSlash
-            onClick={handlePasswordState}
-            style={{ cursor: "pointer" }}
-          />
-        ) : null}
+        >
+          {options.map((option: any) => (
+            <option key={option.id} value={option.id || option.value}>
+              {option.name || option.value}
+            </option>
+          ))}
+        </select>
       </InputWrapper>
 
       {errorMessage && (

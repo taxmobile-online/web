@@ -7,6 +7,7 @@ import { SignUpFormProps } from "./types";
 import useApi from "Utils/Hooks/useApi";
 import endpoints from "Services/endpoints";
 import Button from "Components/Atoms/Button";
+import { Select } from "Components/Atoms/Input";
 
 const initialValues = {
   sectionName: "",
@@ -59,7 +60,7 @@ const CreateSubSectionForm: React.FC<SignUpFormProps> = (props) => {
       onSubmit={handleSubmit}
     >
       <Form>
-        <InputField label="Section Name" name="sectionName" />
+        <Select label="Select section" name="sectionName" options={[{}]} />
         <InputField label="Section Name" name="sectionName" />
 
         {children ? (
