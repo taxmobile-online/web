@@ -1,6 +1,7 @@
 import React from "react";
-import { Select } from "Components/Atoms/Input";
 import { useField } from "formik";
+
+import { Select } from "Components/Atoms/Input";
 import { SelectFieldProps } from "./types";
 
 // Component
