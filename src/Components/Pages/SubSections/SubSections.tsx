@@ -19,7 +19,6 @@ const SubSections: React.FC<Props> = () => {
   let {
     data: sections,
     loading: loadingSections,
-    error: sectionsError,
     sendRequest: sendSectionRequest,
   } = useApi<any>();
 

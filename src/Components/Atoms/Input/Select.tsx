@@ -15,6 +15,7 @@ const Select: React.FC<SelectProps> = (props) => {
     bottomLabel,
     noMargin,
     options,
+    placeholder,
     ...otherProps
   } = props;
 
@@ -33,7 +34,9 @@ const Select: React.FC<SelectProps> = (props) => {
           className={`input ${inputClass ? inputClass : ""}`}
           {...otherProps}
         >
-          {options.map((option: any) => (
+          <option value="">{placeholder ? placeholder : "Select"}</option>
+
+          {options?.map((option: any) => (
             <option key={option.id} value={option.id || option.value}>
               {option.name || option.value}
             </option>

@@ -18,5 +18,5 @@ export interface SelectProps extends InputHTMLAttributes<HTMLSelectElement> {
   noMargin?: boolean;
   errorMessage?: any;
 
-  options: object[];
+  options?: object[];
 }

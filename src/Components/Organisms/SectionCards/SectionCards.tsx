@@ -38,7 +38,7 @@ const SectionCards: React.FC<SectionCardsProps> = (props) => {
           <>
             <Button
               className="btn btn-primary btn-md mb-10 ml-auto display-block"
-              value="Create section"
+              value={isSub ? "Create sub section" : "Create section"}
               onClick={handleShowModal}
               disabled={isLoading}
             />

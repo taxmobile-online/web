@@ -12,3 +12,12 @@ export interface InputFieldProps
   label?: any;
   type?: string;
 }
+
+export interface SelectFieldProps
+  extends React.HTMLAttributes<HTMLSelectElement> {
+  name?: any;
+  value?: any;
+  label?: any;
+  type?: string;
+  options?: Array<any>;
+}

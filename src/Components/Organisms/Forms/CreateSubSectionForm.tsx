@@ -2,19 +2,24 @@ import React, { useEffect, useState } from "react";
 import * as yup from "yup";
 import { Form } from "formik";
 
-import { FormField, InputField } from "Components/Molecules/FormFields";
+import {
+  FormField,
+  InputField,
+  SelectField,
+} from "Components/Molecules/FormFields";
 import { SignUpFormProps } from "./types";
 import useApi from "Utils/Hooks/useApi";
 import endpoints from "Services/endpoints";
 import Button from "Components/Atoms/Button";
-import { Select } from "Components/Atoms/Input";
 
 const initialValues = {
-  sectionName: "",
+  sectionId: "",
+  subSectionName: "",
 };
 
 const validationSchema = yup.object().shape({
-  sectionName: yup.string().required().min(1).label("Section Name"),
+  sectionId: yup.string().required().min(1).label("Section Id"),
+  subSectionName: yup.string().required().min(1).label("Sub section Name"),
 });
 
 // Component
@@ -26,7 +31,7 @@ const CreateSubSectionForm: React.FC<SignUpFormProps> = (props) => {
   let { data, loading, sendRequest } = useApi<any>();
 
   // Props
-  const { children, handleAfterFormSubmit } = props;
+  const { children, handleAfterFormSubmit, options } = props;
 
   // Methods
   const handleSubmit = async (values: any) => {
@@ -35,7 +40,7 @@ const CreateSubSectionForm: React.FC<SignUpFormProps> = (props) => {
     };
 
     // Send to backend
-    await sendRequest("POST", endpoints.createSectionEndpoint, requestData);
+    await sendRequest("POST", endpoints.createSubSectionEndpoint, requestData);
     setReRender(!reRender);
   };
 
@@ -60,8 +65,12 @@ const CreateSubSectionForm: React.FC<SignUpFormProps> = (props) => {
       onSubmit={handleSubmit}
     >
       <Form>
-        <Select label="Select section" name="sectionName" options={[{}]} />
-        <InputField label="Section Name" name="sectionName" />
+        <SelectField
+          label="Select section"
+          name="sectionId"
+          options={options || []}
+        />
+        <InputField label="Section Name" name="subSectionName" />
 
         {children ? (
           children

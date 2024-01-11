@@ -5,9 +5,9 @@ import { PassedFooter } from "./style";
 
 import CenterModal from "./CenterModal";
 import Button from "Components/Atoms/Button";
-import { CreateSectionForm } from "Components/Organisms/Forms";
 import { Spinner } from "Components/Atoms/Spinner";
 import CreateSubSectionForm from "Components/Organisms/Forms/CreateSubSectionForm";
+import { formatForSelectInput } from "Utils/Helper";
 
 // Type defination
 interface Props {
@@ -57,7 +57,14 @@ const CreateSubSectionModal: React.FC<Props> = (props) => {
                 <Spinner style={{ marginInline: "auto" }} />
               </div>
             ) : (
-              <CreateSubSectionForm handleAfterFormSubmit={handleFormSuccess}>
+              <CreateSubSectionForm
+                options={formatForSelectInput(
+                  formDependentData,
+                  "sectionId",
+                  "sectionName"
+                )}
+                handleAfterFormSubmit={handleFormSuccess}
+              >
                 <PassedFooter>
                   <Button
                     className={"btn-color-primary"}

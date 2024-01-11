@@ -28,6 +28,10 @@ export const formatNumber = (number: string | number) => {
   return newNumber.toLocaleString("en-US", {});
 };
 
+export const formatForSelectInput = (data: Array<{}>, key: any, name: any) => {
+  return data.map((d: any) => ({ id: d[key], name: d[name] }));
+};
+
 // // Example usage:
 // const amount = 1234567.89;
 // const formattedAmount = formatCurrency(amount);
