@@ -9,11 +9,17 @@ import { Spinner } from "Components/Atoms/Spinner";
 interface Props {
   data?: any;
   handleFormSuccess?: () => void;
+  handleShowModal?: () => void;
   isSub?: boolean;
 }
 
 // Component
-const Card: React.FC<Props> = ({ data: section, handleFormSuccess, isSub }) => {
+const Card: React.FC<Props> = ({
+  data: section,
+  handleFormSuccess,
+  isSub,
+  handleShowModal,
+}) => {
   // States
   const [showSubSection, setShowSubSection] = useState<boolean>(false);
 
@@ -31,12 +37,12 @@ const Card: React.FC<Props> = ({ data: section, handleFormSuccess, isSub }) => {
     await handleFormSuccess!();
   };
   const handleSectionEdit = async (id: any) => {
-    if (isSub) {
-      await editSectionRequest("PUT", `/section/sub/${id}`);
-    } else {
-      await editSectionRequest("PUT", `/section/${id}`);
-    }
-    await handleFormSuccess!();
+    // if (isSub) {
+    //   await editSectionRequest("PUT", `/section/sub/${id}`);
+    // } else {
+    //   await editSectionRequest("PUT", `/section/${id}`);
+    // }
+    // await handleFormSuccess!();
   };
 
   // Data to display
@@ -55,6 +61,7 @@ const Card: React.FC<Props> = ({ data: section, handleFormSuccess, isSub }) => {
           <Button
             onClick={(e) => {
               e.stopPropagation();
+              handleShowModal!();
               handleSectionEdit(section.sectionId || section.subSectionId);
             }}
             className="b-1"

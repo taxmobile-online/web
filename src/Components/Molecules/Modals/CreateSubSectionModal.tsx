@@ -3,11 +3,12 @@ import { AnimatePresence } from "framer-motion";
 
 import { PassedFooter } from "./style";
 
+import { formatForSelectInput } from "Utils/Helper";
+
 import CenterModal from "./CenterModal";
 import Button from "Components/Atoms/Button";
 import { Spinner } from "Components/Atoms/Spinner";
 import CreateSubSectionForm from "Components/Organisms/Forms/CreateSubSectionForm";
-import { formatForSelectInput } from "Utils/Helper";
 
 // Type defination
 interface Props {

@@ -1,10 +1,12 @@
 import React from "react";
-import { SectionCardContainer, SectionCardsWrapper, Wrapper } from "./style";
-import Button from "Components/Atoms/Button";
+
 import { SectionCardsProps } from "./types";
+import { SectionCardContainer, SectionCardsWrapper, Wrapper } from "./style";
+
 import Card from "./Card";
-import { SectionLoader } from "Components/Molecules/Loaders";
+import Button from "Components/Atoms/Button";
 import { EmptyCard } from "Components/Molecules/EmptyCard";
+import { SectionLoader } from "Components/Molecules/Loaders";
 
 // Component
 const SectionCards: React.FC<SectionCardsProps> = (props) => {
@@ -49,6 +51,7 @@ const SectionCards: React.FC<SectionCardsProps> = (props) => {
                   data={section}
                   handleFormSuccess={handleFormSuccess}
                   isSub={isSub}
+                  handleShowModal={handleShowModal}
                 />
               ))}
             </SectionCardsWrapper>
