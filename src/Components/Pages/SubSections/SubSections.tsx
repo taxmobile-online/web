@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { AdminDashboardChildTemplate } from "Components/Templates/AdminDashboardTemplate";
 
-import { CreateSubSectionModal } from "Components/Molecules/Modals";
 import useApi from "Utils/Hooks/useApi";
-import { SectionCards } from "Components/Organisms/SectionCards";
 import endpoints from "Services/endpoints";
+
+import { SectionCards } from "Components/Organisms/SectionCards";
+import { CreateSubSectionModal } from "Components/Molecules/Modals";
+import { AdminDashboardChildTemplate } from "Components/Templates/AdminDashboardTemplate";
 
 // Type defination
 interface Props {}
