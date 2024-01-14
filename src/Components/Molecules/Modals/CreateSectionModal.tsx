@@ -7,6 +7,7 @@ import CenterModal from "./CenterModal";
 import Button from "Components/Atoms/Button";
 import { CreateSectionForm } from "Components/Organisms/Forms";
 import { Spinner } from "Components/Atoms/Spinner";
+import useSectionStore from "Store/sections.store";
 
 // Type defination
 interface Props {
@@ -17,12 +18,13 @@ interface Props {
 }
 
 // Component
-const CreateSectionModal: React.FC<Props> = ({
-  showModal,
-  setShowModal,
-  handleFormSuccess,
-  isLoading,
-}) => {
+const CreateSectionModal: React.FC<Props> = (props) => {
+  // Props
+  const { showModal, setShowModal, handleFormSuccess, isLoading } = props;
+
+  // State
+  const { isEdit } = useSectionStore();
+
   // Data to display
   return (
     <AnimatePresence>
@@ -30,7 +32,7 @@ const CreateSectionModal: React.FC<Props> = ({
         <CenterModal
           handleCloseModal={setShowModal}
           headerType="text"
-          headerTitle="Create a new section"
+          headerTitle={isEdit ? "Edit section" : "Create a new section"}
           hideFooter
         >
           <CreateSectionForm handleAfterFormSubmit={handleFormSuccess}>
@@ -44,7 +46,7 @@ const CreateSectionModal: React.FC<Props> = ({
                 {isLoading ? (
                   <Spinner style={{ width: "1rem", height: "1rem" }} />
                 ) : (
-                  "Create"
+                  `${isEdit ? "Edit" : "Create"}`
                 )}
               </Button>
             </PassedFooter>

@@ -4,6 +4,7 @@ import { CreateSectionModal } from "Components/Molecules/Modals";
 import { SectionCards } from "Components/Organisms/SectionCards";
 import { AdminDashboardChildTemplate } from "Components/Templates/AdminDashboardTemplate";
 import useApi from "Utils/Hooks/useApi";
+import useSectionStore from "Store/sections.store";
 
 // Type defination
 interface Props {}
@@ -12,6 +13,9 @@ interface Props {}
 const Sections: React.FC<Props> = () => {
   // States
   const [showModal, setShowModal] = useState<boolean>(false);
+
+  // Store
+  const { setIsEdit } = useSectionStore();
 
   // Hooks
   let { data, loading, error, sendRequest } = useApi<any>();
@@ -46,7 +50,10 @@ const Sections: React.FC<Props> = () => {
 
       <CreateSectionModal
         showModal={showModal}
-        setShowModal={() => setShowModal(false)}
+        setShowModal={() => {
+          setIsEdit!(false);
+          setShowModal(false);
+        }}
         handleFormSuccess={getSections}
         isLoading={loading}
       />

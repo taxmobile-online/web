@@ -9,6 +9,7 @@ import CenterModal from "./CenterModal";
 import Button from "Components/Atoms/Button";
 import { Spinner } from "Components/Atoms/Spinner";
 import CreateSubSectionForm from "Components/Organisms/Forms/CreateSubSectionForm";
+import useSectionStore from "Store/sections.store";
 
 // Type defination
 interface Props {
@@ -34,6 +35,9 @@ const CreateSubSectionModal: React.FC<Props> = (props) => {
     formDependentDataLoading,
   } = props;
 
+  // State
+  const { isEdit } = useSectionStore();
+
   // Effect
   useEffect(
     () => {
@@ -49,7 +53,7 @@ const CreateSubSectionModal: React.FC<Props> = (props) => {
         <CenterModal
           handleCloseModal={setShowModal}
           headerType="text"
-          headerTitle="Create a new sub section"
+          headerTitle={isEdit ? "Edit sub section" : "Create a new sub section"}
           hideFooter
         >
           <>

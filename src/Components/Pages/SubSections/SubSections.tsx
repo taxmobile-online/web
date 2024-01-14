@@ -6,6 +6,7 @@ import endpoints from "Services/endpoints";
 import { SectionCards } from "Components/Organisms/SectionCards";
 import { CreateSubSectionModal } from "Components/Molecules/Modals";
 import { AdminDashboardChildTemplate } from "Components/Templates/AdminDashboardTemplate";
+import useSectionStore from "Store/sections.store";
 
 // Type defination
 interface Props {}
@@ -14,6 +15,9 @@ interface Props {}
 const SubSections: React.FC<Props> = () => {
   // States
   const [showModal, setShowModal] = useState<boolean>(false);
+
+  // Store
+  const { setIsEdit } = useSectionStore();
 
   // Hooks
   let { data, loading, error, sendRequest } = useApi<any>();
@@ -58,7 +62,10 @@ const SubSections: React.FC<Props> = () => {
 
       <CreateSubSectionModal
         showModal={showModal}
-        setShowModal={() => setShowModal(false)}
+        setShowModal={() => {
+          setIsEdit!(false);
+          setShowModal(false);
+        }}
         handleFormSuccess={getSubSections}
         isLoading={loading}
         formDependentApi={async () => await getSections()}

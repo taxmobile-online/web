@@ -4,6 +4,7 @@ import Button from "Components/Atoms/Button";
 import Typography from "Components/Atoms/Typography";
 import useApi from "Utils/Hooks/useApi";
 import { Spinner } from "Components/Atoms/Spinner";
+import useSectionStore from "Store/sections.store";
 
 // Type defination
 interface Props {
@@ -23,6 +24,9 @@ const Card: React.FC<Props> = ({
   // States
   const [showSubSection, setShowSubSection] = useState<boolean>(false);
 
+  // Store
+  const { setIsEdit, setSectionToEdit } = useSectionStore();
+
   // Hooks
   let { loading: editing, sendRequest: editSectionRequest } = useApi<any>();
   let { loading: deleting, sendRequest: deleteSectionRequest } = useApi<any>();
@@ -35,14 +39,6 @@ const Card: React.FC<Props> = ({
       await deleteSectionRequest("DELETE", `/section/${id}`);
     }
     await handleFormSuccess!();
-  };
-  const handleSectionEdit = async (id: any) => {
-    // if (isSub) {
-    //   await editSectionRequest("PUT", `/section/sub/${id}`);
-    // } else {
-    //   await editSectionRequest("PUT", `/section/${id}`);
-    // }
-    // await handleFormSuccess!();
   };
 
   // Data to display
@@ -61,8 +57,9 @@ const Card: React.FC<Props> = ({
           <Button
             onClick={(e) => {
               e.stopPropagation();
+              setIsEdit!(true);
+              setSectionToEdit!(section);
               handleShowModal!();
-              handleSectionEdit(section.sectionId || section.subSectionId);
             }}
             className="b-1"
             disabled={editing}

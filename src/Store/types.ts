@@ -19,3 +19,12 @@ export interface AuthStoreProps {
   userData?: any;
   setUserData: (data: object) => void;
 }
+
+// Section store
+export interface SectionsStoreProps {
+  sectionToEdit?: any;
+  setSectionToEdit?: (type: any) => void;
+
+  isEdit?: boolean;
+  setIsEdit?: (type: boolean) => void;
+}

@@ -20,6 +20,7 @@ const SectionCards: React.FC<SectionCardsProps> = (props) => {
     handleFormSuccess,
     isSub,
   } = props;
+  
   // Data to display
   return (
     <Wrapper>

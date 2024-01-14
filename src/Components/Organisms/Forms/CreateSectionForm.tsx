@@ -7,10 +7,8 @@ import { SignUpFormProps } from "./types";
 import useApi from "Utils/Hooks/useApi";
 import endpoints from "Services/endpoints";
 import Button from "Components/Atoms/Button";
-
-const initialValues = {
-  sectionName: "",
-};
+import useSectionStore from "Store/sections.store";
+import { Spinner } from "Components/Atoms/Spinner";
 
 const validationSchema = yup.object().shape({
   sectionName: yup.string().required().min(1).label("Section Name"),
@@ -21,7 +19,16 @@ const CreateSectionForm: React.FC<SignUpFormProps> = (props) => {
   // States
   const [reRender, setReRender] = useState(false);
 
+  // Store
+  const { sectionToEdit, isEdit } = useSectionStore();
+
+  // Varaibles
+  const initialValues = {
+    sectionName: sectionToEdit ? sectionToEdit.sectionName : "",
+  };
+
   // Hooks
+  let { loading: editing, sendRequest: editSectionRequest } = useApi<any>();
   let { data, loading, sendRequest } = useApi<any>();
 
   // Props
@@ -34,7 +41,15 @@ const CreateSectionForm: React.FC<SignUpFormProps> = (props) => {
     };
 
     // Send to backend
-    await sendRequest("POST", endpoints.createSectionEndpoint, requestData);
+    if (isEdit && sectionToEdit.sectionId) {
+      await editSectionRequest(
+        "PUT",
+        `/section/${sectionToEdit.sectionId}`,
+        requestData
+      );
+    } else {
+      await sendRequest("POST", endpoints.createSectionEndpoint, requestData);
+    }
     setReRender(!reRender);
   };
 
@@ -68,8 +83,13 @@ const CreateSectionForm: React.FC<SignUpFormProps> = (props) => {
             disabled={loading}
             type="submit"
             className="btn btn-full btn-primary btn-bg-color-2 mt-35"
-            value={loading ? "Saving..." : "Save"}
-          />
+          >
+            {loading || editing ? (
+              <Spinner style={{ width: "1.5rem", height: "1.5rem" }} />
+            ) : (
+              "Save"
+            )}
+          </Button>
         )}
       </Form>
     </FormField>
