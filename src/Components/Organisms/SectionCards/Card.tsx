@@ -28,7 +28,6 @@ const Card: React.FC<Props> = ({
   const { setIsEdit, setSectionToEdit } = useSectionStore();
 
   // Hooks
-  let { loading: editing, sendRequest: editSectionRequest } = useApi<any>();
   let { loading: deleting, sendRequest: deleteSectionRequest } = useApi<any>();
 
   // Methods
@@ -62,14 +61,8 @@ const Card: React.FC<Props> = ({
               handleShowModal!();
             }}
             className="b-1"
-            disabled={editing}
-          >
-            {editing ? (
-              <Spinner style={{ width: "1.5rem", height: "1.5rem" }} />
-            ) : (
-              "Edit"
-            )}
-          </Button>
+            value={"Edit"}
+          />
           <Button
             onClick={(e) => {
               e.stopPropagation();
