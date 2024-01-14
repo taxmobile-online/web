@@ -55,6 +55,7 @@ const Sections: React.FC<Props> = () => {
         setShowModal={() => {
           setShowModal(false);
           setIsEdit!(false);
+          setSectionToEdit!({});
         }}
         handleFormSuccess={getSections}
         isLoading={loading}

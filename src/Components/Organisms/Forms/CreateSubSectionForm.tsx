@@ -11,11 +11,7 @@ import { SignUpFormProps } from "./types";
 import useApi from "Utils/Hooks/useApi";
 import endpoints from "Services/endpoints";
 import Button from "Components/Atoms/Button";
-
-const initialValues = {
-  sectionId: "",
-  subSectionName: "",
-};
+import useSectionStore from "Store/sections.store";
 
 const validationSchema = yup.object().shape({
   sectionId: yup.string().required().min(1).label("Section Id"),
@@ -26,6 +22,18 @@ const validationSchema = yup.object().shape({
 const CreateSubSectionForm: React.FC<SignUpFormProps> = (props) => {
   // States
   const [reRender, setReRender] = useState(false);
+
+  // Store
+  const { sectionToEdit, isEdit } = useSectionStore();
+
+  // Variables
+  const initialValues = {
+    sectionId: sectionToEdit ? sectionToEdit.section : "",
+    subSectionName: sectionToEdit ? sectionToEdit.subSectionName : "",
+  };
+
+  console.log(sectionToEdit.subSectionId);
+  console.log(sectionToEdit.section);
 
   // Hooks
   let { data, loading, sendRequest } = useApi<any>();

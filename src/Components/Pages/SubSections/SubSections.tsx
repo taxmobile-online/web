@@ -17,7 +17,7 @@ const SubSections: React.FC<Props> = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
 
   // Store
-  const { setIsEdit } = useSectionStore();
+  const { setIsEdit, setSectionToEdit } = useSectionStore();
 
   // Hooks
   let { data, loading, error, sendRequest } = useApi<any>();
@@ -33,6 +33,8 @@ const SubSections: React.FC<Props> = () => {
   const getSubSections = async () => {
     await sendRequest("GET", endpoints.getSubSectionsEndpoint);
     setShowModal(false);
+    setSectionToEdit!({});
+    setIsEdit!(false);
   };
 
   const getSections = async () => {
@@ -63,8 +65,9 @@ const SubSections: React.FC<Props> = () => {
       <CreateSubSectionModal
         showModal={showModal}
         setShowModal={() => {
-          setIsEdit!(false);
           setShowModal(false);
+          setIsEdit!(false);
+          setSectionToEdit!({});
         }}
         handleFormSuccess={getSubSections}
         isLoading={loading}
