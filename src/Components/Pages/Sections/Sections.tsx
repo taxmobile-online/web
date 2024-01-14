@@ -15,7 +15,7 @@ const Sections: React.FC<Props> = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
 
   // Store
-  const { setIsEdit } = useSectionStore();
+  const { setIsEdit, setSectionToEdit } = useSectionStore();
 
   // Hooks
   let { data, loading, error, sendRequest } = useApi<any>();
@@ -26,6 +26,8 @@ const Sections: React.FC<Props> = () => {
   const getSections = async () => {
     await sendRequest("GET", "/section");
     setShowModal(false);
+    setSectionToEdit!({});
+    setIsEdit!(false);
   };
 
   // Effects
@@ -51,8 +53,8 @@ const Sections: React.FC<Props> = () => {
       <CreateSectionModal
         showModal={showModal}
         setShowModal={() => {
-          setIsEdit!(false);
           setShowModal(false);
+          setIsEdit!(false);
         }}
         handleFormSuccess={getSections}
         isLoading={loading}

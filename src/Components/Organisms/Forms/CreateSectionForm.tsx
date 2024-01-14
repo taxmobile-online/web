@@ -28,7 +28,11 @@ const CreateSectionForm: React.FC<SignUpFormProps> = (props) => {
   };
 
   // Hooks
-  let { loading: editing, sendRequest: editSectionRequest } = useApi<any>();
+  let {
+    data: editData,
+    loading: editing,
+    sendRequest: editSectionRequest,
+  } = useApi<any>();
   let { data, loading, sendRequest } = useApi<any>();
 
   // Props
@@ -53,9 +57,15 @@ const CreateSectionForm: React.FC<SignUpFormProps> = (props) => {
     setReRender(!reRender);
   };
 
-  const handleAfterSubmit = async () => {
-    if (data?.status && data?.status === "SUCCESS") {
-      handleAfterFormSubmit!();
+  const handleAfterSubmit = () => {
+    if (isEdit) {
+      if (editData?.status && editData?.status === "SUCCESS") {
+        handleAfterFormSubmit!();
+      }
+    } else {
+      if (data?.status && data?.status === "SUCCESS") {
+        handleAfterFormSubmit!();
+      }
     }
   };
 

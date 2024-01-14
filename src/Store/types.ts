@@ -23,7 +23,7 @@ export interface AuthStoreProps {
 // Section store
 export interface SectionsStoreProps {
   sectionToEdit?: any;
-  setSectionToEdit?: (type: any) => void;
+  setSectionToEdit?: (section: any) => void;
 
   isEdit?: boolean;
   setIsEdit?: (type: boolean) => void;
