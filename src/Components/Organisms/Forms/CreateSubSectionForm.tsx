@@ -9,8 +9,9 @@ import {
 } from "Components/Molecules/FormFields";
 import { SignUpFormProps } from "./types";
 import useApi from "Utils/Hooks/useApi";
+import FormalModalFooter from "./FormModalFooter";
+
 import endpoints from "Services/endpoints";
-import Button from "Components/Atoms/Button";
 import useSectionStore from "Store/sections.store";
 
 const validationSchema = yup.object().shape({
@@ -32,14 +33,16 @@ const CreateSubSectionForm: React.FC<SignUpFormProps> = (props) => {
     subSectionName: sectionToEdit ? sectionToEdit.subSectionName : "",
   };
 
-  console.log(sectionToEdit.subSectionId);
-  console.log(sectionToEdit.section);
-
   // Hooks
   let { data, loading, sendRequest } = useApi<any>();
+  let {
+    data: editData,
+    loading: editing,
+    sendRequest: editSubSectionRequest,
+  } = useApi<any>();
 
   // Props
-  const { children, handleAfterFormSubmit, options } = props;
+  const { handleAfterFormSubmit, options, closeFormModal } = props;
 
   // Methods
   const handleSubmit = async (values: any) => {
@@ -48,13 +51,31 @@ const CreateSubSectionForm: React.FC<SignUpFormProps> = (props) => {
     };
 
     // Send to backend
-    await sendRequest("POST", endpoints.createSubSectionEndpoint, requestData);
+    if (isEdit && sectionToEdit.subSectionId) {
+      await editSubSectionRequest(
+        "PUT",
+        `${endpoints.createSubSectionEndpoint}/${sectionToEdit.subSectionId}`,
+        { subSectionName: values.subSectionName }
+      );
+    } else {
+      await sendRequest(
+        "POST",
+        endpoints.createSubSectionEndpoint,
+        requestData
+      );
+    }
     setReRender(!reRender);
   };
 
   const handleAfterSubmit = async () => {
-    if (data?.status && data?.status === "SUCCESS") {
-      handleAfterFormSubmit!();
+    if (isEdit) {
+      if (editData?.status && editData?.status === "SUCCESS") {
+        handleAfterFormSubmit!();
+      }
+    } else {
+      if (data?.status && data?.status === "SUCCESS") {
+        handleAfterFormSubmit!();
+      }
     }
   };
 
@@ -80,16 +101,27 @@ const CreateSubSectionForm: React.FC<SignUpFormProps> = (props) => {
         />
         <InputField label="Section Name" name="subSectionName" />
 
-        {children ? (
+        {/* {children ? (
           children
         ) : (
           <Button
             disabled={loading}
             type="submit"
             className="btn btn-full btn-primary btn-bg-color-2 mt-35"
-            value={loading ? "Saving..." : "Save"}
-          />
-        )}
+          >
+            {loading || editing ? (
+              <Spinner style={{ width: "1.5rem", height: "1.5rem" }} />
+            ) : (
+              "Save"
+            )}
+          </Button>
+        )} */}
+        <FormalModalFooter
+          isLoading={loading || editing}
+          yesText={isEdit ? "Edit" : "Create"}
+          noText="Cancel"
+          setShowModal={closeFormModal}
+        />
       </Form>
     </FormField>
   );

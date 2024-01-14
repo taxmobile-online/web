@@ -1,12 +1,9 @@
 import React, { useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 
-import { PassedFooter } from "./style";
-
 import { formatForSelectInput } from "Utils/Helper";
 
 import CenterModal from "./CenterModal";
-import Button from "Components/Atoms/Button";
 import { Spinner } from "Components/Atoms/Spinner";
 import CreateSubSectionForm from "Components/Organisms/Forms/CreateSubSectionForm";
 import useSectionStore from "Store/sections.store";
@@ -29,7 +26,6 @@ const CreateSubSectionModal: React.FC<Props> = (props) => {
     showModal,
     setShowModal,
     handleFormSuccess,
-    isLoading,
     formDependentApi,
     formDependentData,
     formDependentDataLoading,
@@ -69,22 +65,8 @@ const CreateSubSectionModal: React.FC<Props> = (props) => {
                   "sectionName"
                 )}
                 handleAfterFormSubmit={handleFormSuccess}
-              >
-                <PassedFooter>
-                  <Button
-                    className={"btn-color-primary"}
-                    onClick={setShowModal}
-                    value="Cancel"
-                  />
-                  <Button type="submit" className={"btn btn-primary btn-md"}>
-                    {isLoading ? (
-                      <Spinner style={{ width: "1rem", height: "1rem" }} />
-                    ) : (
-                      "Create"
-                    )}
-                  </Button>
-                </PassedFooter>
-              </CreateSubSectionForm>
+                closeFormModal={setShowModal}
+              />
             )}
           </>
         </CenterModal>

@@ -1,9 +1,9 @@
 import React from "react";
 
-export interface SignUpFormProps
-  extends React.AllHTMLAttributes<HTMLDivElement> {
+export interface SignUpFormProps extends React.AllHTMLAttributes<HTMLDivElement> {
   isAdmin?: boolean;
   handleAfterFormSubmit?: () => void;
+  closeFormModal?: () => void;
 
   options?: Array<any>;
 }

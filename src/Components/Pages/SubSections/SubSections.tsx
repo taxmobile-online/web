@@ -7,6 +7,7 @@ import { SectionCards } from "Components/Organisms/SectionCards";
 import { CreateSubSectionModal } from "Components/Molecules/Modals";
 import { AdminDashboardChildTemplate } from "Components/Templates/AdminDashboardTemplate";
 import useSectionStore from "Store/sections.store";
+import { wait } from "Utils/Helper";
 
 // Type defination
 interface Props {}
@@ -34,7 +35,7 @@ const SubSections: React.FC<Props> = () => {
     await sendRequest("GET", endpoints.getSubSectionsEndpoint);
     setShowModal(false);
     setSectionToEdit!({});
-    setIsEdit!(false);
+    wait(() => setIsEdit!(false), 700);
   };
 
   const getSections = async () => {
@@ -66,7 +67,7 @@ const SubSections: React.FC<Props> = () => {
         showModal={showModal}
         setShowModal={() => {
           setShowModal(false);
-          setIsEdit!(false);
+          wait(() => setIsEdit!(false), 700);
           setSectionToEdit!({});
         }}
         handleFormSuccess={getSubSections}

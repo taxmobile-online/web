@@ -5,6 +5,7 @@ import { SectionCards } from "Components/Organisms/SectionCards";
 import { AdminDashboardChildTemplate } from "Components/Templates/AdminDashboardTemplate";
 import useApi from "Utils/Hooks/useApi";
 import useSectionStore from "Store/sections.store";
+import { wait } from "Utils/Helper";
 
 // Type defination
 interface Props {}
@@ -27,7 +28,7 @@ const Sections: React.FC<Props> = () => {
     await sendRequest("GET", "/section");
     setShowModal(false);
     setSectionToEdit!({});
-    setIsEdit!(false);
+    wait(() => setIsEdit!(false), 700);
   };
 
   // Effects
@@ -54,7 +55,7 @@ const Sections: React.FC<Props> = () => {
         showModal={showModal}
         setShowModal={() => {
           setShowModal(false);
-          setIsEdit!(false);
+          wait(() => setIsEdit!(false), 700);
           setSectionToEdit!({});
         }}
         handleFormSuccess={getSections}

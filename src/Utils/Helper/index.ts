@@ -32,6 +32,10 @@ export const formatForSelectInput = (data: Array<{}>, key: any, name: any) => {
   return data.map((d: any) => ({ id: d[key], name: d[name] }));
 };
 
+export const wait = (callBack: () => void, time: number) => {
+  setTimeout(() => callBack(), time);
+};
+
 // // Example usage:
 // const amount = 1234567.89;
 // const formattedAmount = formatCurrency(amount);

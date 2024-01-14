@@ -1,12 +1,8 @@
 import React from "react";
 import { AnimatePresence } from "framer-motion";
 
-import { PassedFooter } from "./style";
-
 import CenterModal from "./CenterModal";
-import Button from "Components/Atoms/Button";
 import { CreateSectionForm } from "Components/Organisms/Forms";
-import { Spinner } from "Components/Atoms/Spinner";
 import useSectionStore from "Store/sections.store";
 
 // Type defination
@@ -20,7 +16,7 @@ interface Props {
 // Component
 const CreateSectionModal: React.FC<Props> = (props) => {
   // Props
-  const { showModal, setShowModal, handleFormSuccess, isLoading } = props;
+  const { showModal, setShowModal, handleFormSuccess } = props;
 
   // State
   const { isEdit } = useSectionStore();
@@ -35,22 +31,10 @@ const CreateSectionModal: React.FC<Props> = (props) => {
           headerTitle={isEdit ? "Edit section" : "Create a new section"}
           hideFooter
         >
-          <CreateSectionForm handleAfterFormSubmit={handleFormSuccess}>
-            <PassedFooter>
-              <Button
-                className={"btn-color-primary"}
-                onClick={setShowModal}
-                value="Cancel"
-              />
-              <Button type="submit" className={"btn btn-primary btn-md"}>
-                {isLoading ? (
-                  <Spinner style={{ width: "1rem", height: "1rem" }} />
-                ) : (
-                  `${isEdit ? "Edit" : "Create"}`
-                )}
-              </Button>
-            </PassedFooter>
-          </CreateSectionForm>
+          <CreateSectionForm
+            handleAfterFormSubmit={handleFormSuccess}
+            closeFormModal={setShowModal}
+          />
         </CenterModal>
       )}
     </AnimatePresence>

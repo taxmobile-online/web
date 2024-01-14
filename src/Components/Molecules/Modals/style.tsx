@@ -99,3 +99,7 @@ export const PassedFooter = styled.div`
   ${FlexJcEndAiCenter}
   gap: 3.5rem;
 `;
+export const ModalFooterStyle = styled.div`
+  ${FlexJcEndAiCenter}
+  gap: 3.5rem;
+`;

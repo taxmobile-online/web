@@ -6,9 +6,8 @@ import { FormField, InputField } from "Components/Molecules/FormFields";
 import { SignUpFormProps } from "./types";
 import useApi from "Utils/Hooks/useApi";
 import endpoints from "Services/endpoints";
-import Button from "Components/Atoms/Button";
 import useSectionStore from "Store/sections.store";
-import { Spinner } from "Components/Atoms/Spinner";
+import FormalModalFooter from "./FormModalFooter";
 
 const validationSchema = yup.object().shape({
   sectionName: yup.string().required().min(1).label("Section Name"),
@@ -36,7 +35,7 @@ const CreateSectionForm: React.FC<SignUpFormProps> = (props) => {
   let { data, loading, sendRequest } = useApi<any>();
 
   // Props
-  const { children, handleAfterFormSubmit } = props;
+  const { handleAfterFormSubmit, closeFormModal } = props;
 
   // Methods
   const handleSubmit = async (values: any) => {
@@ -86,7 +85,7 @@ const CreateSectionForm: React.FC<SignUpFormProps> = (props) => {
       <Form>
         <InputField label="Section Name" name="sectionName" />
 
-        {children ? (
+        {/* {children ? (
           children
         ) : (
           <Button
@@ -100,7 +99,14 @@ const CreateSectionForm: React.FC<SignUpFormProps> = (props) => {
               "Save"
             )}
           </Button>
-        )}
+        )} */}
+
+        <FormalModalFooter
+          isLoading={loading || editing}
+          yesText={isEdit ? "Edit" : "Create"}
+          noText="Cancel"
+          setShowModal={closeFormModal}
+        />
       </Form>
     </FormField>
   );
