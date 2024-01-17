@@ -29,7 +29,7 @@ const SignInForm: React.FC<SignUpFormProps> = (props) => {
   const { setUserData } = useAuthStore();
 
   // Hooks
-  let { data, loading, error, sendRequest } = useApi<any>();
+  let { data, loading, sendRequest } = useApi<any>();
   const navigate = useNavigate();
 
   // Props

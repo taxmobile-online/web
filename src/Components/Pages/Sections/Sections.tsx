@@ -3,9 +3,10 @@ import React, { useEffect, useState } from "react";
 import { CreateSectionModal } from "Components/Molecules/Modals";
 import { SectionCards } from "Components/Organisms/SectionCards";
 import { AdminDashboardChildTemplate } from "Components/Templates/AdminDashboardTemplate";
+
+import { wait } from "Utils/Helper";
 import useApi from "Utils/Hooks/useApi";
 import useSectionStore from "Store/sections.store";
-import { wait } from "Utils/Helper";
 
 // Type defination
 interface Props {}
