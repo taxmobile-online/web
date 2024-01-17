@@ -1,4 +1,4 @@
-import { FlexRowAiCenter } from "Styles/Abstract/Mixins";
+import { FlexColumnJcCenterAiCenter, FlexRowAiCenter } from "Styles/Abstract/Mixins";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -127,5 +127,59 @@ export const SelectField = styled.select`
   &:focus {
     border: 1px solid var(--color-17);
     outline: none;
+  }
+`;
+
+// Custome file two
+export const CustomeFileField = styled.div`
+  position: relative;
+  margin-bottom: 2.2rem;
+
+  .input-label {
+    font-size: 1.5rem;
+    color: var(--color-9);
+    display: inline-block;
+    margin-bottom: 0.3rem;
+    text-transform: capitalize;
+  }
+
+  .custom-input-container {
+    ${FlexColumnJcCenterAiCenter};
+
+    padding: 1.7rem 2rem;
+
+    border-radius: 0.4rem;
+    border: 1px dashed var(--color-24);
+    background-color: var(--color-white);
+  }
+
+  .file-name {
+    color: var(--color-60);
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 150%;
+  }
+
+  .file-input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .bottom-label {
+    display: block;
+
+    color: var(--color-1);
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 156.25%;
+
+    margin-top: 1.2rem;
   }
 `;

@@ -15,16 +15,21 @@ import endpoints from "Services/endpoints";
 import useSectionStore from "Store/sections.store";
 import { Spinner } from "Components/Atoms/Spinner";
 import { formatForSelectInput } from "Utils/Helper";
+import { CustomeFile } from "Components/Atoms/Input";
 
 const validationSchema = yup.object().shape({
   section: yup.string().required().min(1).label("Section"),
   subSection: yup.string().required().min(1).label("Sub section"),
+  title: yup.string().required().min(1).label("Sub section"),
+  canBuy: yup.boolean().required().label("Status"),
+  amount: yup.string().required().min(1).label("Amount"),
 });
 
 // Component
 const CreateMaterialForm: React.FC<SignUpFormProps> = (props) => {
   // States
   const [reRender, setReRender] = useState(false);
+  const [file, setFile] = useState<any>("");
 
   // Store
   const { sectionToEdit, isEdit } = useSectionStore();
@@ -33,6 +38,9 @@ const CreateMaterialForm: React.FC<SignUpFormProps> = (props) => {
   const initialValues = {
     section: "",
     subSection: "",
+    title: "",
+    canBuy: false,
+    amount: "",
   };
 
   // Hooks
@@ -56,23 +64,33 @@ const CreateMaterialForm: React.FC<SignUpFormProps> = (props) => {
   const handleSubmit = async (values: any) => {
     const requestData = {
       ...values,
+      description: "",
+      file,
     };
 
-    // Send to backend
-    if (isEdit && sectionToEdit.subSectionId) {
-      await sendRequest(
-        "PUT",
-        `${endpoints.createSubSectionEndpoint}/${sectionToEdit.subSectionId}`,
-        { subSectionName: values.subSectionName }
-      );
-    } else {
-      await sendRequest(
-        "POST",
-        endpoints.createSubSectionEndpoint,
-        requestData
-      );
+    console.log({ requestData });
+
+    let formData = new FormData();
+    for (let key in requestData) {
+      formData.append(key, requestData[key]);
     }
-    setReRender(!reRender);
+    await sendRequest("POST", endpoints.getDocumentEndpoint, formData);
+
+    // Send to backend
+    // if (isEdit && sectionToEdit.subSectionId) {
+    //   await sendRequest(
+    //     "PUT",
+    //     `${endpoints.createSubSectionEndpoint}/${sectionToEdit.subSectionId}`,
+    //     { subSectionName: values.subSectionName }
+    //   );
+    // } else {
+    //   await sendRequest(
+    //     "POST",
+    //     endpoints.createSubSectionEndpoint,
+    //     requestData
+    //   );
+    // }
+    // setReRender(!reRender);
   };
 
   const handleAfterSubmit = async () => {};
@@ -81,6 +99,11 @@ const CreateMaterialForm: React.FC<SignUpFormProps> = (props) => {
     await sendSubSectionRequest("GET", endpoints.getSubSectionsEndpoint);
     await sendSectionRequest("GET", endpoints.getSectionsEndpoint);
     setReRender(!reRender);
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { target } = e;
+    setFile(target?.files![0]);
   };
 
   // Effects
@@ -131,9 +154,30 @@ const CreateMaterialForm: React.FC<SignUpFormProps> = (props) => {
               ) || []
             }
           />
-          <InputField label="Book title" name="bookTitle" />
-          <SelectField label="Status" name="status" options={options || []} />
-          <InputField label="Amount" name="amount" />
+          <InputField label="Book title" name="title" />
+          <SelectField
+            label="Status"
+            name="canBuy"
+            options={
+              formatForSelectInput(
+                [
+                  { name: "Buy Option Available", id: true },
+                  { name: "No Buy Option", id: false },
+                ],
+                "id",
+                "name"
+              ) ||
+              [] ||
+              []
+            }
+          />
+          <CustomeFile
+            handleChange={handleFileChange}
+            label="File"
+            accept=".pdf"
+          />
+
+          <InputField label="Amount (₦)" name="amount" />
 
           {/* {children ? (
           children

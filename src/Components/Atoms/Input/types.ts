@@ -1,4 +1,4 @@
-import { InputHTMLAttributes } from "react";
+import { AllHTMLAttributes, InputHTMLAttributes } from "react";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
@@ -19,4 +19,15 @@ export interface SelectProps extends InputHTMLAttributes<HTMLSelectElement> {
   errorMessage?: any;
 
   options?: object[];
+}
+
+export interface CustomeFileTwoProps extends AllHTMLAttributes<HTMLDivElement> {
+  label?: string;
+  required?: boolean;
+  pattern?: string;
+  accept?: string;
+  name?: string;
+  noBottomLabel?: boolean;
+  wrapperClassName?: string;
+  handleChange: (e: any) => void;
 }
