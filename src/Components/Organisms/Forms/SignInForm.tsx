@@ -53,7 +53,6 @@ const SignInForm: React.FC<SignUpFormProps> = (props) => {
   };
 
   const handleAfterSubmit = () => {
-    console.log({ data, error });
 
     if (data?.status && data?.status === "SUCCESS") {
       const userData = data?.data;

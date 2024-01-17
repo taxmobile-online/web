@@ -29,7 +29,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ children }) => {
   const [reRender, setReRender] = useState(false);
 
   // Hooks
-  let { data, loading, error, sendRequest } = useApi<any>();
+  let { data, loading, sendRequest } = useApi<any>();
   const navigate = useNavigate();
 
   // Store
@@ -48,7 +48,6 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ children }) => {
 
   const handleAfterSubmit = () => {
     // if (!formSubmitted) return;
-    console.log({ data, error });
     if (data?.status && data?.status === "SUCCESS") navigate("/verify-email");
   };
 

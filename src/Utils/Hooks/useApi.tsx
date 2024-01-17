@@ -16,6 +16,7 @@ const useApi = <T,>() => {
     loading: false,
     error: null,
   });
+  
 
   const sendRequest = async (
     method: HttpMethod,
