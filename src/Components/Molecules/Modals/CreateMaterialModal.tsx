@@ -1,8 +1,8 @@
 import React from "react";
 import { AnimatePresence } from "framer-motion";
+
 import CenterModal from "./CenterModal";
-import { Input } from "Components/Atoms/Input";
-import { CustomSelect } from "../CustomSelect";
+import { CreateMaterialForm } from "Components/Organisms/Forms";
 
 // Type defination
 interface Props {
@@ -20,19 +20,9 @@ const CreateMaterialModal: React.FC<Props> = ({ showModal, setShowModal }) => {
           handleCloseModal={setShowModal}
           headerType="text"
           headerTitle="Create a new material"
+          hideFooter
         >
-          <>
-            <CustomSelect value="Select" label="Section" dropdownwidth="full" />
-            <CustomSelect
-              value="Select"
-              label="Sub section"
-              dropdownwidth="full"
-            />
-
-            <Input label="Book title" />
-            <CustomSelect value="Select" label="Status" dropdownwidth="full" />
-            <Input label="Amount" />
-          </>
+          <CreateMaterialForm />
         </CenterModal>
       )}
     </AnimatePresence>
