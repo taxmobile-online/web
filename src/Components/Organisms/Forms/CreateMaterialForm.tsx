@@ -32,7 +32,7 @@ const CreateMaterialForm: React.FC<SignUpFormProps> = (props) => {
   const [file, setFile] = useState<any>("");
 
   // Store
-  const { sectionToEdit, isEdit } = useSectionStore();
+  const { isEdit } = useSectionStore();
 
   // Variables
   const initialValues = {
