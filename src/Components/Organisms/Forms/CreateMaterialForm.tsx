@@ -65,10 +65,10 @@ const CreateMaterialForm: React.FC<SignUpFormProps> = (props) => {
     const requestData = {
       ...values,
       description: "",
+      canBuy: values.canBuy === "true" ? true : false,
+      download: values.canBuy === "true" ? "Allowed" : "NotAllowed",
       file,
     };
-
-    console.log({ requestData });
 
     let formData = new FormData();
     for (let key in requestData) {
@@ -158,18 +158,14 @@ const CreateMaterialForm: React.FC<SignUpFormProps> = (props) => {
           <SelectField
             label="Status"
             name="canBuy"
-            options={
-              formatForSelectInput(
-                [
-                  { name: "Buy Option Available", id: true },
-                  { name: "No Buy Option", id: false },
-                ],
-                "id",
-                "name"
-              ) ||
-              [] ||
-              []
-            }
+            options={formatForSelectInput(
+              [
+                { name: "Buy Option Available", id: "true" },
+                { name: "No Buy Option", id: "false" },
+              ],
+              "id",
+              "name"
+            )}
           />
           <CustomeFile
             handleChange={handleFileChange}
