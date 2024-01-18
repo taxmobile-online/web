@@ -58,7 +58,7 @@ const CreateMaterialForm: React.FC<SignUpFormProps> = (props) => {
   } = useApi<any>();
 
   // Props
-  const { handleAfterFormSubmit, options, closeFormModal } = props;
+  const {  closeFormModal } = props;
 
   // Methods
   const handleSubmit = async (values: any) => {
