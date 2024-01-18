@@ -45,7 +45,7 @@ const CreateMaterialForm: React.FC<SignUpFormProps> = (props) => {
 
   // Hooks
   // Hooks
-  let { data, loading, sendRequest } = useApi<any>();
+  let { loading, sendRequest } = useApi<any>();
   let {
     data: sections,
     loading: loadingSections,
@@ -58,7 +58,7 @@ const CreateMaterialForm: React.FC<SignUpFormProps> = (props) => {
   } = useApi<any>();
 
   // Props
-  const {  closeFormModal } = props;
+  const { closeFormModal } = props;
 
   // Methods
   const handleSubmit = async (values: any) => {
