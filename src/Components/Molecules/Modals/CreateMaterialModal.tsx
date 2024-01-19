@@ -3,15 +3,14 @@ import { AnimatePresence } from "framer-motion";
 
 import CenterModal from "./CenterModal";
 import { CreateMaterialForm } from "Components/Organisms/Forms";
+import { ModalProps } from "./types";
 
-// Type defination
-interface Props {
-  showModal: boolean;
-  setShowModal: () => void;
-}
 
 // Component
-const CreateMaterialModal: React.FC<Props> = ({ showModal, setShowModal }) => {
+const CreateMaterialModal: React.FC<ModalProps> = ({
+  showModal,
+  setShowModal,
+}) => {
   // Data to display
   return (
     <AnimatePresence>

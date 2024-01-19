@@ -19,6 +19,7 @@ const ELibrary: React.FC<Props> = () => {
   // Methods
   const getDocuments = async () => {
     await sendRequest("GET", endpoints.getDocumentEndpoint);
+    setShowModal(false);
   };
 
   // Data to display
@@ -34,6 +35,7 @@ const ELibrary: React.FC<Props> = () => {
         <CreateMaterialModal
           showModal={showModal}
           setShowModal={() => setShowModal(false)}
+          handleFormSuccess={getDocuments}
         />
       </>
     </AdminDashboardChildTemplate>

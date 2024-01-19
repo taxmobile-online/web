@@ -15,3 +15,10 @@ export interface ModalsProps extends AllHTMLAttributes<HTMLDivElement> {
 
   hideFooter?: boolean;
 }
+
+export interface ModalProps extends AllHTMLAttributes<HTMLDivElement> {
+  showModal: boolean;
+  setShowModal: () => void;
+  handleFormSuccess?: () => void;
+  isLoading?: boolean;
+}

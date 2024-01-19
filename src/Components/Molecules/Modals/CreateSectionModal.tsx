@@ -4,17 +4,12 @@ import { AnimatePresence } from "framer-motion";
 import CenterModal from "./CenterModal";
 import { CreateSectionForm } from "Components/Organisms/Forms";
 import useSectionStore from "Store/sections.store";
+import { ModalProps } from "./types";
 
 // Type defination
-interface Props {
-  showModal: boolean;
-  setShowModal: () => void;
-  handleFormSuccess?: () => void;
-  isLoading?: boolean;
-}
 
 // Component
-const CreateSectionModal: React.FC<Props> = (props) => {
+const CreateSectionModal: React.FC<ModalProps> = (props) => {
   // Props
   const { showModal, setShowModal, handleFormSuccess } = props;
 
