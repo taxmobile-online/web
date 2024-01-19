@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AdminDashboardChildTemplate } from "Components/Templates/AdminDashboardTemplate";
 import { EmptyCard } from "Components/Molecules/EmptyCard";
 import { CreateMaterialModal } from "Components/Molecules/Modals";
@@ -21,6 +21,13 @@ const ELibrary: React.FC<Props> = () => {
     await sendRequest("GET", endpoints.getDocumentEndpoint);
     setShowModal(false);
   };
+
+  // Effects
+  useEffect(() => {
+    getDocuments();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Data to display
   return (

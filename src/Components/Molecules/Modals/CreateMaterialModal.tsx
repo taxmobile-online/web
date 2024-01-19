@@ -10,6 +10,7 @@ import { ModalProps } from "./types";
 const CreateMaterialModal: React.FC<ModalProps> = ({
   showModal,
   setShowModal,
+  handleFormSuccess,
 }) => {
   // Data to display
   return (
@@ -21,7 +22,10 @@ const CreateMaterialModal: React.FC<ModalProps> = ({
           headerTitle="Create a new material"
           hideFooter
         >
-          <CreateMaterialForm />
+          <CreateMaterialForm
+            handleAfterFormSubmit={handleFormSuccess}
+            closeFormModal={setShowModal}
+          />
         </CenterModal>
       )}
     </AnimatePresence>

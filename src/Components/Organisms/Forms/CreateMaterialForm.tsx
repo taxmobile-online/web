@@ -44,8 +44,7 @@ const CreateMaterialForm: React.FC<SignUpFormProps> = (props) => {
   };
 
   // Hooks
-  // Hooks
-  let { loading, sendRequest } = useApi<any>();
+  let { data, loading, sendRequest } = useApi<any>();
   let {
     data: sections,
     loading: loadingSections,
@@ -58,7 +57,7 @@ const CreateMaterialForm: React.FC<SignUpFormProps> = (props) => {
   } = useApi<any>();
 
   // Props
-  const { closeFormModal } = props;
+  const { closeFormModal, handleAfterFormSubmit } = props;
 
   // Methods
   const handleSubmit = async (values: any) => {
@@ -90,10 +89,14 @@ const CreateMaterialForm: React.FC<SignUpFormProps> = (props) => {
     //     requestData
     //   );
     // }
-    // setReRender(!reRender);
+    setReRender(!reRender);
   };
 
-  const handleAfterSubmit = async () => {};
+  const handleAfterSubmit = async () => {
+    if (data) {
+      handleAfterFormSubmit!();
+    }
+  };
 
   const getFormDependantData = async () => {
     await sendSubSectionRequest("GET", endpoints.getSubSectionsEndpoint);
