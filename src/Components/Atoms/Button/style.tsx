@@ -173,5 +173,10 @@ export const ButtonStyle = styled(Button)`
       padding: 0.6rem 2.3rem;
       font-size: 1.4rem;
     }
+
+    &-s-1 {
+      padding: 0.3rem 1rem;
+      font-size: 1.4rem;
+    }
   }
 `;

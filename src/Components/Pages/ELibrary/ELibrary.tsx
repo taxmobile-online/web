@@ -4,6 +4,8 @@ import { EmptyCard } from "Components/Molecules/EmptyCard";
 import { CreateMaterialModal } from "Components/Molecules/Modals";
 import useApi from "Utils/Hooks/useApi";
 import endpoints from "Services/endpoints";
+import Book from "Components/Organisms/Libraries/Book";
+import { Libraries } from "Components/Organisms/Libraries";
 
 // Type defination
 interface Props {}
@@ -33,11 +35,13 @@ const ELibrary: React.FC<Props> = () => {
   return (
     <AdminDashboardChildTemplate pageTile="E-library">
       <>
-        <EmptyCard
+        {/* <EmptyCard
           message="No materials yet!"
           btnLabel="Create materials"
           handleAction={() => setShowModal(true)}
-        />
+        /> */}
+
+        <Libraries />
 
         <CreateMaterialModal
           showModal={showModal}

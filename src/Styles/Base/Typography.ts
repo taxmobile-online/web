@@ -245,6 +245,11 @@ export const Typography = css`
       font-size: 1.3rem;
       font-weight: 500;
     }
+    &-41 {
+      color: var(--color-white);
+      font-size: 3rem;
+      font-weight: 600;
+    }
   }
 
   /* Body || Paragraphs */
@@ -408,6 +413,11 @@ export const Typography = css`
     }
     &-2 {
       font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--color-20);
+    }
+    &-3 {
+      font-size: 1rem;
       font-weight: 400;
       color: var(--color-20);
     }
