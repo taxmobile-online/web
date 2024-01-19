@@ -14,7 +14,7 @@ const ELibrary: React.FC<Props> = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
 
   // Hookd
-  const { sendRequest } = useApi();
+  const { data, sendRequest } = useApi();
 
   // Methods
   const getDocuments = async () => {
