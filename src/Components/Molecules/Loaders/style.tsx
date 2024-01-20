@@ -1,4 +1,4 @@
-import { FlexRowJcBetweenAiCenter, GridCenter } from "Styles/Abstract/Mixins";
+import { FlexRowJcBetweenAiCenter } from "Styles/Abstract/Mixins";
 import styled from "styled-components";
 
 export const LoaderStyle = styled.div`
