@@ -5,6 +5,8 @@ import reportWebVitals from "./reportWebVitals";
 import { GlobalStyle } from "./Styles/GlobalStyles";
 import { RouterProvider } from "react-router-dom";
 import Router from "Router";
+import authService from "Services/authService";
+authService.getToken();
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

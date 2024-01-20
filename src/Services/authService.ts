@@ -1,7 +1,6 @@
 import http from "./httpService";
 
 const userDataKey = process.env.REACT_APP_USER_KEY || "";
-// const authApi = "/User/Onboarding/auth";
 
 http.setToken(getToken());
 
@@ -10,7 +9,9 @@ http.setToken(getToken());
 // }
 
 export function getToken() {
-  let token: any = localStorage.getItem(userDataKey);
+  const localStore = localStorage.getItem(userDataKey);
+  const stor = JSON.parse(JSON.parse(JSON.stringify(localStore)));
+  const { token } = stor.state.userData;
   if (token) {
     return token;
   }
@@ -19,5 +20,5 @@ export function getToken() {
 
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
-  //   login,
+  getToken,
 };
