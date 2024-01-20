@@ -30,7 +30,7 @@ const Libraries: React.FC<Props> = ({ isLoading, data, handleAction }) => {
 
       <BooksWrapper>
         {isLoading ? (
-          <BookLoader length={5} />
+          <BookLoader length={3} />
         ) : (
           <>
             {data?.length
