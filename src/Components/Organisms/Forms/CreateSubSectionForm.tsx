@@ -7,10 +7,10 @@ import {
   InputField,
   SelectField,
 } from "Components/Molecules/FormFields";
-import { SignUpFormProps } from "./types";
-import useApi from "Utils/Hooks/useApi";
 import FormalModalFooter from "./FormModalFooter";
 
+import useApi from "Utils/Hooks/useApi";
+import { SignUpFormProps } from "./types";
 import endpoints from "Services/endpoints";
 import useSectionStore from "Store/sections.store";
 

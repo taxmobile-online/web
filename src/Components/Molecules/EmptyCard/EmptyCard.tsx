@@ -1,5 +1,7 @@
 import React from "react";
+
 import { EmptyContent, Wrapper } from "./style";
+
 import Button from "Components/Atoms/Button";
 import Typography from "Components/Atoms/Typography";
 
