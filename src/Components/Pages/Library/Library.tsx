@@ -31,20 +31,15 @@ const Library: React.FC<Props> = () => {
   // Data to display
   return (
     <DashboardTemplate>
-      <Card title="Library">
-        <>
-          {loading ? (
-            <Libraries isLoading={loading} />
-          ) : data && data?.length ? (
-            <Libraries data={data} isLoading={loading} />
-          ) : (
-            <EmptyCard
-              message="No materials yet!"
-              btnLabel="Create materials"
-            />
-          )}
-        </>
-      </Card>
+      <>
+        {loading ? (
+          <Libraries isLoading={loading} />
+        ) : data && data?.length ? (
+          <Libraries data={data} isLoading={loading} />
+        ) : (
+          <EmptyCard message="No materials yet!" btnLabel="Create materials" />
+        )}
+      </>
     </DashboardTemplate>
   );
 };
