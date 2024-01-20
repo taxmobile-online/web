@@ -6,7 +6,7 @@ import { UploadLargeFileIcon } from "../SvgIcons";
 const CustomeFile: React.FC<CustomeFileTwoProps> = (props) => {
   // States
   const [fileName, setFileName] = useState<string>("");
-  const [file, setFile] = useState<any>("");
+  const [, setFile] = useState<any>("");
 
   //   Props
   const {

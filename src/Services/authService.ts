@@ -9,6 +9,7 @@ http.setToken(getToken());
 // }
 
 export function getToken() {
+  console.log({ userDataKey });
   const localStore = localStorage.getItem(userDataKey);
   const stor = JSON.parse(JSON.parse(JSON.stringify(localStore)));
   if (stor) {
