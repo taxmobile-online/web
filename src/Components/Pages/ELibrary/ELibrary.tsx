@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { AdminDashboardChildTemplate } from "Components/Templates/AdminDashboardTemplate";
+
 import { EmptyCard } from "Components/Molecules/EmptyCard";
+import { Libraries } from "Components/Organisms/Libraries";
 import { CreateMaterialModal } from "Components/Molecules/Modals";
+import { AdminDashboardChildTemplate } from "Components/Templates/AdminDashboardTemplate";
+
 import useApi from "Utils/Hooks/useApi";
 import endpoints from "Services/endpoints";
-import Book from "Components/Organisms/Libraries/Book";
-import { Libraries } from "Components/Organisms/Libraries";
 
 // Type defination
 interface Props {}
@@ -15,9 +16,9 @@ const ELibrary: React.FC<Props> = () => {
   // States
   const [showModal, setShowModal] = useState<boolean>(false);
 
-  // Hookd
-  let { data, sendRequest } = useApi<any>();
-  data = data?.data || [];
+  // Hooks
+  let { data, loading, sendRequest } = useApi<any>();
+  data = (data && data?.data) || [];
 
   // Methods
   const getDocuments = async () => {
@@ -36,13 +37,21 @@ const ELibrary: React.FC<Props> = () => {
   return (
     <AdminDashboardChildTemplate pageTile="E-library">
       <>
-        {/* <EmptyCard
-          message="No materials yet!"
-          btnLabel="Create materials"
-          handleAction={() => setShowModal(true)}
-        /> */}
-
-        <Libraries data={data} />
+        {loading ? (
+          <Libraries isLoading={loading} />
+        ) : data && data?.length ? (
+          <Libraries
+            data={data}
+            isLoading={loading}
+            handleAction={() => setShowModal(true)}
+          />
+        ) : (
+          <EmptyCard
+            message="No materials yet!"
+            btnLabel="Create materials"
+            handleAction={() => setShowModal(true)}
+          />
+        )}
 
         <CreateMaterialModal
           showModal={showModal}

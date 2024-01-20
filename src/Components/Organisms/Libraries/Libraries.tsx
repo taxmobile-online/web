@@ -4,30 +4,42 @@ import Button from "Components/Atoms/Button";
 
 import { BooksWrapper, Top, Wrapper } from "./style";
 import Book from "./Book";
+import BookLoader from "Components/Molecules/Loaders/BookLoader";
 
 // Type defination
 interface Props {
   data?: Array<any>;
-  afterSuccess?: () => void;
+  isLoading?: boolean;
+  handleAction?: () => void;
 }
 
 // Component
-const Libraries: React.FC<Props> = ({ afterSuccess, data }) => {
+const Libraries: React.FC<Props> = ({ isLoading, data, handleAction }) => {
   // Data to display
   return (
     <Wrapper>
-      <Top>
-        <Button
-          className="btn btn-primary btn-md ml-auto mb-30 display-block"
-          value="Create"
-          onClick={() => {}}
-        />
-      </Top>
+      {handleAction && (
+        <Top>
+          <Button
+            className="btn btn-primary btn-md ml-auto mb-30 display-block"
+            value="Create"
+            onClick={handleAction}
+          />
+        </Top>
+      )}
 
       <BooksWrapper>
-        {data?.length
-          ? data?.map((book, index) => <Book key={index} data={book} />)
-          : "E no dey"}
+        {isLoading ? (
+          <BookLoader length={5} />
+        ) : (
+          <>
+            {data?.length
+              ? [...data]
+                  ?.reverse()
+                  .map((book, index) => <Book key={index} data={book} />)
+              : "E no dey"}
+          </>
+        )}
       </BooksWrapper>
     </Wrapper>
   );

@@ -1,7 +1,10 @@
 import React from "react";
+
 import { Actions, BookStyle } from "./style";
-import Typography from "Components/Atoms/Typography";
+
 import Button from "Components/Atoms/Button";
+import Typography from "Components/Atoms/Typography";
+
 import { formatCurrency } from "Utils/Helper";
 
 // Type defination
@@ -15,10 +18,15 @@ const Book: React.FC<Props> = ({ data }) => {
   return (
     <BookStyle>
       <div className="book__top">
-        <Typography as="h5" className="h-41" text="M" />
+        <Typography as="h5" className="h-41" text={`${data.title.charAt(0)}`} />
       </div>
       <div className="book__bottom">
-        <Typography as="h5" className="h-21" text={data.title || "--"} />
+        <Typography
+          as="h5"
+          className="h-21 text-truncate"
+          title={data.title || ""}
+          text={data.title || "--"}
+        />
         <Typography
           as="h5"
           className="p-15"
@@ -29,7 +37,7 @@ const Book: React.FC<Props> = ({ data }) => {
             className="btn b-3 btn-primary btn-s-1 book-btn"
             value="Read"
           />
-          <Button className="book-btn" value="Download" />
+          {data.canBuy && <Button className="book-btn" value="Download" />}
         </Actions>
       </div>
     </BookStyle>

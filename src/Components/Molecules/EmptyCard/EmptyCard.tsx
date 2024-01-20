@@ -18,11 +18,13 @@ const EmptyCard: React.FC<Props> = (props) => {
   // Data to display
   return (
     <Wrapper>
-      <Button
-        className="btn btn-primary btn-md ml-auto display-block"
-        value="Create"
-        onClick={() => handleAction!()}
-      />
+      {handleAction && (
+        <Button
+          className="btn btn-primary btn-md ml-auto display-block"
+          value="Create"
+          onClick={() => handleAction!()}
+        />
+      )}
       <EmptyContent>
         <Typography as="h5" className="h-31" text={message} />
         <Button

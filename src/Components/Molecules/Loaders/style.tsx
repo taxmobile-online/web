@@ -1,4 +1,4 @@
-import { FlexRowJcBetweenAiCenter } from "Styles/Abstract/Mixins";
+import { FlexRowJcBetweenAiCenter, GridCenter } from "Styles/Abstract/Mixins";
 import styled from "styled-components";
 
 export const LoaderStyle = styled.div`
@@ -32,5 +32,11 @@ export const SectionLoaderStyle = styled.div`
   }
   .button {
     border-radius: 3.8rem;
+  }
+`;
+
+export const BookLoaderStyle = styled.div`
+  .boo__loader_top {
+    border-radius: 1rem;
   }
 `;
