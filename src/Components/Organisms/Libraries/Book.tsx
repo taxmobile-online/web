@@ -2,6 +2,7 @@ import React from "react";
 import { Actions, BookStyle } from "./style";
 import Typography from "Components/Atoms/Typography";
 import Button from "Components/Atoms/Button";
+import { formatCurrency } from "Utils/Helper";
 
 // Type defination
 interface Props {
@@ -17,8 +18,12 @@ const Book: React.FC<Props> = ({ data }) => {
         <Typography as="h5" className="h-41" text="M" />
       </div>
       <div className="book__bottom">
-        <Typography as="h5" className="h-21" text="The new man" />
-        <Typography as="h5" className="p-15" text="₦ 13,000" />
+        <Typography as="h5" className="h-21" text={data.title || "--"} />
+        <Typography
+          as="h5"
+          className="p-15"
+          text={`${formatCurrency(data.amount)}`}
+        />
         <Actions className="mt-20">
           <Button
             className="btn b-3 btn-primary btn-s-1 book-btn"
@@ -32,3 +37,4 @@ const Book: React.FC<Props> = ({ data }) => {
 };
 
 export default Book;
+// ₦

@@ -25,7 +25,9 @@ const Libraries: React.FC<Props> = ({ afterSuccess, data }) => {
       </Top>
 
       <BooksWrapper>
-        {data?.length ? data?.map(() => <Book />) : "E no dey"}
+        {data?.length
+          ? data?.map((book, index) => <Book key={index} data={book} />)
+          : "E no dey"}
       </BooksWrapper>
     </Wrapper>
   );

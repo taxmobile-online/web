@@ -8,7 +8,7 @@ export const formatCurrency = (number: string | number) => {
   // Format the number as currency
   const formattedCurrency = newNumber.toLocaleString("en-US", {
     style: "currency",
-    currency: "USD", // You can change the currency code as needed
+    currency: "NGN", // You can change the currency code as needed
     minimumFractionDigits: 2,
   });
 
