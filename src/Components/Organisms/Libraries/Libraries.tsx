@@ -6,10 +6,13 @@ import { BooksWrapper, Top, Wrapper } from "./style";
 import Book from "./Book";
 
 // Type defination
-interface Props {}
+interface Props {
+  data?: Array<any>;
+  afterSuccess?: () => void;
+}
 
 // Component
-const Libraries: React.FC<Props> = (props) => {
+const Libraries: React.FC<Props> = ({ afterSuccess, data }) => {
   // Data to display
   return (
     <Wrapper>
@@ -22,9 +25,7 @@ const Libraries: React.FC<Props> = (props) => {
       </Top>
 
       <BooksWrapper>
-        {[...Array(5)].map(() => (
-          <Book />
-        ))}
+        {data?.length ? data?.map(() => <Book />) : "E no dey"}
       </BooksWrapper>
     </Wrapper>
   );

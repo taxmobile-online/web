@@ -16,7 +16,8 @@ const ELibrary: React.FC<Props> = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
 
   // Hookd
-  const { data, sendRequest } = useApi();
+  let { data, sendRequest } = useApi<any>();
+  data = data?.data || [];
 
   // Methods
   const getDocuments = async () => {
@@ -41,7 +42,7 @@ const ELibrary: React.FC<Props> = () => {
           handleAction={() => setShowModal(true)}
         /> */}
 
-        <Libraries />
+        <Libraries data={data} />
 
         <CreateMaterialModal
           showModal={showModal}
