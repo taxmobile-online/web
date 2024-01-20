@@ -40,6 +40,12 @@ const Router = createBrowserRouter(
       />
       <Route path="verify-email" element={<VerifyEmail />} />
       <Route path="reset-password" element={<ResetPassword />} />
+      <Route path="forget-password" element={<ForgetPassword />} />
+      <Route path="multi-user-signup" element={<MultiUserSignup />} />
+      <Route path="multi-user-settings" element={<MultiUserSetting />} />
+      <Route path="admin/sign-in" element={<SignIn isAdmin />} />
+      <Route path="sign-in" element={<SignIn />} />
+
       <Route
         path="invite-team"
         element={
@@ -48,9 +54,6 @@ const Router = createBrowserRouter(
           </ProtectedRoute>
         }
       />
-      <Route path="forget-password" element={<ForgetPassword />} />
-      <Route path="multi-user-signup" element={<MultiUserSignup />} />
-      <Route path="multi-user-settings" element={<MultiUserSetting />} />
       <Route
         path="individual-user-settings"
         element={
@@ -67,7 +70,14 @@ const Router = createBrowserRouter(
           </ProtectedRoute>
         }
       />
-      <Route path="admin-profile-settings" element={<AdminProfileSetting />} />
+      <Route
+        path="admin-profile-settings"
+        element={
+          <ProtectedRoute>
+            <AdminProfileSetting />
+          </ProtectedRoute>
+        }
+      />
       <Route
         path="library"
         element={
@@ -76,12 +86,18 @@ const Router = createBrowserRouter(
           </ProtectedRoute>
         }
       />
-      <Route path="admin/sign-in" element={<SignIn isAdmin />} />
 
       <Route path="admin" element={<AdminDashboardTemplate />}>
         <Route path="" element={<AdminDashboard />} />
         <Route path="payment-success" element={<PaymentSuccess />} />
-        <Route path="e-library" element={<ELibrary />} />
+        <Route
+          path="e-library"
+          element={
+            <ProtectedRoute>
+              <ELibrary />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path="sections"
           element={
@@ -98,17 +114,51 @@ const Router = createBrowserRouter(
             </ProtectedRoute>
           }
         />
-        <Route path="subscribers" element={<Subscribers />} />
-        <Route path="coupon-code" element={<CouponCode />} />
-        <Route path="pricing" element={<PricingTemplate />}>
+        <Route
+          path="subscribers"
+          element={
+            <ProtectedRoute>
+              <Subscribers />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="coupon-code"
+          element={
+            <ProtectedRoute>
+              <CouponCode />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="pricing"
+          element={
+            <ProtectedRoute>
+              <PricingTemplate />
+            </ProtectedRoute>
+          }
+        >
           <Route path="" element={<Pricing />} />
           <Route path="set-up" element={<PricingSetup />} />
         </Route>
       </Route>
 
-      <Route path="billing" element={<Billing />} />
-      <Route path="payment-success" element={<PaymentSuccess />} />
-      <Route path="sign-in" element={<SignIn />} />
+      <Route
+        path="billing"
+        element={
+          <ProtectedRoute>
+            <Billing />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="payment-success"
+        element={
+          <ProtectedRoute>
+            <PaymentSuccess />
+          </ProtectedRoute>
+        }
+      />
     </>
   )
 );

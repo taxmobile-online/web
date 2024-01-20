@@ -8,6 +8,7 @@ interface Props {
 const ProtectedRoute: React.FC<Props> = ({ children }) => {
   // Store
   const { userData } = useAuthStore();
+  console.log({ userData });
 
   if (!userData?.fullName) {
     return <Navigate to="/" replace />;
