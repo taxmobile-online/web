@@ -53,11 +53,9 @@ const SignInForm: React.FC<SignUpFormProps> = (props) => {
   };
 
   const handleAfterSubmit = () => {
-
     if (data?.status && data?.status === "SUCCESS") {
       const userData = data?.data;
 
-      console.log({ userData });
       httpService.setToken(userData.token);
       setUserData(userData);
 

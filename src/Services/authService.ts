@@ -11,11 +11,13 @@ http.setToken(getToken());
 export function getToken() {
   const localStore = localStorage.getItem(userDataKey);
   const stor = JSON.parse(JSON.parse(JSON.stringify(localStore)));
-  const { token } = stor.state.userData;
-  if (token) {
-    return token;
+  if (stor) {
+    const { token } = stor?.state?.userData;
+    if (token) {
+      return token;
+    }
+    return null;
   }
-  return null;
 }
 
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */

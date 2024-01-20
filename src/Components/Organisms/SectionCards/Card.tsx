@@ -43,7 +43,7 @@ const Card: React.FC<Props> = ({
   // Data to display
   return (
     <CardStyle>
-      <Button
+      <div
         className="top"
         onClick={() => setShowSubSection(!showSubSection)}
       >
@@ -78,7 +78,7 @@ const Card: React.FC<Props> = ({
             )}
           </Button>
         </div>
-      </Button>
+      </div>
 
       {showSubSection && !isSub && (
         <div className="bottom">
