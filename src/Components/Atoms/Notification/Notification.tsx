@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Wrapper } from "./style";
+
 import Typography from "Components/Atoms/Typography";
 
 // Type defination

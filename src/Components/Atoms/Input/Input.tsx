@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { InputWrapper, Wrapper } from "./style";
+
 import { EyeSlash, EyeUnSlash } from "../SvgIcons";
+
 import { InputProps } from "./types";
 
 

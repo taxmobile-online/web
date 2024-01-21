@@ -1,5 +1,7 @@
 import React from "react";
+
 import { InputWrapper, Wrapper } from "./style";
+
 import { SelectProps } from "./types";
 
 // Component
