@@ -1,4 +1,5 @@
 import React from "react";
+
 import { OverlayStyle } from "./style";
 
 interface Props {

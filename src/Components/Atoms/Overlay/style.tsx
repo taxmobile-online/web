@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+
 import { GridCenter } from "Styles/Abstract/Mixins";
 
 export const OverlayStyle = styled(motion.div)<{

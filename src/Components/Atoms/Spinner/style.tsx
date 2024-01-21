@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+
 import { Rotate } from "Styles/Base/Animation";
 
 export const FaSpinnerStyle = styled(motion.div)`
