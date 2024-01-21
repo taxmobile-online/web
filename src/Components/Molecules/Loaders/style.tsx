@@ -1,5 +1,5 @@
-import { FlexRowJcBetweenAiCenter } from "Styles/Abstract/Mixins";
 import styled from "styled-components";
+import { FlexRowJcBetweenAiCenter } from "Styles/Abstract/Mixins";
 
 export const LoaderStyle = styled.div`
   border: 0.1rem solid var(--color-6);

@@ -1,6 +1,7 @@
-import { FlexRowAiCenter } from "Styles/Abstract/Mixins";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+
+import { FlexRowAiCenter } from "Styles/Abstract/Mixins";
 
 export const Wrapper = styled(motion.div)`
   ${FlexRowAiCenter}

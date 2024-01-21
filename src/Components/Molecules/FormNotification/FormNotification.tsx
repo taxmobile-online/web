@@ -1,10 +1,13 @@
 import React, { useRef } from "react";
+import { AnimatePresence } from "framer-motion";
+
 import { Wrapper } from "./style";
+
 import Typography from "Components/Atoms/Typography";
 import { NotificationCheckIcon } from "Components/Atoms/SvgIcons";
+
 import { FormNotificationProps } from "./types";
 import useOnClickOutside from "Utils/Hooks/useOnClickOutside";
-import { AnimatePresence } from "framer-motion";
 
 // Component
 const FormNotification: React.FC<FormNotificationProps> = (props) => {
