@@ -14,6 +14,7 @@ import { Line } from "react-chartjs-2";
 import { faker } from "@faker-js/faker";
 
 import { Bottom, Legends, Top, TopLeft, Wrapper } from "./style";
+
 import Typography from "Components/Atoms/Typography";
 
 ChartJS.register(

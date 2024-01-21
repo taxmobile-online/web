@@ -1,8 +1,8 @@
+import styled from "styled-components";
 import {
   FlexRowAiCenter,
   FlexRowJcBetweenAiCenter,
 } from "Styles/Abstract/Mixins";
-import styled from "styled-components";
 
 export const Wrapper = styled.div`
   border-radius: 0.4rem;

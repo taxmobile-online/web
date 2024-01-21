@@ -1,5 +1,6 @@
 import React from "react";
 
+// interface Props extends AllHTMLAttributes<HTMLDivElement> {
 interface Props {
   as: any;
   className?: string;

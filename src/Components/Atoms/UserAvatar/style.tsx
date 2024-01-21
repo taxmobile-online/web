@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { GridCenter } from "Styles/Abstract/Mixins";
 
 export const Wrapper = styled.div`

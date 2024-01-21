@@ -1,6 +1,8 @@
 import React from "react";
-import { Input } from "Components/Atoms/Input";
 import { useField } from "formik";
+
+import { Input } from "Components/Atoms/Input";
+
 import { InputFieldProps } from "./types";
 
 // Component
