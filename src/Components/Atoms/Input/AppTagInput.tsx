@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Wrapper } from "./style";
 import { TagInput } from "react-simple-tagged-input";
+
+import { Wrapper } from "./style";
 
 // Type defination
 interface Props {

@@ -1,6 +1,8 @@
 import React from "react";
-import Typography from "../Typography";
+
 import { EmptyStateStyle } from "./style";
+
+import Typography from "../Typography";
 
 interface Props {
   title?: string | number;

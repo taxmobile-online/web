@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+
 import { CustomeFileField } from "./style";
-import { CustomeFileTwoProps } from "./types";
+
 import { UploadLargeFileIcon } from "../SvgIcons";
+
+import { CustomeFileTwoProps } from "./types";
+
 
 const CustomeFile: React.FC<CustomeFileTwoProps> = (props) => {
   // States
