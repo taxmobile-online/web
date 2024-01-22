@@ -1,5 +1,5 @@
-import { FlexColumn } from "Styles/Abstract/Mixins";
 import styled from "styled-components";
+import { FlexColumn } from "Styles/Abstract/Mixins";
 
 export const Wrapper = styled.nav`
   border-right: 1px solid var(--color-6);

@@ -1,8 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import { SubscriptionRange, Wrapper } from "./style";
 import { Flex } from "Styles/layouts/Flex";
+
 import Typography from "Components/Atoms/Typography";
-import { Link } from "react-router-dom";
 import { ArrowRight } from "Components/Atoms/SvgIcons";
 
 // Type defination
