@@ -1,13 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Flex } from "Styles/layouts/Flex";
-import Button from "Components/Atoms/Button";
 import { UserDetail, Wrapper } from "./style";
+
+import Button from "Components/Atoms/Button";
 import Typography from "Components/Atoms/Typography";
-import { GalleryAdd, Camera } from "Components/Atoms/SvgIcons";
 import { UserAvatar } from "Components/Atoms/UserAvatar";
+import { GalleryAdd, Camera } from "Components/Atoms/SvgIcons";
+
 import useAuthStore from "Store/auth.store";
-import { useNavigate } from "react-router-dom";
 
 // Type defination
 interface Props {
