@@ -7,15 +7,16 @@ import {
   InputField,
   SelectField,
 } from "Components/Molecules/FormFields";
-import { SignUpFormProps } from "./types";
-import useApi from "Utils/Hooks/useApi";
 import FormalModalFooter from "./FormModalFooter";
 
-import endpoints from "Services/endpoints";
-import useSectionStore from "Store/sections.store";
 import { Spinner } from "Components/Atoms/Spinner";
 import { formatForSelectInput } from "Utils/Helper";
 import { CustomeFile } from "Components/Atoms/Input";
+
+import useApi from "Utils/Hooks/useApi";
+import endpoints from "Services/endpoints";
+import useSectionStore from "Store/sections.store";
+import { SignUpFormProps } from "./types";
 
 const validationSchema = yup.object().shape({
   section: yup.string().required().min(1).label("Section"),

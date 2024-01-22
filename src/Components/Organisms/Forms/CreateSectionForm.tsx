@@ -3,11 +3,12 @@ import * as yup from "yup";
 import { Form } from "formik";
 
 import { FormField, InputField } from "Components/Molecules/FormFields";
-import { SignUpFormProps } from "./types";
+import FormalModalFooter from "./FormModalFooter";
+
 import useApi from "Utils/Hooks/useApi";
+import { SignUpFormProps } from "./types";
 import endpoints from "Services/endpoints";
 import useSectionStore from "Store/sections.store";
-import FormalModalFooter from "./FormModalFooter";
 
 const validationSchema = yup.object().shape({
   sectionName: yup.string().required().min(1).label("Section Name"),
