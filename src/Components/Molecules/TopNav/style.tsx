@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
+
 import {
   FlexColumn,
   FlexRowAiCenter,
   FlexRowJcBetweenAiCenter,
 } from "Styles/Abstract/Mixins";
 import { Center } from "Styles/layouts/Center";
-import { motion } from "framer-motion";
 
 export const Wrapper = styled.nav<{ $type?: "admin" | "user" }>`
   background-color: ${({ $type }) =>

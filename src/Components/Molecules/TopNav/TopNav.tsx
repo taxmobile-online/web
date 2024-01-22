@@ -2,10 +2,7 @@ import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
-import Logo from "Components/Atoms/Logo";
-import Button from "Components/Atoms/Button";
 import { Center } from "Styles/layouts/Center";
-import { ArrowDown, Bell, Logout, Setting } from "Components/Atoms/SvgIcons";
 import {
   Container,
   Dropdown,
@@ -16,11 +13,16 @@ import {
   UserCta,
   Wrapper,
 } from "./style";
+
+import Logo from "Components/Atoms/Logo";
+import Button from "Components/Atoms/Button";
 import Typography from "Components/Atoms/Typography";
-import { Notification } from "Components/Atoms/Notification";
-import useOnClickOutside from "Utils/Hooks/useOnClickOutside";
 import { UserAvatar } from "Components/Atoms/UserAvatar";
+import { Notification } from "Components/Atoms/Notification";
+import { ArrowDown, Bell, Logout, Setting } from "Components/Atoms/SvgIcons";
+
 import useAuthStore from "Store/auth.store";
+import useOnClickOutside from "Utils/Hooks/useOnClickOutside";
 
 // Type defination
 interface Props {
