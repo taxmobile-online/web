@@ -1,13 +1,13 @@
 import React, { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 
 import { Action, Email, Name, Wrapper } from "./style";
 
-import Typography from "Components/Atoms/Typography";
-import { UserAvatar } from "Components/Atoms/UserAvatar";
+import { CenterModal } from "../Modals";
 import Button from "Components/Atoms/Button";
 import { Trash } from "Components/Atoms/SvgIcons";
-import { AnimatePresence } from "framer-motion";
-import { CenterModal } from "../Modals";
+import Typography from "Components/Atoms/Typography";
+import { UserAvatar } from "Components/Atoms/UserAvatar";
 
 // Type defination
 interface Props {
