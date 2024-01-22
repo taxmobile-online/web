@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+
 import { Switch, SwitchToggle, Wrapper } from "./style";
+
 import Typography from "Components/Atoms/Typography";
 
 // Variable
