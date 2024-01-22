@@ -1,10 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import { Wrapper } from "./style";
-import Typography from "Components/Atoms/Typography";
+
 import Button from "Components/Atoms/Button";
 import { Logout } from "Components/Atoms/SvgIcons";
+import Typography from "Components/Atoms/Typography";
+
 import useAuthStore from "Store/auth.store";
-import { useNavigate } from "react-router-dom";
 
 // Type defination
 interface Props {}
