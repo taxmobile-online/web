@@ -1,6 +1,5 @@
 import React from "react";
 
-import Overlay from "Components/Atoms/Overlay";
 import {
   CouponAndPrice,
   RightModalBody,
@@ -8,12 +7,14 @@ import {
   RightModalTop,
   RightModalWrapper,
 } from "./style";
-import Typography from "Components/Atoms/Typography";
 import Button from "Components/Atoms/Button";
-import { Close } from "Components/Atoms/SvgIcons";
+import Overlay from "Components/Atoms/Overlay";
 import Input from "Components/Atoms/Input/Input";
-import { Flex } from "Styles/layouts/Flex";
+import { Close } from "Components/Atoms/SvgIcons";
+import Typography from "Components/Atoms/Typography";
 import { SignUpForm } from "Components/Organisms/Forms";
+
+import { Flex } from "Styles/layouts/Flex";
 
 // Type defination
 interface Props {

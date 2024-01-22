@@ -1,15 +1,16 @@
 import React from "react";
 
-import Overlay from "Components/Atoms/Overlay";
 import {
   CenterModalBody,
   CenterModalFooter,
   CenterModalTop,
   CenterModalWrapper,
 } from "./style";
-import { CloseCircle, Warning } from "Components/Atoms/SvgIcons";
 import Button from "Components/Atoms/Button";
+import Overlay from "Components/Atoms/Overlay";
 import Typography from "Components/Atoms/Typography";
+import { CloseCircle, Warning } from "Components/Atoms/SvgIcons";
+
 import { ModalsProps } from "./types";
 
 // Component

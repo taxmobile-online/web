@@ -1,5 +1,6 @@
 import React from "react";
 import { AnimatePresence } from "framer-motion";
+
 import CenterModal from "./CenterModal";
 import { Input } from "Components/Atoms/Input";
 import { CustomSelect } from "../CustomSelect";

@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 
-import { formatForSelectInput } from "Utils/Helper";
-
 import CenterModal from "./CenterModal";
 import { Spinner } from "Components/Atoms/Spinner";
 import CreateSubSectionForm from "Components/Organisms/Forms/CreateSubSectionForm";
+
+import { formatForSelectInput } from "Utils/Helper";
 import useSectionStore from "Store/sections.store";
 
 // Type defination
