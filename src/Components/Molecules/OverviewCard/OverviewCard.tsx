@@ -1,12 +1,14 @@
 import React from "react";
+
 import { Top, Wrapper } from "./style";
-import Typography from "Components/Atoms/Typography";
+
 import {
   MaterialsIcon,
   PurchasesIcon,
   SubscriptionIcon,
   UsersIcon,
 } from "Components/Atoms/SvgIcons";
+import Typography from "Components/Atoms/Typography";
 import { Flex } from "Styles/layouts/Flex";
 
 // Type defination

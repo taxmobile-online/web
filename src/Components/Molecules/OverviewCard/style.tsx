@@ -1,5 +1,5 @@
-import { FlexColumn, FlexRowAiCenter } from "Styles/Abstract/Mixins";
 import styled from "styled-components";
+import { FlexColumn, FlexRowAiCenter } from "Styles/Abstract/Mixins";
 
 export const Wrapper = styled.div`
   border-radius: 0.4rem;
