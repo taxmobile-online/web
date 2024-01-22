@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import { LinksWrapper, Wrapper } from "./style";
-import Logo from "Components/Atoms/Logo";
 import {
   LibraryIcon,
   DashboardIcon,
@@ -8,7 +9,7 @@ import {
   SubscribersIcon,
   CouponIcon,
 } from "Components/Atoms/SvgIcons";
-import { Link } from "react-router-dom";
+import Logo from "Components/Atoms/Logo";
 
 // Type defination
 interface Props {}
