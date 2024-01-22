@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import * as yup from "yup";
 import { Form } from "formik";
+import { useNavigate } from "react-router-dom";
 
+import Button from "Components/Atoms/Button";
 import { FormField, InputField } from "Components/Molecules/FormFields";
-import { SignUpFormProps } from "./types";
+
 import useAuthStore from "Store/auth.store";
 import useApi from "Utils/Hooks/useApi";
-import Button from "Components/Atoms/Button";
-import { useNavigate } from "react-router-dom";
+import { SignUpFormProps } from "./types";
 
 const validationSchema = yup.object().shape({
   fullName: yup.string().required().min(1).label("Full Name"),
