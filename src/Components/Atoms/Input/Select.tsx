@@ -16,8 +16,8 @@ const Select: React.FC<SelectProps> = (props) => {
     wrapperClass = "normal",
     bottomLabel,
     noMargin,
-    options,
     placeholder,
+    options,
     ...otherProps
   } = props;
 
