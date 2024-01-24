@@ -34,11 +34,10 @@ const Book: React.FC<Props> = ({ data }) => {
 
   const afterTokenAccess = async () => {
     if (tokedAccessData) {
-      console.log({ tokedAccessData });
       const token = tokedAccessData?.data?.token;
 
       // navigate(`/book/${data.documentId}/${token}`);
-      window.open(`/book/${data.documentId}/${token}`, "_blank");
+      window.open(`${window.location.origin}/book/${data.documentId}/${token}`);
     }
   };
 
