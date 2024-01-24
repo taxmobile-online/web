@@ -9,7 +9,7 @@ const useAuthStore = create<AuthStoreProps>()(
     immer(
       devtools((set) => ({
         accountType: null,
-        pricingId: null,
+        pricingId: "",
         transactionId: null,
         userData: {},
 
@@ -18,7 +18,7 @@ const useAuthStore = create<AuthStoreProps>()(
         setAccountType: (type) => {
           set({ accountType: type });
         },
-        setPricingId: (pricingId) => {
+        setPricingId: (pricingId: string) => {
           set({ pricingId });
         },
         setTransactionId: (id) => {

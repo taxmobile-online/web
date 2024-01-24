@@ -21,14 +21,14 @@ const PlanOption: React.FC<Props> = (props) => {
   const [duration, setDuration] = useState(monthly);
 
   // Store
-  const { setPlanDuration } = useAuthStore();
+  const { setPricingId } = useAuthStore();
 
   // Props
   const { className } = props;
 
   // Effects
   useEffect(() => {
-    setPlanDuration!("MONTHLY");
+    setPricingId!("MONTHLY");
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -41,7 +41,7 @@ const PlanOption: React.FC<Props> = (props) => {
         className="plan-option__btn"
         onClick={() => {
           setDuration(monthly);
-          setPlanDuration!("MONTHLY");
+          setPricingId!("MONTHLY");
         }}
       />
       <Button
@@ -49,7 +49,7 @@ const PlanOption: React.FC<Props> = (props) => {
         className="plan-option__btn"
         onClick={() => {
           setDuration(yearly);
-          setPlanDuration!("YEARLY");
+          setPricingId!("YEARLY");
         }}
       />
     </Wrapper>

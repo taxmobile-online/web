@@ -80,6 +80,7 @@ const Plans: React.FC<PlansProps> = (props) => {
               <>
                 <PaymentButton
                   price={plan.price}
+                  pricingId={plan.pricingId}
                   accountType={plan.accountType}
                   handleShowModal={handleShowModal}
                 />
@@ -97,6 +98,7 @@ const Plans: React.FC<PlansProps> = (props) => {
                 <PaymentButton
                   price={plan.price}
                   accountType={plan.accountType}
+                  pricingId={plan.pricingId}
                   handleShowModal={handleShowModal}
                   btnType="btn-primary"
                 />

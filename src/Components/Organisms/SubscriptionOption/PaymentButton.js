@@ -4,9 +4,9 @@ import useAuthStore from "Store/auth.store";
 
 const PaymentButton = (props) => {
   // Props
-  const { handleShowModal, price, accountType, btnType } = props;
+  const { handleShowModal, price, accountType, btnType, pricingId } = props;
   // Store
-  const { setTransactionId, setAccountType } = useAuthStore();
+  const { setTransactionId, setAccountType, setPricingId } = useAuthStore();
 
   const config = {
     reference: new Date().getTime().toString(),
@@ -21,6 +21,7 @@ const PaymentButton = (props) => {
     console.log({ reference });
     setAccountType(accountType);
     setTransactionId(reference.trxref);
+    setPricingId(pricingId);
   };
   const onClose = () => {
     console.log("closed");

@@ -33,11 +33,16 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ children }) => {
   const navigate = useNavigate();
 
   // Store
-  const { accountType, planDuration, transactionId } = useAuthStore();
+  const { accountType, pricingId, transactionId } = useAuthStore();
 
   // Methods
   const handleSubmit = async (values: ValuesProps) => {
-    const requestData = { ...values, accountType, planDuration, transactionId };
+    const requestData = {
+      ...values,
+      accountType,
+      pricingId,
+      transactionId,
+    };
 
     // Send to backend
     await sendRequest("POST", endpoints.registerUserApi, requestData);
