@@ -5,6 +5,7 @@ import Button from "Components/Atoms/Button";
 import useAuthStore from "Store/auth.store";
 
 const PaymentButton = (props) => {
+  
   // Props
   const { handleShowModal, price, accountType, btnType, pricingId } = props;
   // Store
