@@ -89,7 +89,7 @@ const Router = createBrowserRouter(
       />
 
       <Route
-        path="book:id:token"
+        path="book/:id/:token"
         element={
           <ProtectedRoute>
             <Read />

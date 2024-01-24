@@ -1,6 +1,8 @@
-import React, { useRef } from "react";
-import { Wrapper } from "./style";
+import React, { useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
+import CloudPdfViewer from "@cloudpdf/viewer";
+
+import { Wrapper } from "./style";
 
 // Type defination
 interface Props {}
@@ -12,10 +14,25 @@ const Read: React.FC<Props> = () => {
 
   // Hooks
   const params = useParams();
-  console.log({ params });
+  const { id, token } = params;
+
+  //   Effects
+  useEffect(() => {
+    if (id) {
+      CloudPdfViewer(
+        {
+          documentId: id,
+          darkMode: true,
+          token: token,
+        },
+        viewer.current
+      ).then((instance) => {});
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Data to display
-  return <Wrapper></Wrapper>;
+  return <Wrapper ref={viewer}></Wrapper>;
 };
 
 export default Read;
