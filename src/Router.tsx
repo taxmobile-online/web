@@ -29,6 +29,7 @@ import { PricingTemplate } from "Components/Templates/PricingTemplate";
 import { CouponCode } from "Components/Pages/CouponCode";
 import { ProtectedRoute } from "Components/Atoms/ProtectedRoute";
 import { SubSections } from "Components/Pages/SubSections";
+import { Read } from "Components/Pages/Read";
 
 const Router = createBrowserRouter(
   createRoutesFromElements(
@@ -83,6 +84,15 @@ const Router = createBrowserRouter(
         element={
           <ProtectedRoute>
             <Library />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="book:id:token"
+        element={
+          <ProtectedRoute>
+            <Read />
           </ProtectedRoute>
         }
       />

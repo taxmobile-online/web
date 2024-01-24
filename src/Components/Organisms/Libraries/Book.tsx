@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import CloudPdfViewer from "@cloudpdf/viewer";
 
-import { Actions, BookStyle } from "./style";
+import { Actions, BookStyle, Viewer, ViewerWrapper } from "./style";
 
 import Button from "Components/Atoms/Button";
 import Typography from "Components/Atoms/Typography";
@@ -18,8 +19,11 @@ interface Props {
 
 // Component
 const Book: React.FC<Props> = ({ data }) => {
+
+
   // States
   const [reRender, setReRender] = useState(false);
+  const [bookAccessToken, setBookAccessToken] = useState("");
 
   // Hooks
   const { data: tokedAccessData, loading, sendRequest } = useApi<any>();
@@ -33,7 +37,11 @@ const Book: React.FC<Props> = ({ data }) => {
   };
 
   const afterTokenAccess = async () => {
-    console.log({ tokedAccessData });
+    if (tokedAccessData) {
+      console.log({ tokedAccessData });
+      const token = tokedAccessData?.data?.token;
+      setBookAccessToken(token);
+    }
   };
 
   // Effects
@@ -43,39 +51,66 @@ const Book: React.FC<Props> = ({ data }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [reRender]);
 
+  useEffect(() => {
+    if (bookAccessToken) {
+      CloudPdfViewer(
+        {
+          documentId: data.documentId,
+          darkMode: true,
+          token: bookAccessToken,
+        },
+        viewer.current
+      ).then((instance) => {});
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bookAccessToken]);
+
   // Data to display
   return (
-    <BookStyle>
-      <div className="book__top">
-        <Typography as="h5" className="h-41" text={`${data.title.charAt(0)}`} />
-      </div>
-      <div className="book__bottom">
-        <Typography
-          as="h5"
-          className="h-21 text-truncate"
-          title={data.title || ""}
-          text={data.title || "--"}
-        />
-        <Typography
-          as="h5"
-          className="p-15"
-          text={`${formatCurrency(data.amount)}`}
-        />
-        <Actions className="mt-20">
-          <Button
-            onClick={() => getBookAccess()}
-            className="btn b-3 btn-primary btn-s-1 book-btn"
-          >
-            {loading ? (
-              <Spinner style={{ width: "1.5rem", height: "1.5rem" }} />
-            ) : (
-              "Read"
-            )}
-          </Button>
-          {data.canBuy && <Button className="book-btn" value="Download" />}
-        </Actions>
-      </div>
-    </BookStyle>
+    <>
+      <BookStyle>
+        <div className="book__top">
+          <Typography
+            as="h5"
+            className="h-41"
+            text={`${data.title.charAt(0)}`}
+          />
+        </div>
+        <div className="book__bottom">
+          <Typography
+            as="h5"
+            className="h-21 text-truncate"
+            title={data.title || ""}
+            text={data.title || "--"}
+          />
+          <Typography
+            as="h5"
+            className="p-15"
+            text={`${formatCurrency(data.amount)}`}
+          />
+          <Actions className="mt-20">
+            <Button
+              onClick={() => getBookAccess()}
+              className="btn b-3 btn-primary btn-s-1 book-btn"
+            >
+              {loading ? (
+                <Spinner style={{ width: "1.5rem", height: "1.5rem" }} />
+              ) : (
+                "Read"
+              )}
+            </Button>
+            {data.canBuy && <Button className="book-btn" value="Download" />}
+          </Actions>
+        </div>
+      </BookStyle>
+
+      {bookAccessToken && (
+        <ViewerWrapper>
+          <button className="close-btn">Close</button>
+          <Viewer ref={viewer}></Viewer>
+        </ViewerWrapper>
+      )}
+    </>
   );
 };
 

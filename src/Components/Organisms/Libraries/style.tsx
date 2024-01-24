@@ -3,6 +3,7 @@ import {
   FlexJcEndAiCenter,
   FlexRowAiCenter,
   FlexRowJcBetweenAiCenter,
+  FlexRowJcCenterAiCenter,
   GridCenter,
 } from "Styles/Abstract/Mixins";
 import styled from "styled-components";
@@ -72,3 +73,5 @@ export const Circulars = styled.div`
 `;
 
 export const CircularToggleStyle = styled.div``;
+
+
