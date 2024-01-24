@@ -10,7 +10,6 @@ import useApi from "Utils/Hooks/useApi";
 import endpoints from "Services/endpoints";
 import useAuthStore from "Store/auth.store";
 import { Spinner } from "Components/Atoms/Spinner";
-import { useNavigate } from "react-router-dom";
 
 // Type defination
 interface Props {
@@ -25,8 +24,6 @@ const Book: React.FC<Props> = ({ data }) => {
   // Hooks
   const { data: tokedAccessData, loading, sendRequest } = useApi<any>();
   const { userData } = useAuthStore();
-
-  const navigate = useNavigate();
 
   // Methods
   const getBookAccess = async () => {
