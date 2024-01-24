@@ -35,7 +35,7 @@ const ResetPasswordForm: React.FC<SignUpFormProps> = () => {
   // Methods
   const handleSubmit = async (values: any) => {
     const idString =
-      "84617DD95F887E8BB8940E64BDE088-42ccfe8e52aed47cb.c-C7487967C93F4ADE5070D14848EB2D:1702683779685-4e9ae1c709650f8-C8678BC5509D573AFB49719D6B64D9";
+      "E8B60F67B36AD46B702C4E55A0336F-e0ec64969663c8e08.c-AAF54EF565CF293D29FAAE5820B002:1706086276878-fc0ecb10ff29282-637622EE285E392AD7082130E17F49";
     const requestData = {
       password: values.password,
       idString,
