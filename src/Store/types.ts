@@ -7,8 +7,8 @@ export interface AuthStoreProps {
   accountType?: AccountType;
   setAccountType?: (type: AccountType) => void;
 
-  planDuration?: PlanDurationType;
-  setPlanDuration?: (duration: PlanDurationType) => void;
+  pricingId?: PlanDurationType;
+  setPricingId?: (pricingId: string) => void;
 
   curency?: CurrencyType;
   setCurrency?: (type: CurrencyType) => void;
