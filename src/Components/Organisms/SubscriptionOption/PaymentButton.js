@@ -1,5 +1,7 @@
 import { usePaystackPayment } from "react-paystack";
+
 import Button from "Components/Atoms/Button";
+
 import useAuthStore from "Store/auth.store";
 
 const PaymentButton = (props) => {
