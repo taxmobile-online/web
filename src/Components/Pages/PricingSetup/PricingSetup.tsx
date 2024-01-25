@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 
 import { Actions, Card, Wrapper } from "./style";
 
+import Button from "Components/Atoms/Button";
+import { Input } from "Components/Atoms/Input";
 import Typography from "Components/Atoms/Typography";
 import { PlanOption } from "Components/Molecules/PlanOption";
-import { Input } from "Components/Atoms/Input";
-import Button from "Components/Atoms/Button";
 
 // Type defination
 interface Props {}
