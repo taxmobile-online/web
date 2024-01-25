@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 
 import Home from "Components/Pages/Home";
+import { Read } from "Components/Pages/Read";
 import { SignIn } from "Components/Pages/SignIn";
 import { Library } from "Components/Pages/Library";
 import VerifyEmail from "Components/Pages/VerifyEmail";
@@ -14,10 +15,8 @@ import { ForgetPassword } from "Components/Pages/ForgetPassword";
 import { InviteTeamMate } from "Components/Pages/InviteTeamMate";
 import { MultiUserSignup } from "Components/Pages/MultiUserSignup";
 import { MultiUserSetting } from "Components/Pages/MultiUserSetting";
-import { AdminProfileSetting } from "Components/Pages/AdminProfileSetting";
 import { Billing } from "Components/Pages/Billing";
 import { PaymentSuccess } from "Components/Pages/PaymentSuccess";
-import { IndividualUserSettings } from "Components/Pages/IndividualUserSettings";
 import { ELibrary } from "Components/Pages/ELibrary";
 import { AdminDashboard } from "Components/Pages/AdminDashboard";
 import { Sections } from "Components/Pages/Sections";
@@ -28,7 +27,8 @@ import { PricingTemplate } from "Components/Templates/PricingTemplate";
 import { CouponCode } from "Components/Pages/CouponCode";
 import { ProtectedRoute } from "Components/Atoms/ProtectedRoute";
 import { SubSections } from "Components/Pages/SubSections";
-import { Read } from "Components/Pages/Read";
+import { AdminProfileSetting } from "Components/Pages/AdminProfileSetting";
+import { IndividualUserSettings } from "Components/Pages/IndividualUserSettings";
 import { AdminDashboardTemplate } from "Components/Templates/AdminDashboardTemplate";
 
 const Router = createBrowserRouter(
