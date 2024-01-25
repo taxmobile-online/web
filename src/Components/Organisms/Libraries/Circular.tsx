@@ -1,8 +1,10 @@
 import React from "react";
+
 import { BookStyle } from "./style";
-import Typography from "Components/Atoms/Typography";
-import Button from "Components/Atoms/Button";
+
 import { Flex } from "Styles/layouts/Flex";
+import Button from "Components/Atoms/Button";
+import Typography from "Components/Atoms/Typography";
 
 // Type defination
 interface Props {
