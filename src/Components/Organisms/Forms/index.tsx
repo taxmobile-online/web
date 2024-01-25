@@ -5,3 +5,4 @@ export { default as CreateSectionForm } from "./CreateSectionForm";
 export { default as CreateSubSectionForm } from "./CreateSubSectionForm";
 export { default as AdminProfileForm } from "./AdminProfileForm";
 export { default as CreateMaterialForm } from "./CreateMaterialForm";
+export { default as PricingSetupForm } from "./PricingSetupForm";
