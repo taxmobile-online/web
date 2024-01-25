@@ -7,6 +7,8 @@ import {
   RightModalTop,
   RightModalWrapper,
 } from "./style";
+import { Flex } from "Styles/layouts/Flex";
+
 import Button from "Components/Atoms/Button";
 import Overlay from "Components/Atoms/Overlay";
 import Input from "Components/Atoms/Input/Input";
@@ -14,7 +16,6 @@ import { Close } from "Components/Atoms/SvgIcons";
 import Typography from "Components/Atoms/Typography";
 import { SignUpForm } from "Components/Organisms/Forms";
 
-import { Flex } from "Styles/layouts/Flex";
 
 // Type defination
 interface Props {
