@@ -20,7 +20,6 @@ import { PaymentSuccess } from "Components/Pages/PaymentSuccess";
 import { IndividualUserSettings } from "Components/Pages/IndividualUserSettings";
 import { ELibrary } from "Components/Pages/ELibrary";
 import { AdminDashboard } from "Components/Pages/AdminDashboard";
-import { AdminDashboardTemplate } from "Components/Templates/AdminDashboardTemplate";
 import { Sections } from "Components/Pages/Sections";
 import { Subscribers } from "Components/Pages/Subscribers";
 import { Pricing } from "Components/Pages/Pricing";
@@ -30,6 +29,7 @@ import { CouponCode } from "Components/Pages/CouponCode";
 import { ProtectedRoute } from "Components/Atoms/ProtectedRoute";
 import { SubSections } from "Components/Pages/SubSections";
 import { Read } from "Components/Pages/Read";
+import { AdminDashboardTemplate } from "Components/Templates/AdminDashboardTemplate";
 
 const Router = createBrowserRouter(
   createRoutesFromElements(
