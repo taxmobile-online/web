@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import * as yup from "yup";
 import { Form } from "formik";
 
-import { FormField, InputField } from "Components/Molecules/FormFields";
 import FormalModalFooter from "./FormModalFooter";
+import { FormField, InputField } from "Components/Molecules/FormFields";
 
 import useApi from "Utils/Hooks/useApi";
 import { SignUpFormProps } from "./types";
