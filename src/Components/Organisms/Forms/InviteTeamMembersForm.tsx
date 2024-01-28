@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 
-import { SignUpFormProps } from "./types";
-import useAuthStore from "Store/auth.store";
 import useApi from "Utils/Hooks/useApi";
+import { SignUpFormProps } from "./types";
 import endpoints from "Services/endpoints";
+import { Flex } from "Styles/layouts/Flex";
+import useAuthStore from "Store/auth.store";
 import Button from "Components/Atoms/Button";
 import { Link, useNavigate } from "react-router-dom";
 import { AppTagInput } from "Components/Atoms/Input";
-import { Flex } from "Styles/layouts/Flex";
+
 import { FormNotification } from "Components/Molecules/FormNotification";
 
 // Component
