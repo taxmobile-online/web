@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
+
 import * as yup from "yup";
 import { Form } from "formik";
-
-import { FormField, InputField } from "Components/Molecules/FormFields";
-import { SignUpFormProps, ValuesProps } from "./types";
-import useAuthStore from "Store/auth.store";
-import useApi from "Utils/Hooks/useApi";
-import endpoints from "Services/endpoints";
-import { RightModalDown } from "./style";
-import Button from "Components/Atoms/Button";
 import { useNavigate } from "react-router-dom";
+
+import useApi from "Utils/Hooks/useApi";
+import { RightModalDown } from "./style";
+import endpoints from "Services/endpoints";
+import useAuthStore from "Store/auth.store";
+import { SignUpFormProps, ValuesProps } from "./types";
+
+import Button from "Components/Atoms/Button";
+import { FormField, InputField } from "Components/Molecules/FormFields";
 
 const initialValues = {
   fullName: "",
