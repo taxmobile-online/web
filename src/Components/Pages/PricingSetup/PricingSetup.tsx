@@ -33,6 +33,8 @@ const PricingSetup: React.FC<Props> = () => {
           text="Create pricing set-up"
         />
 
+        <PricingSetupForm />
+
         <Input label="Account type" />
         <Input label="Price" />
 
