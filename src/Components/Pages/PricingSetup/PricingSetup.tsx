@@ -7,6 +7,7 @@ import Button from "Components/Atoms/Button";
 import { Input } from "Components/Atoms/Input";
 import Typography from "Components/Atoms/Typography";
 import { PlanOption } from "Components/Molecules/PlanOption";
+import { PricingSetupForm } from "Components/Organisms/Forms";
 
 // Type defination
 interface Props {}
