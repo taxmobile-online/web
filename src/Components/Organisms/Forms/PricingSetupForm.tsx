@@ -7,8 +7,8 @@ import { FormField, InputField } from "Components/Molecules/FormFields";
 
 import useApi from "Utils/Hooks/useApi";
 import { SignUpFormProps } from "./types";
-import endpoints from "Services/endpoints";
 import useSectionStore from "Store/sections.store";
+import endpoints from "Services/endpoints";
 
 const validationSchema = yup.object().shape({
   sectionName: yup.string().required().min(1).label("Section Name"),
