@@ -4,7 +4,11 @@ import * as yup from "yup";
 import { Form } from "formik";
 
 import FormalModalFooter from "./FormModalFooter";
-import { FormField, InputField, SelectField } from "Components/Molecules/FormFields";
+import {
+  FormField,
+  InputField,
+  SelectField,
+} from "Components/Molecules/FormFields";
 
 import useApi from "Utils/Hooks/useApi";
 import { SignUpFormProps } from "./types";
@@ -12,7 +16,7 @@ import endpoints from "Services/endpoints";
 import useSectionStore from "Store/sections.store";
 
 const validationSchema = yup.object().shape({
-  sectionName: yup.string().required().min(1).label("Section Name"),
+  accountType: yup.string().required().min(1).label("Section Name"),
 });
 
 // Component
@@ -25,7 +29,7 @@ const PricingSetupForm: React.FC<SignUpFormProps> = (props) => {
 
   // Varaibles
   const initialValues = {
-    sectionName: sectionToEdit ? sectionToEdit.sectionName : "",
+    accountType: "",
   };
 
   // Hooks
@@ -85,9 +89,14 @@ const PricingSetupForm: React.FC<SignUpFormProps> = (props) => {
       onSubmit={handleSubmit}
     >
       <Form>
-        <SelectField label="Section Name" name="accountType" />
-
-       
+        <SelectField
+          options={[
+            { id: "PERSONAL", value: "PERSONAL" },
+            { id: "COPERATE", value: "COPERATE" },
+          ]}
+          label="Account Type"
+          name="accountType"
+        />
 
         <FormalModalFooter
           isLoading={loading || editing}
