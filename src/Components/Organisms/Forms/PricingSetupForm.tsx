@@ -16,7 +16,7 @@ import endpoints from "Services/endpoints";
 import useSectionStore from "Store/sections.store";
 import { PlanOption } from "Components/Molecules/PlanOption";
 import Typography from "Components/Atoms/Typography";
-import { Card } from "./style";
+import { Card, OptionsWrapper } from "./style";
 
 const validationSchema = yup.object().shape({
   accountType: yup.string().required().min(1).label("Account type"),
@@ -29,6 +29,7 @@ const validationSchema = yup.object().shape({
 const PricingSetupForm: React.FC<SignUpFormProps> = (props) => {
   // States
   const [reRender, setReRender] = useState(false);
+  const [planDuration, setPlanDuration] = useState("");
 
   // Store
   const { sectionToEdit, isEdit } = useSectionStore();
@@ -56,19 +57,24 @@ const PricingSetupForm: React.FC<SignUpFormProps> = (props) => {
   const handleSubmit = async (values: any) => {
     const requestData = {
       ...values,
+      duration: planDuration,
+      subscriberCount: Number(values.subscriberCount),
+      price: Number(values.price),
     };
 
+    console.log({ requestData });
+
     // Send to backend
-    if (isEdit && sectionToEdit.sectionId) {
-      await editSectionRequest(
-        "PUT",
-        `/section/${sectionToEdit.sectionId}`,
-        requestData
-      );
-    } else {
-      await sendRequest("POST", endpoints.createSectionEndpoint, requestData);
-    }
-    setReRender(!reRender);
+    // if (isEdit && sectionToEdit.sectionId) {
+    //   await editSectionRequest(
+    //     "PUT",
+    //     `/section/${sectionToEdit.sectionId}`,
+    //     requestData
+    //   );
+    // } else {
+    //   await sendRequest("POST", endpoints.createSectionEndpoint, requestData);
+    // }
+    // setReRender(!reRender);
   };
 
   const handleAfterSubmit = () => {
@@ -98,7 +104,12 @@ const PricingSetupForm: React.FC<SignUpFormProps> = (props) => {
       onSubmit={handleSubmit}
     >
       <Form>
-        <PlanOption className="mt-60 mb-40" />
+        <OptionsWrapper>
+          <PlanOption
+            getSelectedPlan={setPlanDuration}
+            className="mt-60 mb-40"
+          />
+        </OptionsWrapper>
 
         <Card>
           <Typography

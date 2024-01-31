@@ -9,6 +9,7 @@ import useAuthStore from "Store/auth.store";
 // Type defination
 interface Props {
   className?: string;
+  getSelectedPlan?: (paln: string) => void;
 }
 
 // Variables
@@ -24,11 +25,12 @@ const PlanOption: React.FC<Props> = (props) => {
   const { setPricingId } = useAuthStore();
 
   // Props
-  const { className } = props;
+  const { className, getSelectedPlan } = props;
 
   // Effects
   useEffect(() => {
     setPricingId!("MONTHLY");
+    getSelectedPlan!("MONTHLY");
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -42,6 +44,7 @@ const PlanOption: React.FC<Props> = (props) => {
         onClick={() => {
           setDuration(monthly);
           setPricingId!("MONTHLY");
+          getSelectedPlan!("MONTHLY");
         }}
       />
       <Button
@@ -50,6 +53,7 @@ const PlanOption: React.FC<Props> = (props) => {
         onClick={() => {
           setDuration(yearly);
           setPricingId!("YEARLY");
+          getSelectedPlan!("YEARLY");
         }}
       />
     </Wrapper>
