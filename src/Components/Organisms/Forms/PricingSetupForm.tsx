@@ -14,10 +14,15 @@ import useApi from "Utils/Hooks/useApi";
 import { SignUpFormProps } from "./types";
 import endpoints from "Services/endpoints";
 import useSectionStore from "Store/sections.store";
+import { PlanOption } from "Components/Molecules/PlanOption";
+import Typography from "Components/Atoms/Typography";
+import { Card } from "./style";
 
 const validationSchema = yup.object().shape({
-  accountType: yup.string().required().min(1).label("Section Name"),
-  subscriberCount: yup.string().required().min(1).label("Section Name"),
+  accountType: yup.string().required().min(1).label("Account type"),
+  currency: yup.string().required().min(1).label("Currency"),
+  subscriberCount: yup.string().required().min(1).label("No of subscriber"),
+  price: yup.string().required().min(1).label("Price"),
 });
 
 // Component
@@ -31,7 +36,9 @@ const PricingSetupForm: React.FC<SignUpFormProps> = (props) => {
   // Varaibles
   const initialValues = {
     accountType: "",
+    currency: "",
     subscriberCount: "",
+    price: "",
   };
 
   // Hooks
@@ -91,23 +98,52 @@ const PricingSetupForm: React.FC<SignUpFormProps> = (props) => {
       onSubmit={handleSubmit}
     >
       <Form>
-        <SelectField
-          options={[
-            { id: "PERSONAL", value: "PERSONAL" },
-            { id: "COPERATE", value: "COPERATE" },
-          ]}
-          label="Account Type"
-          name="accountType"
-        />
+        <PlanOption className="mt-60 mb-40" />
 
-        <InputField label="Subscriber Amount" name="subscriberCount" />
+        <Card>
+          <Typography
+            as="h5"
+            className="h-38 pb-15 mb-50"
+            text="Create pricing set-up"
+          />
+          <SelectField
+            options={[
+              { id: "PERSONAL", value: "PERSONAL" },
+              { id: "COPERATE", value: "COPERATE" },
+            ]}
+            label="Account Type"
+            name="accountType"
+          />
 
-        <FormalModalFooter
-          isLoading={loading || editing}
-          yesText={isEdit ? "Edit" : "Create"}
-          noText="Cancel"
-          setShowModal={closeFormModal}
-        />
+          <SelectField
+            options={[
+              { id: "NGN", value: "NGN" },
+              { id: "USD", value: "USD" },
+            ]}
+            label="Currency"
+            name="currency"
+          />
+
+          <InputField label="Price" name="price" />
+          <InputField label="Number Of Subscribers" name="subscriberCount" />
+
+          <FormalModalFooter
+            isLoading={loading || editing}
+            yesText={isEdit ? "Edit" : "Create"}
+            noText="Cancel"
+            setShowModal={closeFormModal}
+          />
+
+          {/* <Actions className="mt-90">
+          <Button
+            className="btn-secondary btn-md"
+            onClick={() => navigate("/admin/pricing")}
+          >
+            Cancel
+          </Button>
+          <Button className="btn-primary btn-md">Update</Button>
+        </Actions> */}
+        </Card>
       </Form>
     </FormField>
   );

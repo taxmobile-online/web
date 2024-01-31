@@ -25,30 +25,7 @@ const PricingSetup: React.FC<Props> = () => {
         pricing set plans for taxmobile community
       </Typography>
 
-      <PlanOption className="mt-60 mb-40" />
-
-      <Card>
-        <Typography
-          as="h5"
-          className="h-38 pb-15 mb-50"
-          text="Create pricing set-up"
-        />
-
-        <PricingSetupForm />
-
-        <Input label="Account type" />
-        <Input label="Price" />
-
-        <Actions className="mt-90">
-          <Button
-            className="btn-secondary btn-md"
-            onClick={() => navigate("/admin/pricing")}
-          >
-            Cancel
-          </Button>
-          <Button className="btn-primary btn-md">Update</Button>
-        </Actions>
-      </Card>
+      <PricingSetupForm />
     </Wrapper>
   );
 };
