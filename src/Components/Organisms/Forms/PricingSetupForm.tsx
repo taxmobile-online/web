@@ -4,7 +4,7 @@ import * as yup from "yup";
 import { Form } from "formik";
 
 import FormalModalFooter from "./FormModalFooter";
-import { FormField, InputField } from "Components/Molecules/FormFields";
+import { FormField, InputField, SelectField } from "Components/Molecules/FormFields";
 
 import useApi from "Utils/Hooks/useApi";
 import { SignUpFormProps } from "./types";
@@ -85,23 +85,9 @@ const PricingSetupForm: React.FC<SignUpFormProps> = (props) => {
       onSubmit={handleSubmit}
     >
       <Form>
-        <InputField label="Section Name" name="sectionName" />
+        <SelectField label="Section Name" name="accountType" />
 
-        {/* {children ? (
-          children
-        ) : (
-          <Button
-            disabled={loading}
-            type="submit"
-            className="btn btn-full btn-primary btn-bg-color-2 mt-35"
-          >
-            {loading || editing ? (
-              <Spinner style={{ width: "1.5rem", height: "1.5rem" }} />
-            ) : (
-              "Save"
-            )}
-          </Button>
-        )} */}
+       
 
         <FormalModalFooter
           isLoading={loading || editing}
