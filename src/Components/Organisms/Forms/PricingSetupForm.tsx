@@ -17,6 +17,7 @@ import useSectionStore from "Store/sections.store";
 
 const validationSchema = yup.object().shape({
   accountType: yup.string().required().min(1).label("Section Name"),
+  subscriberCount: yup.string().required().min(1).label("Section Name"),
 });
 
 // Component
@@ -30,6 +31,7 @@ const PricingSetupForm: React.FC<SignUpFormProps> = (props) => {
   // Varaibles
   const initialValues = {
     accountType: "",
+    subscriberCount: "",
   };
 
   // Hooks
@@ -97,6 +99,8 @@ const PricingSetupForm: React.FC<SignUpFormProps> = (props) => {
           label="Account Type"
           name="accountType"
         />
+
+        <InputField label="Subscriber Amount" name="subscriberCount" />
 
         <FormalModalFooter
           isLoading={loading || editing}
