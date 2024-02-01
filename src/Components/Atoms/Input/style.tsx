@@ -75,8 +75,8 @@ export const InputWrapper = styled.div`
   ${FlexRowAiCenter}
   gap: .5rem;
   border: 2px solid var(--color-6);
-  border-radius: 1.2rem;
   background-color: var(--color-white);
+  border-radius: 1.2rem;
   padding-right: 1.5rem;
   overflow: hidden;
 
