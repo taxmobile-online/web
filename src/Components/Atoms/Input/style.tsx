@@ -100,8 +100,8 @@ export const InputWrapper = styled.div`
 
   .input-ele {
     width: 100%;
-    padding-block: 1.7rem;
     flex-grow: 1;
+    padding-block: 1.7rem;
     padding-left: 1.5rem;
   }
 
