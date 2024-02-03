@@ -89,8 +89,8 @@ export const InputWrapper = styled.div`
 
   .input {
     border: none;
-    color: var(--color-4);
     font-family: inherit;
+    color: var(--color-4);
 
     &:active,
     &:focus {
