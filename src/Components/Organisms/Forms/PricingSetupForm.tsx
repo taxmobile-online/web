@@ -61,7 +61,6 @@ const PricingSetupForm: React.FC<SignUpFormProps> = (props) => {
       subscriberCount: Number(values.subscriberCount),
       price: Number(values.price),
     };
-
     console.log({ requestData });
 
     // Send to backend
