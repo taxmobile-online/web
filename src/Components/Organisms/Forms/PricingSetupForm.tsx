@@ -63,7 +63,7 @@ const PricingSetupForm: React.FC<SignUpFormProps> = (props) => {
     };
     console.log({ requestData });
 
-    // Send to backendd
+    // Send to backend
     // if (isEdit && sectionToEdit.sectionId) {
     //   await editSectionRequest(
     //     "PUT",
