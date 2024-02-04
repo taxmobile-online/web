@@ -58,8 +58,8 @@ const PricingSetupForm: React.FC<SignUpFormProps> = (props) => {
     const requestData = {
       ...values,
       duration: planDuration,
-      subscriberCount: Number(values.subscriberCount),
       price: Number(values.price),
+      subscriberCount: Number(values.subscriberCount),
     };
     console.log({ requestData });
 
