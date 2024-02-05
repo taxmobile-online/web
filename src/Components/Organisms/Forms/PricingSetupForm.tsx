@@ -19,10 +19,10 @@ import Typography from "Components/Atoms/Typography";
 import { Card, OptionsWrapper } from "./style";
 
 const validationSchema = yup.object().shape({
-  accountType: yup.string().required().min(1).label("Account type"),
   currency: yup.string().required().min(1).label("Currency"),
   price: yup.string().required().min(1).label("Price"),
   subscriberCount: yup.string().required().min(1).label("No of subscriber"),
+  accountType: yup.string().required().min(1).label("Account type"),
 });
 
 // Component
