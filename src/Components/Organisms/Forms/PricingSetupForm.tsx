@@ -32,7 +32,7 @@ const PricingSetupForm: React.FC<SignUpFormProps> = (props) => {
   const [planDuration, setPlanDuration] = useState("");
 
   // Store
-  const { sectionToEdit, isEdit } = useSectionStore();
+  const { isEdit } = useSectionStore();
 
   // Varaibles
   const initialValues = {
