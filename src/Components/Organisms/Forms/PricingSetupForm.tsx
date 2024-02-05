@@ -3,20 +3,20 @@ import React, { useEffect, useState } from "react";
 import * as yup from "yup";
 import { Form } from "formik";
 
-import FormalModalFooter from "./FormModalFooter";
 import {
   FormField,
   InputField,
   SelectField,
 } from "Components/Molecules/FormFields";
+import { Card, OptionsWrapper } from "./style";
+import endpoints from "Services/endpoints";
 
 import useApi from "Utils/Hooks/useApi";
 import { SignUpFormProps } from "./types";
-import endpoints from "Services/endpoints";
+import FormalModalFooter from "./FormModalFooter";
 import useSectionStore from "Store/sections.store";
-import { PlanOption } from "Components/Molecules/PlanOption";
 import Typography from "Components/Atoms/Typography";
-import { Card, OptionsWrapper } from "./style";
+import { PlanOption } from "Components/Molecules/PlanOption";
 
 const validationSchema = yup.object().shape({
   price: yup.string().required().min(1).label("Price"),
