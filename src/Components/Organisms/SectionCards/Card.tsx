@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import { CardStyle, SubSection } from "./style";
 
 import Button from "Components/Atoms/Button";
-import Typography from "Components/Atoms/Typography";
-import useApi from "Utils/Hooks/useApi";
 import { Spinner } from "Components/Atoms/Spinner";
+import Typography from "Components/Atoms/Typography";
+
+import useApi from "Utils/Hooks/useApi";
 import useSectionStore from "Store/sections.store";
 
 // Type defination
