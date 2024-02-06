@@ -1,10 +1,10 @@
 import { AllHTMLAttributes } from "react";
 
 export interface SectionCardsProps extends AllHTMLAttributes<HTMLDivElement> {
-  handleShowModal?: () => void;
-  handleFormSuccess?: () => void;
+  error: any;
   sections: Array<{}>;
   isLoading?: boolean;
   isSub?: boolean;
-  error: any;
+  handleShowModal?: () => void;
+  handleFormSuccess?: () => void;
 }
