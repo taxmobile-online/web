@@ -21,7 +21,7 @@ export const CardStyle = styled.div`
   padding: 1.8rem;
   border-radius: 0.6rem;
   box-shadow: var(--shadow-1);
-  
+
   .top {
     ${FlexRowJcBetweenAiCenter}
     gap: 1rem;
@@ -44,7 +44,6 @@ export const CardStyle = styled.div`
 `;
 
 export const SubSection = styled.div`
-  /* box-shadow: var(--shadow-1); */
   padding: 1.5rem;
   padding-block: 0.8rem;
   border: 1px solid var(--color-6);
