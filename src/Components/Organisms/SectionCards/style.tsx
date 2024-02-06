@@ -1,5 +1,5 @@
-import { FlexRowAiCenter, FlexRowJcBetweenAiCenter, FlexRowJcCenter } from 'Styles/Abstract/Mixins';
 import styled from 'styled-components';
+import { FlexRowAiCenter, FlexRowJcBetweenAiCenter, FlexRowJcCenter } from 'Styles/Abstract/Mixins';
 
 export const Wrapper = styled.div`
   ${FlexRowJcCenter}
