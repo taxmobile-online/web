@@ -10,12 +10,12 @@ const Select: React.FC<SelectProps> = (props) => {
   const {
     label,
     name,
+    noMargin,
     errorMessage,
     wrapperClass = "normal",
     inputClass = "input-ele",
     labelClass = "input-label",
     bottomLabel,
-    noMargin,
     placeholder,
     options,
     ...otherProps
