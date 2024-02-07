@@ -10,6 +10,7 @@ import useApi from "Utils/Hooks/useApi";
 import { SignUpFormProps } from "./types";
 import FormalModalFooter from "./FormModalFooter";
 import useSectionStore from "Store/sections.store";
+
 import {
   FormField,
   InputField,
@@ -18,6 +19,7 @@ import {
 import Typography from "Components/Atoms/Typography";
 import { PlanOption } from "Components/Molecules/PlanOption";
 
+// Schema
 const validationSchema = yup.object().shape({
   price: yup.string().required().min(1).label("Price"),
   currency: yup.string().required().min(1).label("Currency"),
