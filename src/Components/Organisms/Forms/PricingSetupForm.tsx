@@ -4,11 +4,10 @@ import * as yup from "yup";
 import { Form } from "formik";
 
 import { Card, OptionsWrapper } from "./style";
-import endpoints from "Services/endpoints";
 
 import useApi from "Utils/Hooks/useApi";
 import { SignUpFormProps } from "./types";
-import FormalModalFooter from "./FormModalFooter";
+import endpoints from "Services/endpoints";
 import useSectionStore from "Store/sections.store";
 
 import {
@@ -16,6 +15,7 @@ import {
   InputField,
   SelectField,
 } from "Components/Molecules/FormFields";
+import FormalModalFooter from "./FormModalFooter";
 import Typography from "Components/Atoms/Typography";
 import { PlanOption } from "Components/Molecules/PlanOption";
 
