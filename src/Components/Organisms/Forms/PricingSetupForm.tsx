@@ -6,15 +6,15 @@ import { Form } from "formik";
 import { Card, OptionsWrapper } from "./style";
 import endpoints from "Services/endpoints";
 
+import useApi from "Utils/Hooks/useApi";
+import { SignUpFormProps } from "./types";
+import FormalModalFooter from "./FormModalFooter";
+import useSectionStore from "Store/sections.store";
 import {
   FormField,
   InputField,
   SelectField,
 } from "Components/Molecules/FormFields";
-import useApi from "Utils/Hooks/useApi";
-import { SignUpFormProps } from "./types";
-import FormalModalFooter from "./FormModalFooter";
-import useSectionStore from "Store/sections.store";
 import Typography from "Components/Atoms/Typography";
 import { PlanOption } from "Components/Molecules/PlanOption";
 
