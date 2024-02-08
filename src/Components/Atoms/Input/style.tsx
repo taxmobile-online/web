@@ -115,11 +115,11 @@ export const InputWrapper = styled.div`
 `;
 
 export const SelectField = styled.select`
+  width: 100%;
   background-color: var(--color-white);
   border: 1px solid var(--color-17);
   box-shadow: 0 1rem 2.84984rem rgba(0, 0, 0, 0.05);
   border-radius: 1rem;
-  width: 100%;
   padding: 1.5rem 2rem;
   font-family: inherit;
   resize: none;
