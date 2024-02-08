@@ -126,8 +126,8 @@ export const SelectField = styled.select`
 
   &:active,
   &:focus {
-    border: 1px solid var(--color-17);
     outline: none;
+    border: 1px solid var(--color-17);
   }
 `;
 
