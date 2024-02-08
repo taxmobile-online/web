@@ -108,8 +108,8 @@ export const InputWrapper = styled.div`
   .input-ele--coupon {
     width: 100%;
     border: none;
-    padding-block: 1.7rem;
     padding-left: 1.5rem;
+    padding-block: 1.7rem;
     border: 0.1rem solid var(--color-2);
   }
 `;
