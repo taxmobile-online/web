@@ -155,10 +155,10 @@ export const CustomeFileField = styled.div`
   }
 
   .file-name {
-    color: var(--color-60);
-    font-size: 1.3rem;
     font-weight: 500;
     line-height: 150%;
+    font-size: 1.3rem;
+    color: var(--color-60);
   }
 
   .file-input {
