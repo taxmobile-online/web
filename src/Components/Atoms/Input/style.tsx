@@ -74,10 +74,10 @@ export const Wrapper = styled.div`
 export const InputWrapper = styled.div`
   ${FlexRowAiCenter}
   gap: .5rem;
-  border: 2px solid var(--color-6);
-  background-color: var(--color-white);
   border-radius: 1.2rem;
   padding-right: 1.5rem;
+  border: 2px solid var(--color-6);
+  background-color: var(--color-white);
   overflow: hidden;
 
   &.rounded {
