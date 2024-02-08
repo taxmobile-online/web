@@ -138,9 +138,9 @@ export const CustomeFileField = styled.div`
 
   .input-label {
     font-size: 1.5rem;
+    margin-bottom: 0.3rem;
     color: var(--color-9);
     display: inline-block;
-    margin-bottom: 0.3rem;
     text-transform: capitalize;
   }
 
