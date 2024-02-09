@@ -169,8 +169,8 @@ export const CustomeFileField = styled.div`
     bottom: 0;
     height: 100%;
     width: 100%;
-    position: absolute;
     cursor: pointer;
+    position: absolute;
   }
 
   .bottom-label {
