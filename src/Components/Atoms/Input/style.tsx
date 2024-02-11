@@ -165,8 +165,8 @@ export const CustomeFileField = styled.div`
     top: 0;
     left: 0;
     right: 0;
-    opacity: 0;
     bottom: 0;
+    opacity: 0;
     height: 100%;
     width: 100%;
     cursor: pointer;
