@@ -180,7 +180,7 @@ export const CustomeFileField = styled.div`
     font-weight: 400;
     line-height: 156.25%;
     color: var(--color-1);
-
     margin-top: 1.2rem;
+
   }
 `;
