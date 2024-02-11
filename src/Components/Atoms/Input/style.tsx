@@ -164,8 +164,8 @@ export const CustomeFileField = styled.div`
   .file-input {
     top: 0;
     left: 0;
-    opacity: 0;
     right: 0;
+    opacity: 0;
     bottom: 0;
     height: 100%;
     width: 100%;
