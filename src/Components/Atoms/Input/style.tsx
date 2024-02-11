@@ -176,11 +176,11 @@ export const CustomeFileField = styled.div`
   .bottom-label {
     display: block;
 
-    font-size: 1.3rem;
     font-weight: 400;
+    margin-top: 1.2rem;
+    font-size: 1.3rem;
     line-height: 156.25%;
     color: var(--color-1);
-    margin-top: 1.2rem;
 
   }
 `;
