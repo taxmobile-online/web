@@ -177,8 +177,8 @@ export const CustomeFileField = styled.div`
     display: block;
 
     font-weight: 400;
-    margin-top: 1.2rem;
     font-size: 1.3rem;
+    margin-top: 1.2rem;
     line-height: 156.25%;
     color: var(--color-1);
 
