@@ -45,8 +45,8 @@ export const CardStyle = styled.div`
 
 export const SubSection = styled.div`
   padding: 1.5rem;
-  padding-block: 0.8rem;
   margin-top: 1rem;
+  padding-block: 0.8rem;
   border-radius: 0.6rem;
   border: 1px solid var(--color-6);
 `;
