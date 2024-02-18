@@ -29,8 +29,8 @@ export const CardStyle = styled.div`
   }
 
   .actions {
-    ${FlexRowAiCenter}
     gap: 1rem;
+    ${FlexRowAiCenter}
   }
 
   .bottom {
