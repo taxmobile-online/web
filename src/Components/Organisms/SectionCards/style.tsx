@@ -21,11 +21,11 @@ export const CardStyle = styled.div`
   padding: 1.8rem;
   border-radius: 0.6rem;
   box-shadow: var(--shadow-1);
-
+  
   .top {
-    ${FlexRowJcBetweenAiCenter}
     gap: 1rem;
     width: 100%;
+    ${FlexRowJcBetweenAiCenter}
   }
 
   .actions {
