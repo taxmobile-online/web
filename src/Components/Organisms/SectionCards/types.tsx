@@ -5,6 +5,6 @@ export interface SectionCardsProps extends AllHTMLAttributes<HTMLDivElement> {
   isSub?: boolean;
   sections: Array<{}>;
   isLoading?: boolean;
-  handleFormSuccess?: () => void;
   handleShowModal?: () => void;
+  handleFormSuccess?: () => void;
 }
