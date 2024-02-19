@@ -1,8 +1,8 @@
+import styled from "styled-components";
 import {
   FlexJcEndAiCenter,
   FlexRowJcCenterAiCenter,
 } from "Styles/Abstract/Mixins";
-import styled from "styled-components";
 
 export const Wrapper = styled.div``;
 
