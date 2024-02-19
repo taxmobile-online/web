@@ -17,8 +17,8 @@ export const FormalModalFooterStyle = styled.div`
 
 export const Card = styled.div`
   width: 60rem;
-  border-radius: 1.2rem;
   padding: 3rem;
+  border-radius: 1.2rem;
   background: var(--color-white);
   border: 1px solid var(--color-6);
 `;
