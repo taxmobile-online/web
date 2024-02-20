@@ -11,8 +11,8 @@ export const RightModalDown = styled.div`
 `;
 
 export const FormalModalFooterStyle = styled.div`
-  ${FlexJcEndAiCenter}
   gap: 3.5rem;
+  ${FlexJcEndAiCenter}
 `;
 
 export const Card = styled.div`
