@@ -10,8 +10,8 @@ const useAuthStore = create<AuthStoreProps>()(
       devtools((set) => ({
         pricingId: "",
         accountType: null,
-        transactionId: null,
         userData: {},
+        transactionId: null,
 
         // Actions | Methods
 
