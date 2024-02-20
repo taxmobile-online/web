@@ -1,6 +1,6 @@
 // Auth store
 type AccountType = "PERSONAL" | "CORPERATE" | null;
-type PlanDurationType = "YEARLY" | "MONTHLY" | null;
+// type PlanDurationType = "YEARLY" | "MONTHLY" | null;
 type CurrencyType = "NGN" | "USD";
 
 export interface AuthStoreProps {
