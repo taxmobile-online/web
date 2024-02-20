@@ -8,8 +8,8 @@ const useAuthStore = create<AuthStoreProps>()(
   persist(
     immer(
       devtools((set) => ({
-        accountType: null,
         pricingId: "",
+        accountType: null,
         transactionId: null,
         userData: {},
 
