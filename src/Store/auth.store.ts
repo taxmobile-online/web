@@ -9,8 +9,8 @@ const useAuthStore = create<AuthStoreProps>()(
     immer(
       devtools((set) => ({
         pricingId: "",
-        accountType: null,
         userData: {},
+        accountType: null,
         transactionId: null,
 
         // Actions | Methods
