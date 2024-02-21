@@ -5,8 +5,8 @@ import { Form } from "formik";
 
 import { Card, OptionsWrapper } from "./style";
 
-import useApi from "Utils/Hooks/useApi";
 // import endpoints from "Services/endpoints";
+import useApi from "Utils/Hooks/useApi";
 import { SignUpFormProps } from "./types";
 import useSectionStore from "Store/sections.store";
 
