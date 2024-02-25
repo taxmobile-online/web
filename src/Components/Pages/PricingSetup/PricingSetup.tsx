@@ -1,12 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import { Actions, Card, Wrapper } from "./style";
+import { Wrapper } from "./style";
 
-import Button from "Components/Atoms/Button";
-import { Input } from "Components/Atoms/Input";
 import Typography from "Components/Atoms/Typography";
-import { PlanOption } from "Components/Molecules/PlanOption";
 import { PricingSetupForm } from "Components/Organisms/Forms";
 
 // Type defination

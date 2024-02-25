@@ -9,7 +9,7 @@ import useAuthStore from "Store/auth.store";
 // Type defination
 interface Props {
   className?: string;
-  getSelectedPlan?: (paln: string) => void;
+  getSelectedPlan?: (plan: string) => void;
 }
 
 // Variables

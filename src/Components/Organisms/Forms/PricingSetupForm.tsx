@@ -18,6 +18,7 @@ import {
 import FormalModalFooter from "./FormModalFooter";
 import Typography from "Components/Atoms/Typography";
 import { PlanOption } from "Components/Molecules/PlanOption";
+import endpoints from "Services/endpoints";
 
 // Schema
 const validationSchema = yup.object().shape({
@@ -45,11 +46,6 @@ const PricingSetupForm: React.FC<SignUpFormProps> = (props) => {
   };
 
   // Hooks
-  let {
-    data: editData,
-    loading: editing,
-    sendRequest: editSectionRequest,
-  } = useApi<any>();
   let { data, loading, sendRequest } = useApi<any>();
 
   // Props
@@ -63,7 +59,6 @@ const PricingSetupForm: React.FC<SignUpFormProps> = (props) => {
       price: Number(values.price),
       subscriberCount: Number(values.subscriberCount),
     };
-    console.log({ requestData });
 
     // Send to backend
     // if (isEdit && sectionToEdit.sectionId) {
@@ -75,18 +70,13 @@ const PricingSetupForm: React.FC<SignUpFormProps> = (props) => {
     // } else {
     //   await sendRequest("POST", endpoints.createSectionEndpoint, requestData);
     // }
-    // setReRender(!reRender);
+    await sendRequest("POST", endpoints.createPricingEndpoint, requestData);
+    setReRender(!reRender);
   };
 
   const handleAfterSubmit = () => {
-    if (isEdit) {
-      if (editData?.status && editData?.status === "SUCCESS") {
-        handleAfterFormSubmit!();
-      }
-    } else {
-      if (data?.status && data?.status === "SUCCESS") {
-        handleAfterFormSubmit!();
-      }
+    if (data?.status && data?.status === "SUCCESS") {
+      handleAfterFormSubmit!();
     }
   };
 
@@ -140,7 +130,7 @@ const PricingSetupForm: React.FC<SignUpFormProps> = (props) => {
           <InputField label="Number Of Subscribers" name="subscriberCount" />
 
           <FormalModalFooter
-            isLoading={loading || editing}
+            isLoading={loading}
             yesText={isEdit ? "Edit" : "Create"}
             noText="Cancel"
             setShowModal={closeFormModal}
