@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { EmptyCard } from "Components/Molecules/EmptyCard";
 import { useNavigate } from "react-router-dom";
 import usePageTitle from "Utils/Hooks/usePageTitle";
+import useApi from "Utils/Hooks/useApi";
+import endpoints from "Services/endpoints";
 
 // Type defination
 interface Props {}
@@ -12,6 +14,20 @@ const Pricing: React.FC<Props> = () => {
   usePageTitle("Pricing");
   const navigate = useNavigate();
 
+  // Api
+  const { data, loading, sendRequest } = useApi<any>();
+
+  // Methods
+  const getPricings = async () => {
+    await sendRequest("GET", endpoints.pricingEndpoint);
+  };
+
+  // Effects
+  useEffect(() => {
+    getPricings();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   // Data to display
   return (
     <EmptyCard

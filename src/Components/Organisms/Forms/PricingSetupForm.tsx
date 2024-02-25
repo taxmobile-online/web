@@ -70,7 +70,7 @@ const PricingSetupForm: React.FC<SignUpFormProps> = (props) => {
     // } else {
     //   await sendRequest("POST", endpoints.createSectionEndpoint, requestData);
     // }
-    await sendRequest("POST", endpoints.createPricingEndpoint, requestData);
+    await sendRequest("POST", endpoints.pricingEndpoint, requestData);
     setReRender(!reRender);
   };
 

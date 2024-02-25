@@ -12,7 +12,7 @@ const getSectionsEndpoint = "/section";
 const getSubSectionsEndpoint = "/section/sub";
 const getDocumentEndpoint = "/document";
 const getDocumentAccessEndpoint = "/document/token";
-const createPricingEndpoint = "/pricing";
+const pricingEndpoint = "/pricing";
 
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
@@ -28,5 +28,5 @@ export default {
   createSubSectionEndpoint,
   getDocumentEndpoint,
   getDocumentAccessEndpoint,
-  createPricingEndpoint,
+  pricingEndpoint,
 };
