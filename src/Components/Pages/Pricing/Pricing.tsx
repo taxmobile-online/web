@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { EmptyCard } from "Components/Molecules/EmptyCard";
 import usePageTitle from "Utils/Hooks/usePageTitle";
+import { EmptyCard } from "Components/Molecules/EmptyCard";
 import useApi from "Utils/Hooks/useApi";
 import endpoints from "Services/endpoints";
 
