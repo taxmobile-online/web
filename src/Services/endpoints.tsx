@@ -1,9 +1,9 @@
 // User endpoints
 const signInApi = "/auth/login";
+const inviteTeamApi = "/user/invite";
 const registerUserApi = "/auth/register";
 const resetPasswordApi = "/auth/password";
 const adminSignInApi = "/auth/admin/login";
-const inviteTeamApi = "/user/invite";
 
 // Admin endpoints
 const pricingEndpoint = "/pricing";
