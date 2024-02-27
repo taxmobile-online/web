@@ -8,8 +8,8 @@ const inviteTeamApi = "/user/invite";
 // Admin endpoints
 const pricingEndpoint = "/pricing";
 const getSectionsEndpoint = "/section";
-const createSectionEndpoint = "/section";
 const getDocumentEndpoint = "/document";
+const createSectionEndpoint = "/section";
 const createSubSectionEndpoint = "/section/sub";
 const getSubSectionsEndpoint = "/section/sub";
 const getDocumentAccessEndpoint = "/document/token";
