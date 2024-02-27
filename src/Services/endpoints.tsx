@@ -10,8 +10,8 @@ const pricingEndpoint = "/pricing";
 const getSectionsEndpoint = "/section";
 const getDocumentEndpoint = "/document";
 const createSectionEndpoint = "/section";
-const createSubSectionEndpoint = "/section/sub";
 const getSubSectionsEndpoint = "/section/sub";
+const createSubSectionEndpoint = "/section/sub";
 const getDocumentAccessEndpoint = "/document/token";
 
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
