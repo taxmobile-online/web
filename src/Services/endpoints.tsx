@@ -19,9 +19,9 @@ export default {
   // User endpoints
   signInApi,
   inviteTeamApi,
+  adminSignInApi,
   registerUserApi,
   resetPasswordApi,
-  adminSignInApi,
   createSectionEndpoint,
   getSectionsEndpoint,
   getSubSectionsEndpoint,
