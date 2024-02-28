@@ -23,10 +23,10 @@ export default {
   registerUserApi,
   pricingEndpoint,
   resetPasswordApi,
+  getDocumentEndpoint,
   getSectionsEndpoint,
   createSectionEndpoint,
   getSubSectionsEndpoint,
   createSubSectionEndpoint,
-  getDocumentEndpoint,
   getDocumentAccessEndpoint,
 };
