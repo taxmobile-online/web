@@ -21,6 +21,7 @@ export default {
   inviteTeamApi,
   adminSignInApi,
   registerUserApi,
+  pricingEndpoint,
   resetPasswordApi,
   createSectionEndpoint,
   getSectionsEndpoint,
@@ -28,5 +29,4 @@ export default {
   createSubSectionEndpoint,
   getDocumentEndpoint,
   getDocumentAccessEndpoint,
-  pricingEndpoint,
 };
