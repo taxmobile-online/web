@@ -17,8 +17,8 @@ const getDocumentAccessEndpoint = "/document/token";
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
   // User endpoints
-  signInApi,
   inviteTeamApi,
+  signInApi,
   adminSignInApi,
   registerUserApi,
   pricingEndpoint,
