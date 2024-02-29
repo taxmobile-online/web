@@ -24,9 +24,9 @@ export default {
   pricingEndpoint,
   resetPasswordApi,
   getDocumentEndpoint,
-  createSectionEndpoint,
   getSectionsEndpoint,
   getSubSectionsEndpoint,
+  createSectionEndpoint,
   createSubSectionEndpoint,
   getDocumentAccessEndpoint,
 };
