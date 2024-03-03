@@ -27,6 +27,6 @@ export default {
   createSectionEndpoint,
   getSubSectionsEndpoint,
   createSubSectionEndpoint,
-  signInApi,
   getDocumentAccessEndpoint,
+  signInApi,
 };
