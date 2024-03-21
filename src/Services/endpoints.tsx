@@ -25,8 +25,8 @@ export default {
   resetPasswordApi,
   getDocumentEndpoint,
   getSectionsEndpoint,
-  createSectionEndpoint,
   getDocumentAccessEndpoint,
+  createSectionEndpoint,
   getSubSectionsEndpoint,
   createSubSectionEndpoint,
 };
