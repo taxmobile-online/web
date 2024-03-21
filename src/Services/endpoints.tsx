@@ -18,8 +18,8 @@ const getDocumentAccessEndpoint = "/document/token";
 export default {
   // User endpoints
   signInApi,
-  getDocumentAccessEndpoint,
   inviteTeamApi,
+  getDocumentAccessEndpoint,
   adminSignInApi,
   registerUserApi,
   pricingEndpoint,
