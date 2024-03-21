@@ -26,7 +26,7 @@ export default {
   getDocumentEndpoint,
   getSectionsEndpoint,
   createSectionEndpoint,
+  getDocumentAccessEndpoint,
   getSubSectionsEndpoint,
   createSubSectionEndpoint,
-  getDocumentAccessEndpoint,
 };
