@@ -3,8 +3,8 @@ import React from "react";
 import {
   LinearScale,
   PointElement,
-  LineElement,
   Title,
+  LineElement,
   Legend,
   Tooltip,
   CategoryScale,
