@@ -19,8 +19,8 @@ import Typography from "Components/Atoms/Typography";
 
 ChartJS.register(
   LinearScale,
-  PointElement,
   Title,
+  PointElement,
   LineElement,
   CategoryScale,
   Tooltip,
