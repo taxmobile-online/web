@@ -2,8 +2,8 @@ import React from "react";
 
 import {
   Title,
-  LinearScale,
   Legend,
+  LinearScale,
   Tooltip,
   LineElement,
   PointElement,
