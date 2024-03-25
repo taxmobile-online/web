@@ -1,9 +1,9 @@
 import React from "react";
 
 import {
-  CategoryScale,
   LinearScale,
   PointElement,
+  CategoryScale,
   LineElement,
   Title,
   Legend,
