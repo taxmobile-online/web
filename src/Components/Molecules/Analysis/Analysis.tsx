@@ -23,8 +23,8 @@ ChartJS.register(
   LinearScale,
   PointElement,
   LineElement,
-  CategoryScale,
-  Legend
+  Legend,
+  CategoryScale
 );
 
 export const options = {
