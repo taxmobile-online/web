@@ -20,8 +20,8 @@ import Typography from "Components/Atoms/Typography";
 ChartJS.register(
   LinearScale,
   PointElement,
-  CategoryScale,
   LineElement,
+  CategoryScale,
   Title,
   Tooltip,
   Legend
