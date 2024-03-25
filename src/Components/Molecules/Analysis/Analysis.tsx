@@ -18,8 +18,8 @@ import { Bottom, Legends, Top, TopLeft, Wrapper } from "./style";
 import Typography from "Components/Atoms/Typography";
 
 ChartJS.register(
-  LinearScale,
   Title,
+  LinearScale,
   PointElement,
   LineElement,
   CategoryScale,
