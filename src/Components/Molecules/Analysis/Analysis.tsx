@@ -21,8 +21,8 @@ ChartJS.register(
   LinearScale,
   PointElement,
   LineElement,
-  CategoryScale,
   Title,
+  CategoryScale,
   Tooltip,
   Legend
 );
