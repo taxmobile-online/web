@@ -3,8 +3,8 @@ import React from "react";
 import {
   CategoryScale,
   LinearScale,
-  Chart as ChartJS,
   PointElement,
+  Chart as ChartJS,
   LineElement,
   Title,
   Tooltip,
