@@ -3,9 +3,9 @@ import React from "react";
 import {
   Title,
   Legend,
+  CategoryScale,
   Tooltip,
   LineElement,
-  CategoryScale,
   LinearScale,
   PointElement,
   Chart as ChartJS,
