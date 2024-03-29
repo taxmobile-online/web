@@ -5,8 +5,8 @@ import {
   Legend,
   Tooltip,
   LineElement,
-  LinearScale,
   PointElement,
+  LinearScale,
   CategoryScale,
   Chart as ChartJS,
 } from "chart.js";
