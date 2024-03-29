@@ -6,8 +6,8 @@ import {
   Tooltip,
   LineElement,
   PointElement,
-  LinearScale,
   CategoryScale,
+  LinearScale,
   Chart as ChartJS,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
