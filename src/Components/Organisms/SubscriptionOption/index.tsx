@@ -5,9 +5,9 @@ import { Container, Wrapper } from "./style";
 import Plans from "./Plans";
 
 import Typography from "Components/Atoms/Typography";
+import { RightModal } from "Components/Molecules/Modals";
 import { PriceSwitch } from "Components/Molecules/PriceSwitch";
 import { PlanOption } from "Components/Molecules/PlanOption";
-import { RightModal } from "Components/Molecules/Modals";
 
 interface Props {}
 const SubscriptionOption: React.FC<Props> = () => {
