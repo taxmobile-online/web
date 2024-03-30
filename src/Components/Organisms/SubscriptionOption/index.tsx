@@ -29,8 +29,8 @@ const SubscriptionOption: React.FC<Props> = () => {
         <Container>
           <Typography
             as="h3"
-            className="h-7 text-center max-width-430 mx-auto mb-50"
             text="Choose A Subscription Plan"
+            className="h-7 text-center max-width-430 mx-auto mb-50"
           />
           <PriceSwitch />
           <PlanOption className="mt-40 mb-50" />
