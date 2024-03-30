@@ -14,8 +14,8 @@ const PaymentButton = (props) => {
 
   const config = {
     reference: new Date().getTime().toString(),
-    amount: parseInt(`${price}00`),
     email: "user@example.com",
+    amount: parseInt(`${price}00`),
     publicKey: `pk_test_da2adf82cb1ed414ff60cd5839106a414b6a21bf`,
   };
   const initializePayment = usePaystackPayment(config);
