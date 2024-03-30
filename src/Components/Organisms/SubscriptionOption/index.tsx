@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Plans from "./Plans";
-import { Container, Wrapper } from "./style";
 import Typography from "Components/Atoms/Typography";
+import { Container, Wrapper } from "./style";
 import { PriceSwitch } from "Components/Molecules/PriceSwitch";
 import { PlanOption } from "Components/Molecules/PlanOption";
 import { AnimatePresence } from "framer-motion";
