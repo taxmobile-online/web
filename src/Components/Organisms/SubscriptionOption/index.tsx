@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Plans from "./Plans";
 import Typography from "Components/Atoms/Typography";
 import { PriceSwitch } from "Components/Molecules/PriceSwitch";
-import { PlanOption } from "Components/Molecules/PlanOption";
 import { AnimatePresence } from "framer-motion";
+import { PlanOption } from "Components/Molecules/PlanOption";
 import { Container, Wrapper } from "./style";
 import { RightModal } from "Components/Molecules/Modals";
 
