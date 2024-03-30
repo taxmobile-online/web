@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Container, Wrapper } from "./style";
 import Plans from "./Plans";
+import { Container, Wrapper } from "./style";
 import Typography from "Components/Atoms/Typography";
 import { PriceSwitch } from "Components/Molecules/PriceSwitch";
 import { PlanOption } from "Components/Molecules/PlanOption";
