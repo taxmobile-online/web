@@ -4,8 +4,8 @@ import Typography from "Components/Atoms/Typography";
 import { PriceSwitch } from "Components/Molecules/PriceSwitch";
 import { PlanOption } from "Components/Molecules/PlanOption";
 import { AnimatePresence } from "framer-motion";
-import { RightModal } from "Components/Molecules/Modals";
 import Plans from "./Plans";
+import { RightModal } from "Components/Molecules/Modals";
 
 interface Props {}
 const SubscriptionOption: React.FC<Props> = () => {
