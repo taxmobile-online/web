@@ -7,10 +7,10 @@ import {
 import Home from "Components/Pages/Home";
 import { SignIn } from "Components/Pages/SignIn";
 import { Library } from "Components/Pages/Library";
-import { Read } from "Components/Pages/Read";
 import { Pricing } from "Components/Pages/Pricing";
 import { Billing } from "Components/Pages/Billing";
 import { ELibrary } from "Components/Pages/ELibrary";
+import { Read } from "Components/Pages/Read";
 import { Sections } from "Components/Pages/Sections";
 import VerifyEmail from "Components/Pages/VerifyEmail";
 import { CouponCode } from "Components/Pages/CouponCode";
