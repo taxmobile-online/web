@@ -5,8 +5,8 @@ import {
 } from "react-router-dom";
 
 import { Read } from "Components/Pages/Read";
-import Home from "Components/Pages/Home";
 import { SignIn } from "Components/Pages/SignIn";
+import Home from "Components/Pages/Home";
 import { Library } from "Components/Pages/Library";
 import { Pricing } from "Components/Pages/Pricing";
 import { Billing } from "Components/Pages/Billing";
