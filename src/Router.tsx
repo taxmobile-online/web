@@ -6,9 +6,9 @@ import {
 
 import { Read } from "Components/Pages/Read";
 import { SignIn } from "Components/Pages/SignIn";
-import Home from "Components/Pages/Home";
 import { Library } from "Components/Pages/Library";
 import { Pricing } from "Components/Pages/Pricing";
+import Home from "Components/Pages/Home";
 import { Billing } from "Components/Pages/Billing";
 import { ELibrary } from "Components/Pages/ELibrary";
 import { Sections } from "Components/Pages/Sections";
